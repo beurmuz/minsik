@@ -30,6 +30,7 @@ export const Menu = (props) => {
           <a
             href='https://www.instagram.com/younghotyellow94/'
             target='_blank'
+            rel='noreferrer'
             class='pl-1'
           >
             Instagram
@@ -42,6 +43,7 @@ export const Menu = (props) => {
           <a
             href='https://twitter.com/younghotyellow'
             target='_blank'
+            rel='noreferrer'
             class='pl-1'
           >
             Twitter
@@ -54,6 +56,7 @@ export const Menu = (props) => {
           <a
             href='https://www.youtube.com/channel/UCxd-HCJDFkaDjpg-y3PgkEA'
             target='_blank'
+            rel='noreferrer'
             class='pl-1'
           >
             Youtube
@@ -66,6 +69,7 @@ export const Menu = (props) => {
           <a
             href='https://soundcloud.com/younghotyellow'
             target='_blank'
+            rel='noreferrer'
             class='pl-1'
           >
             Soundcloud
