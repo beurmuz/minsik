@@ -1,1 +1,1 @@
-# SIK-K
+# minsik
