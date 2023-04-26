@@ -11,9 +11,9 @@ export const Home = (props) => {
         <img src={profileImg} alt='Sik-K' />
       </div> */}
       <Header />
-      <div class='m-10 flex flex-col text-center '>
+      <div class='m-10 h-3/5 flex flex-col text-center '>
         <img src={homeLogo} class='m-auto' alt='home Logo' />
-        <p class=' h-20 flex items-center m-auto'>
+        <p class=' h-10 flex items-center m-auto'>
           <span class='font-NotoSerif text-white text-xl font-bold '>
             who is he? →
           </span>
