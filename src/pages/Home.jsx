@@ -12,7 +12,7 @@ export const Home = (props) => {
       </div> */}
       <Header />
       <div class='m-10 flex flex-col text-center '>
-        <img src={homeLogo} class='m-auto' />
+        <img src={homeLogo} class='m-auto' alt='home Logo' />
         <p class=' h-20 flex items-center m-auto'>
           <span class='font-NotoSerif text-white text-xl font-bold '>
             who is he? →
