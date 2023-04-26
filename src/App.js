@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div
       className='App'
-      class='w-screen h-screen bg-cover bg-center'
+      class='w-screen h-screen bg-cover bg-center overflow-x-hidden'
       style={{
         backgroundImage: `url(${imageURL})`,
       }}
