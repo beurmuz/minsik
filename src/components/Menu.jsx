@@ -9,72 +9,70 @@ import {
 
 export const Menu = (props) => {
   return (
-    <div class='w-full h-screen bg-black text-white flex flex-col justify-between p-10'>
-      <div class='flex flex-row justify-between'>
-        <span />
-        <button>
-          <IoIosClose size='50' />
-        </button>
-      </div>
-      <div class='h-80 flex flex-col justify-between text-5xl font-NotoDisplay font-semibold'>
-        <nav>Songs</nav>
-        <nav>News</nav>
-        <nav>Schedules</nav>
-        <nav>Cherring</nav>
-      </div>
-      <div class='flex flex-row justify-between text-1xl font-NotoDisplay font-medium'>
-        <span class='flex flex-row'>
-          <span class='p-1'>
-            <FaInstagram size='20' />
+    <div class='absolute w-full h-full bg-gray-500/25 flex justify-center align-middle'>
+      <div class='w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-main-white flex flex-col justify-between'>
+        <div class='flex flex-row justify-between'>
+          <span />
+          <button class='hover:cursor-pointer text-main-blue mt-7 mr-5'>
+            <IoIosClose size='60' />
+          </button>
+        </div>
+        <div class='h-full flex flex-col justify-center text-left text-4xl text-main-blue'>
+          <span class='ml-7 my-3'>
+            <button class='font-NotoSerif font-semibold'>Songs</button>
           </span>
-          <a
-            href='https://www.instagram.com/younghotyellow94/'
-            target='_blank'
-            rel='noreferrer'
-            class='pl-1'
-          >
-            Instagram
-          </a>
-        </span>
-        <span class='flex flex-row'>
-          <span class='p-1'>
-            <FaTwitter size='20' />
+          <span class='ml-7 my-3'>
+            <button class='font-NotoSerif font-semibold'>News</button>
           </span>
-          <a
-            href='https://twitter.com/younghotyellow'
-            target='_blank'
-            rel='noreferrer'
-            class='pl-1'
-          >
-            Twitter
-          </a>
-        </span>
-        <span class='flex flex-row'>
-          <span class='p-1'>
-            <FaYoutube size='20' />
+          <span class='ml-7 my-3'>
+            <button class='font-NotoSerif font-semibold'>Schedules</button>
           </span>
-          <a
-            href='https://www.youtube.com/channel/UCxd-HCJDFkaDjpg-y3PgkEA'
-            target='_blank'
-            rel='noreferrer'
-            class='pl-1'
-          >
-            Youtube
-          </a>
-        </span>
-        <span class='flex flex-row'>
-          <span class='p-1'>
-            <FaSoundcloud size='20' />
+          <span class='ml-7 my-3'>
+            <button class='font-NotoSerif font-semibold'>Cherring</button>
           </span>
-          <a
-            href='https://soundcloud.com/younghotyellow'
-            target='_blank'
-            rel='noreferrer'
-            class='pl-1'
-          >
-            Soundcloud
-          </a>
-        </span>
+        </div>
+        <div class='flex flex-row justify-start text-1xl text-main-blue-light'>
+          <span class='flex flex-row'>
+            <a
+              href='https://www.instagram.com/younghotyellow94/'
+              target='_blank'
+              rel='noreferrer'
+              class='mb-7 ml-7 font-NotoSerif font-semibold'
+            >
+              <FaInstagram size='30' />
+            </a>
+          </span>
+          <span class='flex flex-row'>
+            <a
+              href='https://twitter.com/younghotyellow'
+              target='_blank'
+              rel='noreferrer'
+              class='mb-7 ml-7 font-NotoSerif font-semibold'
+            >
+              <FaTwitter size='30' />
+            </a>
+          </span>
+          <span class='flex flex-row'>
+            <a
+              href='https://www.youtube.com/channel/UCxd-HCJDFkaDjpg-y3PgkEA'
+              target='_blank'
+              rel='noreferrer'
+              class='mb-7 ml-7 font-NotoSerif font-semibold'
+            >
+              <FaYoutube size='30' />
+            </a>
+          </span>
+          <span class='flex flex-row'>
+            <a
+              href='https://soundcloud.com/younghotyellow'
+              target='_blank'
+              rel='noreferrer'
+              class='mb-7 ml-7 font-NotoSerif font-semibold'
+            >
+              <FaSoundcloud size='30' />
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   );

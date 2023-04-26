@@ -8,6 +8,11 @@ module.exports = {
         NotoDisplay: ["Noto Serif Display", "serif"],
         Pretendard: ["Pretendard"],
       },
+      colors: {
+        "main-white": "#EBEFFA",
+        "main-blue": "#144184",
+        "main-blue-light": "#1B53AD",
+      },
     },
   },
   plugins: [],
