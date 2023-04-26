@@ -7,9 +7,6 @@ import homeLogo from "../assets/images/homeLogo.svg";
 export const Home = (props) => {
   return (
     <div class='w-full h-full flex flex-col justify-between'>
-      {/* <div class='m-auto w-72'>
-        <img src={profileImg} alt='Sik-K' />
-      </div> */}
       <Header />
       <div class='m-10 h-3/5 flex flex-col text-center '>
         <img src={homeLogo} class='m-auto' alt='home Logo' />
