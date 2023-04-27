@@ -15,7 +15,7 @@ export const Menu = (props) => {
   };
 
   return (
-    <div class='absolute w-full h-full bg-gray-500/25 flex justify-center align-middle'>
+    <div class='fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle'>
       <div class='w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-main-white flex flex-col justify-between rounded'>
         <div class='flex flex-row justify-between'>
           <span />
