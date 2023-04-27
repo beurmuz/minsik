@@ -20,7 +20,7 @@ export const Menu = (props) => {
         <div class='flex flex-row justify-between'>
           <span />
           <button
-            class='hover:cursor-pointer text-main-blue mt-7 mr-5'
+            class='hover:cursor-pointer text-main-blue mt-7 mr-4'
             onClick={closeMenu}
           >
             <IoIosClose size='60' />
