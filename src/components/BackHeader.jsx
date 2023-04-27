@@ -6,7 +6,7 @@ export const BackHeader = (props) => {
     window.history.go(-1); // 임시
   };
   return (
-    <div class='flex flex-row h-1/8 justify-start mx-7 mt-10 text-white'>
+    <div class='flex flex-row h-1/8 justify-start mx-7 mt-10 text-main-blue'>
       <button onClick={openMenu}>
         <RiArrowGoBackLine size='40' />
       </button>

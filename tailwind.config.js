@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         NotoSerif: ["Noto Serif", "serif"],
         NotoDisplay: ["Noto Serif Display", "serif"],
+        NotoKo: ["Noto Serif KR", "serif"],
         Pretendard: ["Pretendard"],
       },
       colors: {
