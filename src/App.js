@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Home } from "./pages/Home";
 import imageURL from "./assets/images/back.jpg";
-import { Menu } from "./components/Menu";
-import ReactGA from "react-ga";
+// import { Menu } from "./components/Menu";
+// import ReactGA from "react-ga";
 
 const App = () => {
   useEffect(() => {
