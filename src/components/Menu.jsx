@@ -6,14 +6,23 @@ import {
   FaYoutube,
   FaSoundcloud,
 } from "react-icons/fa";
+import { menuStore } from "../shared/store";
 
 export const Menu = (props) => {
+  const { showMenu, setShowMenu } = menuStore((state) => state);
+  const closeMenu = () => {
+    if (showMenu) setShowMenu();
+  };
+
   return (
     <div class='absolute w-full h-full bg-gray-500/25 flex justify-center align-middle'>
-      <div class='w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-main-white flex flex-col justify-between'>
+      <div class='w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-main-white flex flex-col justify-between rounded'>
         <div class='flex flex-row justify-between'>
           <span />
-          <button class='hover:cursor-pointer text-main-blue mt-7 mr-5'>
+          <button
+            class='hover:cursor-pointer text-main-blue mt-7 mr-5'
+            onClick={closeMenu}
+          >
             <IoIosClose size='60' />
           </button>
         </div>

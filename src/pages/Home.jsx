@@ -1,7 +1,6 @@
 import React from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-// import mainlogo from "../assets/images/mainLogo.svg";
 import homeLogo from "../assets/images/homeLogo.svg";
 
 export const Home = (props) => {

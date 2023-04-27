@@ -1,10 +1,11 @@
 import React from "react";
 import { Home } from "./pages/Home";
+import { Menu } from "./components/Menu";
 import imageURL from "./assets/images/back.jpg";
-// import { Menu } from "./components/Menu";
-// import ReactGA from "react-ga";
+import { menuStore } from "./shared/store";
 
 const App = () => {
+  const { showMenu } = menuStore((state) => state);
   return (
     <div
       className='App'
@@ -13,8 +14,7 @@ const App = () => {
         backgroundImage: `url(${imageURL})`,
       }}
     >
-      <Home />
-      {/* <Menu /> */}
+      {showMenu ? <Menu /> : <Home />}
     </div>
   );
 };
