@@ -1,5 +1,5 @@
 import React from "react";
-import { Home } from "./pages/Home";
+// import { Home } from "./pages/Home";
 import { Menu } from "./components/Menu";
 import imageURL from "./assets/images/back.jpg";
 import { menuStore } from "./shared/store";
