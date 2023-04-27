@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Home } from "./pages/Home";
 import imageURL from "./assets/images/back.jpg";
 // import { Menu } from "./components/Menu";
 // import ReactGA from "react-ga";
 
 const App = () => {
-  useEffect(() => {
-    React.initialize("user id");
-  });
-
   return (
     <div
       className='App'
