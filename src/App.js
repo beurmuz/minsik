@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Home } from "./pages/Home";
 import imageURL from "./assets/images/back.jpg";
 import { Menu } from "./components/Menu";
-// import imageURL from "./assets/images/background.jpg";
+import ReactGA from "react-ga";
 
 const App = () => {
+  useEffect(() => {
+    React.initialize("user id");
+  });
+
   return (
     <div
       className='App'
@@ -13,8 +17,8 @@ const App = () => {
         backgroundImage: `url(${imageURL})`,
       }}
     >
-      {/* <Home /> */}
-      <Menu />
+      <Home />
+      {/* <Menu /> */}
     </div>
   );
 };
