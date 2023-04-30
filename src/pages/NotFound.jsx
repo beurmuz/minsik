@@ -1,0 +1,17 @@
+import React from "react";
+import { BackHeader } from "../components/BackHeader";
+
+export const NotFound = (props) => {
+  return (
+    <div class=' bg-white'>
+      <section class='w-screen h-screen flex flex-col text-center'>
+        <BackHeader />
+        <div class='flex flex-col m-auto '>
+          <p class='m-auto text-main-blue font-NotoSerif text-3xl font-bold'>
+            Page Not Found
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+};

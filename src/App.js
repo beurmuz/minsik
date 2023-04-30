@@ -5,16 +5,17 @@ import imageURL from "./assets/images/back.jpg";
 import { menuStore } from "./shared/store";
 import { Intro } from "./pages/Intro";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/intro",
-    element: <Intro />,
-  },
-]);
+import { NotFound } from "./pages/NotFound";
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Home />,
+//   },
+//   {
+//     path: "/intro",
+//     element: <Intro />,
+//   },
+// ]);
 
 const App = () => {
   const { showMenu } = menuStore((state) => state);
@@ -27,7 +28,8 @@ const App = () => {
         backgroundImage: `url(${imageURL})`,
       }}
     >
-      <RouterProvider router={router} />
+      <NotFound />
+      {/* <RouterProvider router={router} /> */}
       {/* <Intro /> */}
       {/* <Home /> */}
       {showMenu ? <Menu /> : ""}
