@@ -1,9 +1,20 @@
 import React from "react";
-// import { Home } from "./pages/Home";
+import { Home } from "./pages/Home";
 import { Menu } from "./components/Menu";
 import imageURL from "./assets/images/back.jpg";
 import { menuStore } from "./shared/store";
 import { Intro } from "./pages/Intro";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/intro",
+    element: <Intro />,
+  },
+]);
 
 const App = () => {
   const { showMenu } = menuStore((state) => state);
@@ -16,7 +27,8 @@ const App = () => {
         backgroundImage: `url(${imageURL})`,
       }}
     >
-      <Intro />
+      <RouterProvider router={router} />
+      {/* <Intro /> */}
       {/* <Home /> */}
       {showMenu ? <Menu /> : ""}
     </div>
