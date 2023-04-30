@@ -1,5 +1,6 @@
 import React from "react";
 import { BackHeader } from "../components/BackHeader";
+import { Footer } from "../components/Footer";
 
 export const NotFound = (props) => {
   return (
@@ -11,6 +12,7 @@ export const NotFound = (props) => {
             Page Not Found
           </p>
         </div>
+        <Footer />
       </section>
     </div>
   );
