@@ -1,15 +1,15 @@
 import React from "react";
 import { BsArrowDown } from "react-icons/bs";
 import { TbPointFilled } from "react-icons/tb";
-import { BackHeader } from "../components/BackHeader";
 import faceImg from "../assets/images/face.png";
 import { DescriptionBox } from "../components/DescriptionBox";
+import { Header } from "../components/Header";
 
 export const Intro = (props) => {
   return (
     <div class=' bg-white'>
       <section class='w-screen h-screen flex flex-col text-center '>
-        <BackHeader />
+        <Header changeColor={true} />
         <div class='flex flex-col m-auto '>
           <div class='m-auto w-72'>
             <img src={faceImg} alt='Sik-K face' />
@@ -70,10 +70,10 @@ export const Intro = (props) => {
             </DescriptionBox>
             <DescriptionBox>
               <span class='font-NotoSerif text-xl font-semibold text-main-blue'>
-                Now
+                2023
               </span>
               <br />
-              레이블 없이 무소속으로 활동중
+              KC 레이블 런칭 <br />- 첫 아티스트이자 CEO
             </DescriptionBox>
           </article>
         </div>

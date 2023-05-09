@@ -3,6 +3,7 @@ import { Menu } from "./components/Menu";
 import imageURL from "./assets/images/back.jpg";
 import { menuStore } from "./shared/store";
 import { News } from "./pages/News";
+import { Intro } from "./pages/Intro";
 
 const App = () => {
   const { showMenu } = menuStore((state) => state);
@@ -15,7 +16,7 @@ const App = () => {
         backgroundImage: `url(${imageURL})`,
       }}
     >
-      <News />
+      <Intro />
       {showMenu ? <Menu /> : ""}
     </div>
   );
