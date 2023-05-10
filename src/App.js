@@ -2,8 +2,7 @@ import React from "react";
 import { Menu } from "./components/Menu";
 import imageURL from "./assets/images/back.jpg";
 import { menuStore } from "./shared/store";
-import { News } from "./pages/News";
-import { Intro } from "./pages/Intro";
+import { Songs } from "./pages/Songs";
 
 const App = () => {
   const { showMenu } = menuStore((state) => state);
@@ -16,7 +15,7 @@ const App = () => {
         backgroundImage: `url(${imageURL})`,
       }}
     >
-      <Intro />
+      <Songs />
       {showMenu ? <Menu /> : ""}
     </div>
   );
