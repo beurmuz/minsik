@@ -3,9 +3,18 @@ import { Menu } from "./components/Menu";
 import imageURL from "./assets/images/back.jpg";
 import { menuStore } from "./shared/store";
 import { Home } from "./pages/Home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { NotFound } from "./pages/NotFound.jsx";
 
 const App = () => {
   const { showMenu } = menuStore((state) => state);
+
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <Home />,
+  //   },
+  // ]);
 
   return (
     <div
@@ -15,7 +24,9 @@ const App = () => {
         backgroundImage: `url(${imageURL})`,
       }}
     >
-      <Home />
+      {/* <RouterProvider router={router} /> */}
+      {/* <Home /> */}
+      <NotFound />
       {showMenu ? <Menu /> : ""}
     </div>
   );
