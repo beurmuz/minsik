@@ -2,6 +2,7 @@ import React from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import homeLogo from "../assets/images/homeLogo.svg";
+import { Link } from "react-router-dom";
 
 export const Home = (props) => {
   return (
@@ -15,7 +16,9 @@ export const Home = (props) => {
         />
         <p class=' h-10 flex items-center m-auto'>
           <span class='font-NotoSerif text-white text-xl font-bold '>
-            <button>who is he? →</button>
+            <Link to='/intro'>
+              <button>who is he? →</button>
+            </Link>
           </span>
         </p>
       </div>

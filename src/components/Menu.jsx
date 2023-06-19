@@ -7,11 +7,18 @@ import {
   FaSoundcloud,
 } from "react-icons/fa";
 import { menuStore } from "../shared/store";
+import { useNavigate } from "react-router-dom";
 
 export const Menu = (props) => {
   const { showMenu, setShowMenu } = menuStore((state) => state);
   const closeMenu = () => {
     if (showMenu) setShowMenu();
+  };
+
+  let navigate = useNavigate();
+  const gotoPage = (pageName) => {
+    closeMenu();
+    navigate(`/${pageName}`);
   };
 
   return (
@@ -28,16 +35,36 @@ export const Menu = (props) => {
         </div>
         <div class='h-full flex flex-col justify-center text-left text-4xl text-main-blue'>
           <span class='ml-7 my-3'>
-            <button class='font-NotoSerif font-semibold'>Songs</button>
+            <button
+              class='font-NotoSerif font-semibold'
+              onClick={() => gotoPage("songs")}
+            >
+              Songs
+            </button>
           </span>
           <span class='ml-7 my-3'>
-            <button class='font-NotoSerif font-semibold'>News</button>
+            <button
+              class='font-NotoSerif font-semibold'
+              onClick={() => gotoPage("news")}
+            >
+              News
+            </button>
           </span>
           <span class='ml-7 my-3'>
-            <button class='font-NotoSerif font-semibold'>Schedules</button>
+            <button
+              class='font-NotoSerif font-semibold'
+              onClick={() => gotoPage("schedules")}
+            >
+              Schedules
+            </button>
           </span>
           <span class='ml-7 my-3'>
-            <button class='font-NotoSerif font-semibold'>Cherring</button>
+            <button
+              class='font-NotoSerif font-semibold'
+              onClick={() => gotoPage("cheering")}
+            >
+              Cheering
+            </button>
           </span>
         </div>
         <div class='flex flex-row justify-start text-1xl text-main-blue-light'>
