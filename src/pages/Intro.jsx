@@ -14,7 +14,7 @@ export const Intro = (props) => {
           <div class='m-auto w-72'>
             <img src={faceImg} alt='Sik-K face' />
           </div>
-          <h2 class='font-NotoSerif text-main-blue text-5xl font-bold mt-7 mb-2'>
+          <h2 class='font-NotoSerif text-main-blue text-4xl font-bold mt-7 mb-2'>
             SIK-K
           </h2>
           <p class='font-NotoSerif text-lg'>(1994.02.26)</p>
