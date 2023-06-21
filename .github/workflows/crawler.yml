@@ -2,7 +2,7 @@ name: NewsDataCrawler
 
 on:
   schedule:
-    - cron: "0 7 * * mon"
+    - cron: "0 20 * * wed"
 
 jobs:
   build:
