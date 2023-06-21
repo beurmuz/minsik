@@ -7,14 +7,21 @@ export const News = (props) => {
   const newsList = newsData.map((article) => {
     return (
       <li
-        class='bg-sky-50/80  font-NotoKo border rounded-md p-4 my-3 text-base list-none'
+        class='bg-sky-50/80 font-NotoKo border rounded-md p-4 my-3 text-base list-none'
         key={article.id}
       >
-        <h3 class=' font-Pretendard font-bold text-lg pb-2 leading-tight'>
+        <h3 class=' font-Pretendard font-bold text-lg py-2 leading-tight'>
           {article.title}
         </h3>
-        <p class='font-Pretendard text-sm'>
-          {article.content.slice(0, 101) + "..."}
+        <p>
+          <a
+            class='font-Pretendard text-sm hover:font-semibold'
+            href={article.link}
+            target='_blank'
+            rel='noreferrer'
+          >
+            {article.content.slice(0, 101) + "..."}
+          </a>
         </p>
         <p class='text-right pt-2'>
           <span class='font-Pretendard text-sm font-bold'>{article.date}</span>
