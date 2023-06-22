@@ -24,7 +24,35 @@ export const Intro = (props) => {
           </div>
         </div>
       </section>
-      <section class='w-screen h-screen flex flex-col'>
+      <section class='w-screen h-screen flex flex-col justify-center'>
+        {/* <div class='my-10 h-52 border border-slate-800'></div> */}
+        <div class='px-10'>
+          <p class='font-NotoKo text-base font-base'>
+            <span class='font-NotoSerif'>KC</span> 레이블의 대표{" "}
+            <span class='font-NotoSerif'>SIK-K</span>는 꾸준하게 서울을 중심으로
+            새로운 사운드를 전 세계에 선사하고 있는 아티스트이다.
+            <br />
+            <br />
+            쇼미더머니 출연, 박재범과 함께한 하이어뮤직의 컴필레이션 참여 등
+            레이블의 전성기를 견인하며, 한국 힙합씬을 전 세계에 알려온 식케이는
+            2023년 새로운 둥지를 스스로 마련하여 다양한 활동을 할 준비를 마쳤다.
+            <br />
+            <br />
+            평단과 대중의 호평을 동시에 얻은 두 번째 정규작{" "}
+            <span class='font-NotoSerif'>[HEADLINER]</span> 이후 군입대 기간
+            공백 후, <span class='font-NotoSerif'>[POP A LOT]</span> 월드 투어를
+            성공적으로 진행하며 추후 앨범 활동에 대한 기대감을 끌어올리고 있다.{" "}
+            <br />
+            <br />
+            항상 새로운 플로우와 사운드의 기준을 제시해 온 그가 어떤 모습의
+            트랙과 앨범들을 선사할지 귀추가 주목된다.
+          </p>
+          <p class='py-3 font-NotoSerif text-gray-300 text-xs'>
+            Sources: Naver Vibe Biography
+          </p>
+        </div>
+      </section>
+      <section class='w-screen flex flex-col'>
         <div class='flex flex-row'>
           <article class='w-1/2 border-r border-main-blue-light' />
           <article class='w-1/2 border-l border-main-blue-light'>
@@ -80,9 +108,14 @@ export const Intro = (props) => {
         <div class='mx-auto mt-0 my-3 animate-ping text-main-blue-light'>
           <TbPointFilled size='30' />
         </div>
-        <div class='m-auto '>
+        <div class=' text-center'>
+          <p class='font-NotoSerif font-extrabold text-5xl text-main-blue-light'>
+            D+2876
+          </p>
+        </div>
+        <div class='m-auto my-10'>
           <a
-            href='https://namu.wiki/w/%EC%8B%9D%EC%BC%80%EC%9D%B4'
+            href='https://ko.wikipedia.org/wiki/%EC%8B%9D%EC%BC%80%EC%9D%B4'
             target='_blank'
             rel='noreferrer'
             class='font-NotoSerif font-normal text-gray-500'

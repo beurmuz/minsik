@@ -37,6 +37,14 @@ export const Menu = (props) => {
           <span class='ml-7 my-3'>
             <button
               class='font-NotoSerif font-semibold'
+              onClick={() => gotoPage("intro")}
+            >
+              Intro
+            </button>
+          </span>
+          <span class='ml-7 my-3'>
+            <button
+              class='font-NotoSerif font-semibold'
               onClick={() => gotoPage("songs")}
             >
               Songs
@@ -58,14 +66,14 @@ export const Menu = (props) => {
               Schedules
             </button>
           </span>
-          <span class='ml-7 my-3'>
+          {/* <span class='ml-7 my-3'>
             <button
               class='font-NotoSerif font-semibold'
               onClick={() => gotoPage("cheering")}
             >
               Cheering
             </button>
-          </span>
+          </span> */}
         </div>
         <div class='flex flex-row justify-start text-1xl text-main-blue-light'>
           <span class='flex flex-row'>
