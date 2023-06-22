@@ -1,7 +1,7 @@
 import React from "react";
 import { BsArrowDown } from "react-icons/bs";
 import { TbPointFilled } from "react-icons/tb";
-import faceImg from "../assets/images/face.png";
+import faceImg from "../assets/images/minsik.png";
 import { DescriptionBox } from "../components/DescriptionBox";
 import { Header } from "../components/Header";
 
@@ -25,8 +25,10 @@ export const Intro = (props) => {
         </div>
       </section>
       <section class='w-screen h-screen flex flex-col justify-center'>
-        {/* <div class='my-10 h-52 border border-slate-800'></div> */}
-        <div class='px-10'>
+        <h3 class='font-NotoSerif text-main-blue/80 text-4xl font-bold p-10'>
+          Biography
+        </h3>
+        <article class='px-10'>
           <p class='font-NotoKo text-base font-base'>
             <span class='font-NotoSerif'>KC</span> 레이블의 대표{" "}
             <span class='font-NotoSerif'>SIK-K</span>는 꾸준하게 서울을 중심으로
@@ -47,73 +49,82 @@ export const Intro = (props) => {
             항상 새로운 플로우와 사운드의 기준을 제시해 온 그가 어떤 모습의
             트랙과 앨범들을 선사할지 귀추가 주목된다.
           </p>
-          <p class='py-3 font-NotoSerif text-gray-300 text-xs'>
-            Sources: Naver Vibe Biography
+          <p class='py-5 '>
+            <a
+              href='https://vibe.naver.com/artist/331653'
+              target='_blank'
+              rel='noreferrer'
+              class='font-NotoSerif text-gray-300 text-xs'
+            >
+              [Sources] Naver Vibe Biography
+            </a>
           </p>
-        </div>
+        </article>
       </section>
       <section class='w-screen flex flex-col'>
+        <h3 class='font-NotoSerif text-main-blue/80 text-4xl font-bold px-10 py-7'>
+          Timeline
+        </h3>
         <div class='flex flex-row'>
-          <article class='w-1/2 border-r border-main-blue-light' />
-          <article class='w-1/2 border-l border-main-blue-light'>
+          <article class='w-12 border-r border-main-blue-light' />
+          <article class='w-full border-l border-main-blue-light'>
             <DescriptionBox>
               <span class='font-NotoSerif text-xl font-semibold text-main-blue'>
                 2015
               </span>
               <br />
-              쇼미더머니 4를 통해 데뷔
+              - 쇼미더머니 4 출연
+              <br />- 싱글 <span class='font-NotoSerif'>[My Man]</span>으로 데뷔
             </DescriptionBox>
             <DescriptionBox>
               <span class='font-NotoSerif text-xl font-semibold text-main-blue'>
                 2016
               </span>
-              <br />첫 EP 'FLIP' 발매
+              <br />- 첫 <span class='font-NotoSerif'>EP</span> 앨범인{" "}
+              <span class='font-NotoSerif'>'FLIP'</span> 발매
             </DescriptionBox>
             <DescriptionBox>
               <span class='font-NotoSerif text-xl font-semibold text-main-blue'>
                 2017
               </span>
-              <br />
-              하이어뮤직의 첫 아티스트로 계약
+              <br />- <span class='font-NotoSerif'>H1GHR MUSIC</span>의 첫
+              아티스트로 계약
             </DescriptionBox>
             <DescriptionBox>
               <span class='font-NotoSerif text-xl font-semibold text-main-blue'>
                 2019
               </span>
-              <br />첫 단독콘서트 진행
+              <br />- 첫 단독콘서트{" "}
+              <span class='font-NotoSerif'>'WORLD TOUR IN SEOUL'</span>
             </DescriptionBox>
             <DescriptionBox>
               <span class='font-NotoSerif text-xl font-semibold text-main-blue'>
                 2020
               </span>
-              <br />
-              입대
+              <br />- 입대
             </DescriptionBox>
             <DescriptionBox>
               <span class='font-NotoSerif text-xl font-semibold text-main-blue'>
                 2022
               </span>
-              <br />
-              전역 / 하이어뮤직과 계약 종료
+              <br />- 전역
+              <br />- 하이어뮤직과 계약 종료
             </DescriptionBox>
             <DescriptionBox>
               <span class='font-NotoSerif text-xl font-semibold text-main-blue'>
                 2023
               </span>
-              <br />
-              KC 레이블 런칭 <br />- 첫 아티스트이자 CEO
+              <br />- KC 레이블 런칭
             </DescriptionBox>
           </article>
         </div>
-        <div class='mx-auto mt-0 my-3 animate-ping text-main-blue-light'>
-          <TbPointFilled size='30' />
+        <div class='mx-7'>
+          <span class='m-auto animate-ping text-main-blue-light'>
+            <TbPointFilled size='30' />
+          </span>
         </div>
-        <div class=' text-center'>
-          <p class='font-NotoSerif font-extrabold text-5xl text-main-blue-light'>
-            D+2876
-          </p>
-        </div>
-        <div class='m-auto my-10'>
+
+        <div class='mx-12 mb-14'>
           <a
             href='https://ko.wikipedia.org/wiki/%EC%8B%9D%EC%BC%80%EC%9D%B4'
             target='_blank'
