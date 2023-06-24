@@ -4,7 +4,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 export const Song = ({ title, artists }) => {
   return (
-    <li class='text-white border-b p-3 text-base list-none flex felx-row'>
+    <li class='text-black/8 border-b p-3 text-base list-none flex felx-row'>
       <div class='w-10'>
         <img src={basicImg} alt='album' class='' />
       </div>
