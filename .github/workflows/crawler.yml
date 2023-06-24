@@ -1,8 +1,9 @@
 name: NewsDataCrawler
 
 on:
-  schedule:
-    - cron: "0 20 * * wed"
+  [push]
+  # schedule:
+  # - cron: "0 20 * * wed"
 
 jobs:
   build:
@@ -22,13 +23,14 @@ jobs:
 
       - name: 3. 파이썬 실행
         run: python "src/crawler/news_crawler.py"
+          python "src/crawler/songs_crawler.py"
 
       - name: Commit files
         run: |
           git config --local user.email "fallinta2@gmail.com"
           git config --local user.name "beurmuz"
           git add .
-          git commit -m "#23 [auto] Run crawler and update naver news data"
+          git commit -m "#23 [auto] Run crawler and update data"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
