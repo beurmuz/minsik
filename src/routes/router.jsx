@@ -3,6 +3,7 @@ import { Home } from "../pages/Home";
 import { Intro } from "../pages/Intro";
 import { News } from "../pages/News";
 import { Songs } from "../pages/Songs";
+import { Schedules } from "../pages/Schedules";
 import { NotFound } from "../pages/NotFound";
 import { Menu } from "../components/Menu";
 import { menuStore } from "../shared/store";
@@ -25,7 +26,7 @@ const Router = () => {
           <Route path='/intro' element={<Intro />} />
           <Route path='/news' element={<News />} />
           <Route path='/songs' element={<Songs />} />
-          <Route path='/schedules' element={<Songs />} />
+          <Route path='/schedules' element={<Schedules />} />
           <Route path='/cheering' element={<Songs />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
