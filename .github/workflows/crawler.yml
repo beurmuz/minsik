@@ -22,7 +22,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 3. 파이썬 실행
-        run: python "src/crawler/news_crawler.py"
+        run: |
+          python "src/crawler/news_crawler.py"
           python "src/crawler/songs_crawler.py"
 
       - name: Commit files
