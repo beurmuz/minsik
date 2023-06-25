@@ -1,5 +1,5 @@
 import React from "react";
-import { Song } from "./Song";
+import { SongItem } from "./SongItem";
 import songData from "../crawlingData/songs_data.json";
 
 export const SongsList = (props) => {
@@ -8,7 +8,7 @@ export const SongsList = (props) => {
       <ol class=''>
         {songData.map((song) => {
           return (
-            <Song
+            <SongItem
               title={
                 song.title.length < 26
                   ? song.title

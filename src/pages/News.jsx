@@ -1,48 +1,18 @@
 import React from "react";
 import { Header } from "../components/Header";
+import { NewsList } from "../components/NewsList";
 // import { Post } from "../components/Post";
-import newsData from "../crawlingData/news_data.json";
 
 export const News = (props) => {
-  const newsList = newsData.map((article) => {
-    return (
-      <li
-        class='bg-sky-50/80 font-NotoKo border rounded-md px-4 py-3 my-3 text-base list-none'
-        key={article.id}
-      >
-        <h3 class=' font-Pretendard font-bold text-lg py-2 leading-tight'>
-          {article.title}
-        </h3>
-        <p class='leading-none'>
-          <a
-            class='font-Pretendard text-sm hover:font-semibold '
-            href={article.link}
-            target='_blank'
-            rel='noreferrer'
-          >
-            {article.content.slice(0, 101) + "..."}
-          </a>
-        </p>
-        <p class='text-right pt-1'>
-          <span class='font-Pretendard text-sm font-bold'>
-            {article.date.slice(-1) === "."
-              ? article.date.slice(0, -1)
-              : article.date}
-          </span>
-        </p>
-      </li>
-    );
-  });
-
   return (
-    <div class='w-full h-full flex flex-col '>
-      <Header />
+    <div class='w-full flex flex-col bg-white'>
+      <Header changeColor={true} />
       <div class='m-7'>
         <article>
-          <p class='text-white font-NotoSerif text-sm'>
+          <p class='font-NotoSerif text-gray-400 text-sm'>
             Last Update: 2023.06.21 20:00 PM
           </p>
-          <ol class='my-5 mb-10'>{newsList}</ol>
+          <NewsList />
         </article>
         {/* <article>
           <h1 class='text-white'>Instagram</h1>
