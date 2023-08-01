@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SongItem } from "./SongItem";
 import { songsApi } from "../shared/axios";
-// import songData from "../crawlingData/songs_data.json";
+import { RaceBy } from "@uiball/loaders";
 
 export const SongsList = (props) => {
   const [songsData, setSongsData] = useState([]);
@@ -21,7 +21,7 @@ export const SongsList = (props) => {
   return (
     <div class='m-7 p-30 overflow-auto'>
       <ol class=''>
-        {songsData &&
+        {songsData ? (
           songsData.map((song) => {
             return (
               <SongItem
@@ -38,7 +38,14 @@ export const SongsList = (props) => {
                 }
               />
             );
-          })}
+          })
+        ) : (
+          <div class='flex h-full'>
+            <span class='m-auto'>
+              <RaceBy size={50} lineWeight={3} speed={1.4} color='gray' />
+            </span>
+          </div>
+        )}
       </ol>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { newsApi } from "../shared/axios";
 import { NewsItem } from "./NewsItem";
+import { RaceBy } from "@uiball/loaders";
 
 export const NewsList = () => {
   const [newsData, setNewsData] = useState([]);
@@ -19,7 +20,7 @@ export const NewsList = () => {
 
   return (
     <ol class='my-5 mb-10'>
-      {newsData &&
+      {newsData ? (
         newsData.map((data) => {
           return (
             <NewsItem
@@ -32,7 +33,14 @@ export const NewsList = () => {
               date={data.date}
             />
           );
-        })}
+        })
+      ) : (
+        <div class='flex h-full'>
+          <span class='m-auto'>
+            <RaceBy size={50} lineWeight={3} speed={1.4} color='gray' />
+          </span>
+        </div>
+      )}
     </ol>
   );
 };

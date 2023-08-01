@@ -1,6 +1,7 @@
 import React from "react";
 import { Header } from "../components/Header";
 import { NewsList } from "../components/NewsList";
+import { Footer } from "../components/Footer";
 // import { Post } from "../components/Post";
 
 export const News = (props) => {
@@ -29,6 +30,7 @@ export const News = (props) => {
           </div>
         </article> */}
       </div>
+      <Footer />
     </div>
   );
 };
