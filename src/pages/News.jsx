@@ -11,7 +11,7 @@ export const News = (props) => {
       <div class='m-7'>
         <article>
           <p class='font-NotoSerif text-gray-400 text-sm'>
-            Last Update: 2023.06.21 20:00 PM
+            Last Update: 2023.08.01 20:00 PM
           </p>
           <NewsList />
         </article>
