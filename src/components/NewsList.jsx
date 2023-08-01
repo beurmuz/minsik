@@ -24,6 +24,7 @@ export const NewsList = () => {
           return (
             <NewsItem
               id={data.id}
+              key={data.id}
               title={data.title}
               link={data.link}
               content={data.content}
