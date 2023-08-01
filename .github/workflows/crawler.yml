@@ -1,9 +1,9 @@
 name: NewsDataCrawler
 
 on:
-  [push]
-  # schedule:
-  # - cron: "0 20 * * wed"
+  # [push]
+  schedule:
+    - cron: "0 20 * * wed"
 
 jobs:
   build:
@@ -21,19 +21,22 @@ jobs:
       - name: 2. 필요한 패키지 다운
         run: pip install -r requirements.txt
 
-      - name: 3. 파이썬 실행
+      - name: 3. 뉴스 데이터 크롤링
         run: |
           python "src/crawler/news_crawler.py"
+
+      - name: 4. 음악 데이터 크롤링
+        run: |
           python "src/crawler/songs_crawler.py"
 
-      - name: Commit files
+      - name: 5. Commit files
         run: |
           git config --local user.email "fallinta2@gmail.com"
           git config --local user.name "beurmuz"
           git add .
           git commit -m "#23 [auto] Run crawler and update data"
 
-      - name: Push changes
+      - name: 6. Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
