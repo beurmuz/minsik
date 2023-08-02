@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import { SongItem } from "./SongItem";
 import { songsApi } from "../shared/axios";
 import { RaceBy } from "@uiball/loaders";
+import { songsStore } from "../shared/store";
 
 export const SongsList = (props) => {
-  const [songsData, setSongsData] = useState([]);
+  // const [songsData, setSongsData] = useState([]);
+  const { songs, setsSongs } = songsStore((state) => state);
 
   const getSongsData = async () => {
     const result = await songsApi
       .get("songs_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
-    setSongsData(result);
+    // setSongsData(result);
+    setsSongs(result);
   };
 
   useEffect(() => {
@@ -21,8 +24,8 @@ export const SongsList = (props) => {
   return (
     <div class='m-7 p-30 overflow-auto'>
       <ol class=''>
-        {songsData ? (
-          songsData.map((song) => {
+        {songs ? (
+          songs.map((song) => {
             return (
               <SongItem
                 key={song.songId}
