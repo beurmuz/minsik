@@ -45,5 +45,5 @@ for i in range(0, len(JoinSongsData)):
   JoinSongsData[i]["imgSource"] = imgSource
 
 # json 형식으로 만들기
-with open('JoinSongsData.json', "w", encoding="UTF-8-sig") as f_write:
+with open('src/crawlingData/join_songs_data.json', "w", encoding="UTF-8-sig") as f_write:
   json.dump(JoinSongsData, f_write, ensure_ascii=False, indent=4)
