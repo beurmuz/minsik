@@ -1,9 +1,9 @@
 name: NewsDataCrawler
 
 on:
-  # [push]
-  schedule:
-    - cron: "0 20 * * wed"
+  [push]
+  # schedule:
+  # - cron: "0 20 * * wed"
 
 jobs:
   build:
@@ -25,18 +25,22 @@ jobs:
         run: |
           python "src/crawler/news_crawler.py"
 
-      - name: 4. 음악 데이터 크롤링
+      - name: 4. 발매 음악 데이터 크롤링
         run: |
           python "src/crawler/songs_crawler.py"
 
-      - name: 5. Commit files
+      - name: 5. 참여 음악 데이터 크롤링
+        run: |
+          python "src/crawler/join_songs_crawler.py"
+
+      - name: 6. Commit files
         run: |
           git config --local user.email "fallinta2@gmail.com"
           git config --local user.name "beurmuz"
           git add .
           git commit -m "#23 [auto] Run crawler and update data"
 
-      - name: 6. Push changes
+      - name: 7. Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
