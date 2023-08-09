@@ -16,3 +16,10 @@ export const songsStore = create(
     setsSongs: (song) => set((state) => ({ songs: song })),
   }))
 );
+
+export const joinSongsStore = create(
+  devtools((set) => ({
+    joinSongs: [],
+    setsJoinSongs: (song) => set((state) => ({ joinSongs: song })),
+  }))
+);

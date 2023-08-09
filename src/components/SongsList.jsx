@@ -2,23 +2,33 @@ import React, { useEffect, useState } from "react";
 import { SongItem } from "./SongItem";
 import { songsApi } from "../shared/axios";
 import { RaceBy } from "@uiball/loaders";
-import { songsStore } from "../shared/store";
+import { songsStore, joinSongsStore } from "../shared/store";
 
 export const SongsList = (props) => {
-  // const [songsData, setSongsData] = useState([]);
   const { songs, setsSongs } = songsStore((state) => state);
+  const { joinSongs, setsJoinSongs } = joinSongsStore((state) => state);
 
+  // 발매 곡 데이터 받아오기
   const getSongsData = async () => {
     const result = await songsApi
       .get("songs_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
-    // setSongsData(result);
     setsSongs(result);
+  };
+
+  // 참여 곡 데이터 받아오기
+  const getJoinSongsData = async () => {
+    const result = await songsApi
+      .get("join_songs_data.json")
+      .then((res) => res.data)
+      .catch((error) => console.log(error));
+    setsJoinSongs(result);
   };
 
   useEffect(() => {
     getSongsData();
+    getJoinSongsData();
   }, []);
 
   return (
