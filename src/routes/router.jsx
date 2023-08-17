@@ -15,20 +15,20 @@ const Router = () => {
   return (
     <BrowserRouter>
       <div
-        className='App'
-        class='w-screen h-screen bg-main-white bg-cover bg-center overflow-x-hidden'
+        className="App"
+        class="w-screen h-screen bg-main-white bg-cover bg-center overflow-x-hidden"
         style={{
           backgroundImage: `url(${imageURL})`,
         }}
       >
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/intro' element={<Intro />} />
-          <Route path='/news' element={<News />} />
-          <Route path='/songs' element={<Songs />} />
-          <Route path='/schedules' element={<Schedules />} />
-          <Route path='/cheering' element={<Songs />} />
-          <Route path='*' element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/songs" element={<Songs />} />
+          <Route path="/schedules" element={<Schedules />} />
+          <Route path="/cheering" element={<Songs />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         {showMenu ? <Menu /> : ""}
       </div>

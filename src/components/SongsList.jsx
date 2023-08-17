@@ -3,6 +3,7 @@ import { SongItem } from "./SongItem";
 import { songsApi } from "../shared/axios";
 import { RaceBy } from "@uiball/loaders";
 import { songsStore } from "../shared/store";
+import OrderButton from "./OrderButton";
 
 export const SongsList = (props) => {
   const {
@@ -39,30 +40,29 @@ export const SongsList = (props) => {
   }, []);
 
   return (
-    <div class='m-7 p-30 overflow-auto'>
-      <ol class=''>
+    <div class="m-7 p-30 overflow-auto">
+      <div class="w-full mb-3 flex flex-row justify-end">
+        <OrderButton name={"ALL"} />
+        <span class="border-r border-gray-500"></span>
+        <OrderButton name={"발매"} />
+        <span class="border-r border-gray-500"></span>
+        <OrderButton name={"참여"} />
+      </div>
+      <ol class="">
         {songsData ? (
           songsData.map((song) => {
             return (
               <SongItem
                 // key={song.songId}
-                title={
-                  song.title.length < 26
-                    ? song.title
-                    : song.title.slice(0, 24) + " ···"
-                }
-                artists={
-                  song.artists.length < 36
-                    ? song.artists
-                    : song.artists.slice(0, 30) + " ···"
-                }
+                title={song.title}
+                artists={song.artists}
               />
             );
           })
         ) : (
-          <div class='flex h-full'>
-            <span class='m-auto'>
-              <RaceBy size={50} lineWeight={3} speed={1.4} color='gray' />
+          <div class="flex h-full">
+            <span class="m-auto">
+              <RaceBy size={50} lineWeight={3} speed={1.4} color="gray" />
             </span>
           </div>
         )}

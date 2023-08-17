@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { clssifyByYear, countByYear } from "../utils/makeChart";
+import makeChart from "../utils/makeChart";
 import { songsStore } from "../shared/store";
 
 const { releaseSongs, joinSongs } = songsStore((state) => state);
@@ -49,7 +50,7 @@ export const options = {
   },
 };
 
-const labels = countByYear(releaseSongs);
+const labels = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022];
 const data1 = [100, 20, 130, 150, 200, 210, 40];
 const data2 = [100, 60, 200, 100, 50, 100, 100];
 
@@ -75,7 +76,7 @@ export const data = {
 export const MusicChart = (props) => {
   // rsi
   return (
-    <div class='p-10'>
+    <div class="p-10">
       <Bar options={options} data={data} />
     </div>
   );
