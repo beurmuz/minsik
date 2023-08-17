@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { SongItem } from "./SongItem";
 import { songsApi } from "../shared/axios";
 import { RaceBy } from "@uiball/loaders";
-import { songsStore, joinSongsStore } from "../shared/store";
+import { songsStore } from "../shared/store";
 
 export const SongsList = (props) => {
-  const { songs, setsSongs } = songsStore((state) => state);
-  const { joinSongs, setsJoinSongs } = joinSongsStore((state) => state);
+  const {
+    releaseSongs,
+    setsReleaseSongs,
+    joinSongs,
+    setsJoinSongs,
+    songsData,
+    setsSongsData,
+  } = songsStore((state) => state);
 
   // 발매 곡 데이터 받아오기
   const getSongsData = async () => {
@@ -14,7 +20,7 @@ export const SongsList = (props) => {
       .get("songs_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
-    setsSongs(result);
+    setsSongsData(result);
   };
 
   // 참여 곡 데이터 받아오기
@@ -23,22 +29,23 @@ export const SongsList = (props) => {
       .get("join_songs_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
-    setsJoinSongs(result);
+    setsSongsData(result);
   };
 
   useEffect(() => {
     getSongsData();
     getJoinSongsData();
+    console.log(songsData);
   }, []);
 
   return (
     <div class='m-7 p-30 overflow-auto'>
       <ol class=''>
-        {songs ? (
-          songs.map((song) => {
+        {songsData ? (
+          songsData.map((song) => {
             return (
               <SongItem
-                key={song.songId}
+                // key={song.songId}
                 title={
                   song.title.length < 26
                     ? song.title

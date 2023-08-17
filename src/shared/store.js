@@ -12,14 +12,13 @@ export const menuStore = create(
 // 곡 관련 정보 저장
 export const songsStore = create(
   devtools((set) => ({
-    songs: [],
-    setsSongs: (song) => set((state) => ({ songs: song })),
-  }))
-);
-
-export const joinSongsStore = create(
-  devtools((set) => ({
+    releaseSongs: [],
     joinSongs: [],
-    setsJoinSongs: (song) => set((state) => ({ joinSongs: song })),
+    songsData: [],
+    setsSongsData: (jsonData) =>
+      set((state) => ({ songsData: [...state.songsData, ...jsonData] })),
+    setsReleaseSongs: (jsonData) =>
+      set((state) => ({ releaseSongs: jsonData })),
+    setsJoinSongs: (jsonData) => set((state) => ({ joinSongs: jsonData })),
   }))
 );
