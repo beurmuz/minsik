@@ -30,13 +30,11 @@ export const SongsList = (props) => {
 
   useEffect(() => {
     getSongsData();
-    console.log("발매 데이터 가져오기");
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     getJoinSongsData();
-    console.log("참여 데이터 가져오기");
     // eslint-disable-next-line
   }, []);
 
@@ -66,6 +64,7 @@ export const SongsList = (props) => {
                     key={song.songId}
                     title={song.title}
                     artists={song.artists}
+                    imgSrc={song.imgSource}
                   />
                 );
               })
@@ -75,6 +74,7 @@ export const SongsList = (props) => {
                     key={song.songId}
                     title={song.title}
                     artists={song.artists}
+                    imgSrc={song.imgSource}
                   />
                 );
               })

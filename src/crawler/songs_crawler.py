@@ -46,10 +46,10 @@ for i in range(0, len(songsData)):
     info = songHtml.find("div", attrs={"id": "conts"})
     meta = info.find("dl", attrs={"class": "list"})
     release = meta.select("dd")[1].text
-    imgUrl = info.find("img", attrs={"width": "282"})["src"]
+    imgSource = info.find("img", attrs={"width": "282"})["src"]
 
     songsData[i]["release"] = release
-    songsData[i]["imgSource"] = imgUrl
+    songsData[i]["imgSource"] = imgSource
 
 # json 형식으로 만들기
 with open("src/crawlingData/songs_data.json", "w", encoding="UTF-8-sig") as f_write:
