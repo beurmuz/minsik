@@ -33,14 +33,18 @@ jobs:
         run: |
           python "src/crawler/join_songs_crawler.py"
 
-      - name: 6. Commit files
+      - name: 6. 참여 공연 데이터 크롤링
+        run: |
+          python "src/crawler/festival_crawler.py"
+
+      - name: 7. Commit files
         run: |
           git config --local user.email "fallinta2@gmail.com"
           git config --local user.name "beurmuz"
           git add .
           git commit -m "#23 [auto] Run crawler and update data"
 
-      - name: 7. Push changes
+      - name: 8. Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
