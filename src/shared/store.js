@@ -9,16 +9,19 @@ export const menuStore = create(
   }))
 );
 
-// 곡 관련 정보 저장
-export const songsStore = create(
+// api로 받아온 데이터 저장
+export const dataStore = create(
   devtools((set) => ({
     releaseSongs: [],
     joinSongs: [],
-    songsData: [],
-    setsSongsData: (jsonData) =>
-      set((state) => ({ songsData: [...state.songsData, ...jsonData] })),
+    // songsData: [],
+    festivalDatas: [],
+    // setsSongsData: (jsonData) =>
+    //   set((state) => ({ songsData: [...state.songsData, ...jsonData] })),
     setsReleaseSongs: (jsonData) =>
       set((state) => ({ releaseSongs: jsonData })),
     setsJoinSongs: (jsonData) => set((state) => ({ joinSongs: jsonData })),
+    setsFestivalDatas: (jsonData) =>
+      set((state) => ({ festivalDatas: jsonData })),
   }))
 );
