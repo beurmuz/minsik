@@ -95,6 +95,7 @@ export const Intro = (props) => {
                     <img
                       className="max-width: 100% height: auto"
                       src={festival.imgUrl}
+                      alt="festival Image"
                     />
                   </div>
                   <article className="py-5">
