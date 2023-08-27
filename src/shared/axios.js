@@ -17,3 +17,11 @@ export const newsApi = axios.create({
     "Content-Type": "application/json",
   },
 });
+
+export const festivalApi = axios.create({
+  baseURL: BASE_URL,
+  responseType: "json",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
