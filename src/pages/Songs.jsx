@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 
 export const Songs = (props) => {
   return (
-    <div class="w-full flex flex-col bg-white">
+    <div className="w-full flex flex-col bg-white">
       <Header changeColor={true} />
       <SongsList />
       <Footer />

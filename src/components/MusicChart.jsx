@@ -76,7 +76,7 @@ export const data = {
 export const MusicChart = (props) => {
   // rsi
   return (
-    <div class="p-10">
+    <div className="p-10">
       <Bar options={options} data={data} />
     </div>
   );

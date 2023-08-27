@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NewSong = ({ songInfo }) => {
+export const LatestSong = ({ songInfo }) => {
   const { imgSource, ablum, artists, release } = { ...songInfo };
   return (
     <div className="flex flex-row px-3 pt-3 pb-10">

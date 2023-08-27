@@ -19,7 +19,7 @@ export const NewsList = () => {
   }, []);
 
   return (
-    <ol class='my-5 mb-10'>
+    <ol className="my-5 mb-10">
       {newsData ? (
         newsData.map((data) => {
           return (
@@ -35,9 +35,9 @@ export const NewsList = () => {
           );
         })
       ) : (
-        <div class='flex h-full'>
-          <span class='m-auto'>
-            <RaceBy size={50} lineWeight={3} speed={1.4} color='gray' />
+        <div className="flex h-full">
+          <span className="m-auto">
+            <RaceBy size={50} lineWeight={3} speed={1.4} color="gray" />
           </span>
         </div>
       )}

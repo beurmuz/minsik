@@ -3,7 +3,7 @@ import { SongItem } from "./SongItem";
 import { songsApi } from "../shared/axios";
 // import { RaceBy } from "@uiball/loaders";
 import { dataStore } from "../shared/store";
-import { NewSong } from "./NewSong";
+import { LatestSong } from "./LatestSong";
 
 export const SongsList = (props) => {
   const { releaseSongs, setsReleaseSongs, joinSongs, setsJoinSongs } =
@@ -41,7 +41,7 @@ export const SongsList = (props) => {
 
   return (
     <div className="m-7 p-30 ">
-      <NewSong songInfo={releaseSongs[0]} />
+      <LatestSong songInfo={releaseSongs[0]} />
 
       {/* 전체곡 리스트 */}
       <div className="overflow-auto">
@@ -65,7 +65,7 @@ export const SongsList = (props) => {
             </button>
           </div>
         </div>
-        <ol class="">
+        <ol>
           {
             releaseSongs && orderState === "release"
               ? releaseSongs.map((song) => {
@@ -88,8 +88,8 @@ export const SongsList = (props) => {
                     />
                   );
                 })
-            // <div class="flex h-full">
-            //   <span class="m-auto">
+            // <div className="flex h-full">
+            //   <span className="m-auto">
             //     <RaceBy size={50} lineWeight={3} speed={1.4} color="gray" />
             //   </span>
             // </div>
