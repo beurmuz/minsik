@@ -5,7 +5,7 @@ export const NewSong = ({ songInfo }) => {
   return (
     <div className="flex flex-row px-3 pt-3 pb-10">
       <div className="w-1/2 min-[700px]:w-1/4">
-        <img src={imgSource} className="w-full h-auto" />
+        <img src={imgSource} className="w-full h-auto" alt={ablum} />
       </div>
       <article className="flex flex-col justify-center w-1/2 pl-5 min-[700px]:w-3/4">
         <h3 class="font-Pretendard text-sm text-main-blue/80 font-bold pb-3 max-[540px]:pb-1">
