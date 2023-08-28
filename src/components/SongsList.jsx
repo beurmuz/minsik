@@ -46,7 +46,7 @@ export const SongsList = (props) => {
       {/* 전체곡 리스트 */}
       <div className="overflow-auto">
         <div className="w-full mb-3 flex flex-row justify-between">
-          <p className="font-Pretendard text-sm text-main-blue/80 text-xl font-bold pl-3">
+          <p className="font-Pretendard text-main-blue/80 text-xl font-bold pl-3">
             전체곡
           </p>
           <div className="">

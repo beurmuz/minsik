@@ -3,7 +3,7 @@ import React from "react";
 export const NewsItem = ({ id, title, link, content, media, date }) => {
   return (
     <li
-      className="font-NotoKo border border-main-blue rounded-md px-4 py-4 my-4 text-base list-none group hover:bg-main-blue"
+      className="font-NotoKo bg-gray-100 rounded-lg px-4 py-4 mb-4 text-base list-none group hover:bg-main-blue"
       key={id}
     >
       <h3 className="font-Pretendard font-bold text-lg py-2 leading-tight group-hover:text-white">
@@ -16,7 +16,7 @@ export const NewsItem = ({ id, title, link, content, media, date }) => {
           target="_blank"
           rel="noreferrer"
         >
-          {content.slice(0, 121) + "... 더보기"}
+          {content.slice(0, 90) + "... 더보기"}
         </a>
       </p>
       <p className="text-right pt-2">

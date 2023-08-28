@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BsArrowDown } from "react-icons/bs";
 import { TbPointFilled } from "react-icons/tb";
 import faceImg from "../assets/images/minsik.png";
 import { DescriptionBox } from "../components/DescriptionBox";
 import { Header } from "../components/Header";
-import { festivalApi } from "../shared/axios";
+import PageName from "../components/PageName";
 
 export const Intro = (props) => {
-  const [festivals, setFestivals] = useState([]);
-
-  const getFestivalData = async () => {
-    const result = await festivalApi
-      .get("festival_data.json")
-      .then((res) => res.data)
-      .catch((error) => console.log(error));
-    setFestivals(result);
-  };
-
-  useEffect(() => {
-    getFestivalData();
-    // eslint-disable-next-line
-  }, []);
-
   return (
     <div className=" bg-white">
       {/* info */}
@@ -44,9 +29,7 @@ export const Intro = (props) => {
 
       {/* Biography */}
       <section className="w-screen h-screen flex flex-col justify-center">
-        <h3 className="font-NotoSerif text-main-blue/80 text-4xl font-bold p-10">
-          Biography
-        </h3>
+        <PageName>Biography</PageName>
         <article className="px-10">
           <p className="font-NotoKo text-base font-base">
             <span className="font-NotoSerif">KC</span> 레이블의 대표{" "}
@@ -81,50 +64,9 @@ export const Intro = (props) => {
         </article>
       </section>
 
-      {/* 상위 10개의 공연 정보 */}
-      <section className="w-screen h-screen flex flex-col justify-center">
-        <h3 className="font-NotoSerif text-main-blue/80 text-4xl font-bold p-10">
-          List of recent 10 concerts
-        </h3>
-        <div className="flex flex-row overflow-x-auto px-10 pb-5">
-          {festivals &&
-            festivals.map((festival) => {
-              return (
-                <div className="w-full">
-                  <div className="w-72">
-                    <img
-                      className="max-width: 100% height: auto"
-                      src={festival.imgUrl}
-                      alt={festival.title}
-                    />
-                  </div>
-                  <article className="py-5">
-                    <p className="text-7xl text-main-blue/30 font-extrabold py-1">
-                      {festival.id + 1 < 10
-                        ? "0" + (festival.id + 1)
-                        : festival.id + 1}
-                    </p>
-                    <p className="text-main-blue-light/70 text-xl font-bold">
-                      <a href={festival.link}>{festival.title}</a>
-                    </p>
-                    <p className="text-gray-500 font-semibold">
-                      {festival.date}
-                    </p>
-                  </article>
-                </div>
-              );
-            })}
-        </div>
-        <p className="px-10 py-5 text-gray-400">
-          * 공연명을 누르면 상세페이지로 이동합니다.
-        </p>
-      </section>
-
       {/* Timeline */}
       <section className="w-screen flex flex-col">
-        <h3 className="font-NotoSerif text-main-blue/80 text-4xl font-bold px-10 py-7">
-          Timeline
-        </h3>
+        <PageName>Timeline</PageName>
         <div className="flex flex-row">
           <article className="w-12 border-r border-main-blue-light" />
           <article className="w-full border-l border-main-blue-light">
