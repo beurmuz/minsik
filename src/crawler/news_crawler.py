@@ -17,7 +17,7 @@ totalNews = newsHtml.select("div.news_area")
 
 newsData = []
 
-for i in range(5):
+for i in range(0, 5):
     m = totalNews[i]
     newsData.append(
         {
