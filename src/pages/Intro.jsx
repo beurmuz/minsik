@@ -21,7 +21,8 @@ export const Intro = (props) => {
           <h2 className="font-NotoSerif text-main-blue text-4xl font-bold mt-7 mb-2">
             SIK-K
           </h2>
-          <p className="font-NotoSerif text-lg">(1994.02.26)</p>
+          <p className="font-Pretendard text-lg">권민식</p>
+          <p className="font-Pretendard text-lg">(1994.02.26)</p>
           <p className="font-NotoSerif text-xl mb-10">Korean Rapper</p>
           <div className="text-center my-10 mx-auto text-main-blue-light animate-bounce">
             <BsArrowDown size="30" />
@@ -29,12 +30,12 @@ export const Intro = (props) => {
         </div>
       </section>
 
-      {/* Biography */}
+      {/* 바이오그래피 */}
       <section className="w-screen h-screen flex flex-col justify-center">
         <PageName>Biography</PageName>
         <article className="px-10">
-          <p className="font-NotoKo text-base font-base">
-            <span className="font-NotoSerif">KC</span> 레이블의 대표{" "}
+          <p className="font-Pretendard text-base font-base">
+            <span className="font-NotoSerif">KC </span> 레이블의 대표{" "}
             <span className="font-NotoSerif">SIK-K</span>는 꾸준하게 서울을
             중심으로 새로운 사운드를 전 세계에 선사하고 있는 아티스트이다.
             <br />
@@ -58,7 +59,7 @@ export const Intro = (props) => {
               href="https://vibe.naver.com/artist/331653"
               target="_blank"
               rel="noreferrer"
-              className="font-NotoSerif text-gray-300 text-xs"
+              className="font-Pretendard text-gray-400 text-sm"
             >
               [Sources] Naver Vibe Biography
             </a>
@@ -80,53 +81,69 @@ export const Intro = (props) => {
           <article className="w-12 border-r border-main-blue-light" />
           <article className="w-full border-l border-main-blue-light">
             <DescriptionBox>
-              <span className="font-NotoSerif text-xl font-semibold text-main-blue">
+              <span className="font-Pretendard text-xl font-semibold text-main-blue">
                 2015
               </span>
               <br />
               - 쇼미더머니 4 출연
               <br />- 싱글 <span className="font-NotoSerif">[My Man]</span>으로
               데뷔
+              {/* https://www.newsen.com/news_view.php?uid=201508070744235010 */}
             </DescriptionBox>
             <DescriptionBox>
-              <span className="font-NotoSerif text-xl font-semibold text-main-blue">
+              <span className="font-Pretendard text-xl font-semibold text-main-blue">
                 2016
               </span>
-              <br />- 첫 <span className="font-NotoSerif">EP</span> 앨범인{" "}
-              <span className="font-NotoSerif">'FLIP'</span> 발매
+              <br />- 첫 단독 콘서트 진행
+              {/* http://news.heraldcorp.com/view.php?ud=20160821000030 */}
             </DescriptionBox>
             <DescriptionBox>
-              <span className="font-NotoSerif text-xl font-semibold text-main-blue">
+              <span className="font-Pretendard text-xl font-semibold text-main-blue">
                 2017
               </span>
               <br />- <span className="font-NotoSerif">H1GHR MUSIC</span>의 첫
               아티스트로 계약
             </DescriptionBox>
             <DescriptionBox>
-              <span className="font-NotoSerif text-xl font-semibold text-main-blue">
+              <span className="font-Pretendard text-xl font-semibold text-main-blue">
                 2019
               </span>
-              <br />- 첫 단독콘서트{" "}
-              <span className="font-NotoSerif">'WORLD TOUR IN SEOUL'</span>
+              <br />- 첫 <span className="font-NotoSerif">EP</span> 앨범인{" "}
+              <span className="font-NotoSerif">'FLIP'</span> 발매
+              {/* https://www.sedaily.com/NewsView/1VFGNY86OA */}
+              <br />- 첫 월드 투어
+              <span className="font-NotoSerif">
+                'FL1P Sik-K World Tour ASIA'
+              </span>{" "}
+              {/* http://www.heraldpop.com/view.php?ud=201912200727017175198_1 */}
             </DescriptionBox>
             <DescriptionBox>
-              <span className="font-NotoSerif text-xl font-semibold text-main-blue">
+              <span className="font-Pretendard text-xl font-semibold text-main-blue">
                 2020
               </span>
+              <br />- 오프화이트 모델
+              {/* https://www.xportsnews.com/article/1223983 */}
               <br />- 입대
+              {/* https://www.newsen.com/news_view.php?uid=202006291411586710*/}
             </DescriptionBox>
             <DescriptionBox>
-              <span className="font-NotoSerif text-xl font-semibold text-main-blue">
+              <span className="font-Pretendard text-xl font-semibold text-main-blue">
                 2022
               </span>
               <br />- 전역
+              {/* https://sports.donga.com/article/all/20211228/110990847/1 */}
               <br />- 하이어뮤직과 계약 종료
+              {/* https://www.wikitree.co.kr/articles/775421 */}
             </DescriptionBox>
             <DescriptionBox>
-              <span className="font-NotoSerif text-xl font-semibold text-main-blue">
+              <span className="font-Pretendard text-xl font-semibold text-main-blue">
                 2023
               </span>
+              <br />- 북미, 유럽 투어{" "}
+              <span className="font-NotoSerif">'POP A LOT'</span>
+              {/* https://www.sportsw.kr/news/newsview.php?ncode=1065600230911436 */}
               <br />- KC 레이블 런칭
+              {/* http://www.gvalley.co.kr/news/articleView.html?idxno=609577 */}
             </DescriptionBox>
           </article>
         </div>
