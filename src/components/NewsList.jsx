@@ -22,17 +22,19 @@ export const NewsList = () => {
     <ol className="my-5 mb-10">
       {newsData ? (
         newsData.map((data) => {
-          return (
-            <NewsItem
-              id={data.id}
-              key={data.id}
-              title={data.title}
-              link={data.link}
-              content={data.content}
-              media={data.media}
-              date={data.date}
-            />
-          );
+          if (data.id < 5) {
+            return (
+              <NewsItem
+                id={data.id}
+                key={data.id}
+                title={data.title}
+                link={data.link}
+                content={data.content}
+                media={data.media}
+                date={data.date}
+              />
+            );
+          }
         })
       ) : (
         <div className="flex h-full">
