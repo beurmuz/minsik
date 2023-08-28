@@ -14,6 +14,16 @@ module.exports = {
         "main-blue": "#144184",
         "main-blue-light": "#1B53AD",
       },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marqueeOrigin: "marquee 10s linear infinite;",
+        marqueeResponsive: "marquee 5s linear infinite",
+      },
     },
   },
   plugins: [],

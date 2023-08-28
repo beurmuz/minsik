@@ -5,6 +5,8 @@ import faceImg from "../assets/images/minsik.png";
 import { DescriptionBox } from "../components/DescriptionBox";
 import { Header } from "../components/Header";
 import PageName from "../components/PageName";
+import { ImgBox } from "../components/ImgBox";
+import { Toolbar } from "../components/Toolbar";
 
 export const Intro = (props) => {
   return (
@@ -62,6 +64,13 @@ export const Intro = (props) => {
             </a>
           </p>
         </article>
+      </section>
+
+      {/* 사진 모음집 */}
+      <section className="w-screen h-screen flex flex-col justify-center">
+        <Toolbar />
+        <ImgBox />
+        <Toolbar />
       </section>
 
       {/* Timeline */}
