@@ -8,7 +8,7 @@ export const ImgBox = () => {
     <div className="flex flex-row overflow-x-auto m-8 py-3">
       {imgUrls.map((imgUrl) => {
         return (
-          <div className="w-full h-full">
+          <div key={imgUrl} className="w-full h-full">
             <div className="w-72 mr-7">
               <img
                 className=" h-[30rem] object-cover"

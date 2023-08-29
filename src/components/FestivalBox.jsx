@@ -6,11 +6,7 @@ const FestivalBox = ({ festivalInfo }) => {
   return (
     <div className="w-full">
       <div className="w-72">
-        <img
-          className="max-width: 100% height: auto"
-          src={imgUrl}
-          alt={title}
-        />
+        <img className="max-w-full h-auto" src={imgUrl} alt={title} />
       </div>
       <article className="py-5">
         <p className="text-7xl text-main-blue/30 font-extrabold py-1">

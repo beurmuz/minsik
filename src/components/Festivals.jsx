@@ -30,8 +30,8 @@ const Festivals = (props) => {
       </div>
       <div className="flex flex-row overflow-x-auto py-5">
         {festivals &&
-          festivals.map((festival) => {
-            return <FestivalBox festivalInfo={festival} />;
+          festivals.map((festival, index) => {
+            return <FestivalBox festivalInfo={festival} key={index} />;
           })}
       </div>
       <p className="font-Pretendard text-sm py-5 text-gray-400">
