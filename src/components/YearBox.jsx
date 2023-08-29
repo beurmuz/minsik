@@ -1,16 +1,15 @@
 import React from "react";
-import { TbPointFilled } from "react-icons/tb";
 
 export const YearBox = ({ children }) => {
   return (
-    <div className="flex flex-row mx-6">
-      {/* <div className="w-5 h-5 border-8 border-main-blue-light rounded-full mx-0 my-auto" />*/}
-      <div className="mx-2">
-        <span className="m-auto animate-ping text-main-blue-light">
-          <TbPointFilled size="30" />
+    <div className="flex flex-row mx-7">
+      <div className="my-auto mx-3">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-main-blue-light opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-main-blue"></span>
         </span>
       </div>
-      <h2 className="font-Pretendard text-3xl font-bold text-main-blue-light px-1">
+      <h2 className="font-Pretendard text-3xl font-bold text-main-blue-light px-1 my-auto">
         {children}
       </h2>
     </div>
