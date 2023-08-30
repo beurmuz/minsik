@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "../components/Header";
 import { NewsList } from "../components/NewsList";
 import { Footer } from "../components/Footer";
-import Festivals from "../components/Festivals";
+import FestivalsList from "../components/FestivalsList";
 
 export const News = (props) => {
   return (
@@ -23,7 +23,7 @@ export const News = (props) => {
       </div>
 
       {/* 페스티벌 정보 */}
-      <Festivals />
+      <FestivalsList />
       <Footer />
     </div>
   );

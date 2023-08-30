@@ -14,10 +14,8 @@ export const dataStore = create(
   devtools((set) => ({
     releaseSongs: [],
     joinSongs: [],
-    // songsData: [],
     festivalDatas: [],
-    // setsSongsData: (jsonData) =>
-    //   set((state) => ({ songsData: [...state.songsData, ...jsonData] })),
+
     setsReleaseSongs: (jsonData) =>
       set((state) => ({ releaseSongs: jsonData })),
     setsJoinSongs: (jsonData) => set((state) => ({ joinSongs: jsonData })),

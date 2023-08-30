@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SongItem } from "./SongItem";
 import { songsApi } from "../shared/axios";
-// import { RaceBy } from "@uiball/loaders";
 import { dataStore } from "../shared/store";
 import { LatestSong } from "./LatestSong";
 
@@ -66,34 +65,27 @@ export const SongsList = (props) => {
           </div>
         </div>
         <ol>
-          {
-            releaseSongs && orderState === "release"
-              ? releaseSongs.map((song) => {
-                  return (
-                    <SongItem
-                      key={song.songId}
-                      title={song.title}
-                      artists={song.artists}
-                      imgSrc={song.imgSource}
-                    />
-                  );
-                })
-              : joinSongs.map((song) => {
-                  return (
-                    <SongItem
-                      key={song.songId}
-                      title={song.title}
-                      artists={song.artists}
-                      imgSrc={song.imgSource}
-                    />
-                  );
-                })
-            // <div className="flex h-full">
-            //   <span className="m-auto">
-            //     <RaceBy size={50} lineWeight={3} speed={1.4} color="gray" />
-            //   </span>
-            // </div>
-          }
+          {releaseSongs && orderState === "release"
+            ? releaseSongs.map((song) => {
+                return (
+                  <SongItem
+                    key={song.songId}
+                    title={song.title}
+                    artists={song.artists}
+                    imgSrc={song.imgSource}
+                  />
+                );
+              })
+            : joinSongs.map((song) => {
+                return (
+                  <SongItem
+                    key={song.songId}
+                    title={song.title}
+                    artists={song.artists}
+                    imgSrc={song.imgSource}
+                  />
+                );
+              })}
         </ol>
       </div>
     </div>

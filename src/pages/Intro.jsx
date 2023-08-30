@@ -68,7 +68,7 @@ export const Intro = (props) => {
               rel="noreferrer"
               className="font-Pretendard text-gray-400 text-sm"
             >
-              [Sources] Naver Vibe Biography
+              [출처] 네이버 바이브
             </a>
           </p>
         </article>

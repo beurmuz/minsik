@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { festivalApi } from "../shared/axios";
-import FestivalBox from "./FestivalBox";
+import FestivalItem from "./FestivalItem";
 
-const Festivals = (props) => {
+const FestivalsList = (props) => {
   const [festivals, setFestivals] = useState([]);
 
   const getFestivalData = async () => {
@@ -28,12 +28,12 @@ const Festivals = (props) => {
           업데이트: 2023.08.30
         </p>
       </div>
-      <div className="flex flex-row overflow-x-auto py-5">
+      <ol className="flex flex-row overflow-x-auto py-5">
         {festivals &&
           festivals.map((festival, index) => {
-            return <FestivalBox festivalInfo={festival} key={index} />;
+            return <FestivalItem festivalInfo={festival} key={index} />;
           })}
-      </div>
+      </ol>
       <p className="font-Pretendard text-sm py-5 text-gray-400">
         * 공연명을 누르면 상세페이지로 이동합니다.
       </p>
@@ -41,4 +41,4 @@ const Festivals = (props) => {
   );
 };
 
-export default Festivals;
+export default FestivalsList;

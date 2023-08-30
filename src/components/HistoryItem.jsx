@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ContentItem = ({ imgUrl, newsUrl, children }) => {
+export const HistoryItem = ({ imgUrl, newsUrl, children }) => {
   return (
     <li className="text-black font-Pretendard rounded-md p-2 text-base list-none">
       {children}

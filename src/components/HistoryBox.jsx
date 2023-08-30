@@ -1,5 +1,5 @@
 import React from "react";
-import { ContentItem } from "./ContentItem";
+import { HistoryItem } from "./HistoryItem";
 import historyData from "../assets/data/history.json";
 import YearBox from "./YearBox";
 
@@ -19,7 +19,7 @@ export const HistoryBox = (props) => {
               <ol className="w-full flex flex-col pl-3 pr-12 py-5 mb-10 border-l-2 border-main-blue-light">
                 {historyData[year].map((contents) => {
                   return (
-                    <ContentItem
+                    <HistoryItem
                       imgUrl={contents.imgUrl}
                       newsUrl={contents.newsUrl}
                     >
@@ -27,7 +27,7 @@ export const HistoryBox = (props) => {
                         {contents.month}
                       </h3>
                       {contents.content}
-                    </ContentItem>
+                    </HistoryItem>
                   );
                 })}
               </ol>

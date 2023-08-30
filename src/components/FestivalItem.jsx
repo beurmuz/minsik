@@ -1,10 +1,10 @@
 import React from "react";
 
-const FestivalBox = ({ festivalInfo }) => {
+const FestivalItem = ({ festivalInfo }) => {
   const { imgUrl, title, id, link, date } = { ...festivalInfo };
 
   return (
-    <div className="w-full">
+    <li className="w-full">
       <div className="w-72">
         <img className="max-w-full h-auto" src={imgUrl} alt={title} />
       </div>
@@ -19,8 +19,8 @@ const FestivalBox = ({ festivalInfo }) => {
         </p>
         <p className="font-Pretendard text-gray-500 font-semibold">{date}</p>
       </article>
-    </div>
+    </li>
   );
 };
 
-export default FestivalBox;
+export default FestivalItem;
