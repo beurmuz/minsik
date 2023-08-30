@@ -1,10 +1,10 @@
 import React from "react";
-import basicImg from "../assets/images/music_basic.png";
+import baseImg from "../assets/images/base_music.png";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 export const SongItem = ({ title, artists, imgSrc }) => {
   const onErrorImg = (e) => {
-    e.target.src = basicImg;
+    e.target.src = baseImg;
   };
 
   return (
@@ -12,9 +12,9 @@ export const SongItem = ({ title, artists, imgSrc }) => {
       <div className="w-10">
         <img src={imgSrc} onError={onErrorImg} alt="album" />
       </div>
-      <div className=" flex flex-col justify-between m-auto ml-3">
+      <div className="flex flex-col justify-between m-auto ml-3 text-start">
         <h2 className="font-normal text-base font-Pretendard">
-          {title.length < 26 ? title : title.slice(0, 24) + " ..."}
+          {title.length < 26 ? title : title.slice(0, 20) + " ..."}
           {/* {title} */}
         </h2>
         <h3 className=" text-xs font-Pretendard">

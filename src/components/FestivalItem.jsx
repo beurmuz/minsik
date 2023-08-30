@@ -1,12 +1,21 @@
 import React from "react";
+import baseImg from "../assets/images/base_festival.png";
 
 const FestivalItem = ({ festivalInfo }) => {
   const { imgUrl, title, id, link, date } = { ...festivalInfo };
+  const onErrorImg = (e) => {
+    e.target.src = baseImg;
+  };
 
   return (
     <li className="w-full">
       <div className="w-72">
-        <img className="max-w-full h-auto" src={imgUrl} alt={title} />
+        <img
+          className="max-w-full h-auto"
+          src={imgUrl}
+          alt={title}
+          onError={onErrorImg}
+        />
       </div>
       <article className="py-5">
         <p className="text-7xl text-main-blue/30 font-extrabold py-1">

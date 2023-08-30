@@ -5,8 +5,14 @@ import { dataStore } from "../shared/store";
 import { LatestSong } from "./LatestSong";
 
 export const SongsList = (props) => {
-  const { releaseSongs, setsReleaseSongs, joinSongs, setsJoinSongs } =
-    dataStore((state) => state);
+  const {
+    releaseSongs,
+    releaseNums,
+    setsReleaseSongs,
+    joinSongs,
+    joinNums,
+    setsJoinSongs,
+  } = dataStore((state) => state);
 
   const [orderState, setOrderState] = useState("release");
 
@@ -53,14 +59,14 @@ export const SongsList = (props) => {
               className="mx-3 font-Pretendard text-gray-500 hover:text-main-blue"
               onClick={(e) => setOrderState("release")}
             >
-              발매 ({releaseSongs.length})
+              발매 ({releaseNums})
             </button>
             <span className="border-r border-gray-500 h-4 my-auto"></span>
             <button
               className="mx-3 font-Pretendard text-gray-500 hover:text-main-blue"
               onClick={() => setOrderState("join")}
             >
-              참여 ({joinSongs.length})
+              참여 ({joinNums})
             </button>
           </div>
         </div>
