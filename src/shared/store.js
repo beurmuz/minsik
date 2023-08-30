@@ -13,12 +13,21 @@ export const menuStore = create(
 export const dataStore = create(
   devtools((set) => ({
     releaseSongs: [],
+    releaseNums: 0,
+    yearOfReleases: [],
     joinSongs: [],
+    joinNums: 0,
+    joinOfReleases: [],
     festivalDatas: [],
 
-    setsReleaseSongs: (jsonData) =>
-      set((state) => ({ releaseSongs: jsonData })),
-    setsJoinSongs: (jsonData) => set((state) => ({ joinSongs: jsonData })),
+    setsReleaseSongs: (jsonData) => {
+      set((state) => ({ releaseSongs: jsonData }));
+      set((state) => ({ releaseNums: jsonData.length }));
+    },
+    setsJoinSongs: (jsonData) => {
+      set((state) => ({ joinSongs: jsonData }));
+      set((state) => ({ joinNums: jsonData.length }));
+    },
     setsFestivalDatas: (jsonData) =>
       set((state) => ({ festivalDatas: jsonData })),
   }))
