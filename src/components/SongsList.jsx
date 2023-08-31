@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { SongItem } from "./SongItem";
 import { songsApi } from "../shared/axios";
 import { dataStore } from "../shared/store";
 import { LatestSong } from "./LatestSong";
 
 export const SongsList = (props) => {
   const {
-    releaseSongs,
+    releaseList,
     releaseNums,
-    setsReleaseSongs,
-    joinSongs,
+    setsReleaseList,
+    releaseAlbums,
     joinNums,
-    setsJoinSongs,
+    joinAlbums,
+    setsJoinList,
   } = dataStore((state) => state);
 
   const [orderState, setOrderState] = useState("release");
@@ -22,7 +22,7 @@ export const SongsList = (props) => {
       .get("songs_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
-    setsReleaseSongs(result);
+    setsReleaseList(result);
   };
 
   // 참여 곡 데이터 받아오기
@@ -31,7 +31,7 @@ export const SongsList = (props) => {
       .get("join_songs_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
-    setsJoinSongs(result);
+    setsJoinList(result);
   };
 
   useEffect(() => {
@@ -46,32 +46,47 @@ export const SongsList = (props) => {
 
   return (
     <div className="m-7 p-30 ">
-      <LatestSong songInfo={releaseSongs[0]} />
+      <LatestSong songInfo={releaseList[0]} />
 
       {/* 전체곡 리스트 */}
-      <div className="overflow-auto">
+      <div className="overflow-auto p-3">
         <div className="w-full mb-3 flex flex-row justify-between">
-          <p className="font-Pretendard text-main-blue/80 text-xl font-bold pl-3">
+          <p className="font-Pretendard text-main-blue/80 text-xl font-bold">
             전체곡
           </p>
           <div className="">
             <button
-              className="mx-3 font-Pretendard text-gray-500 hover:text-main-blue"
+              className="mr-3 font-Pretendard text-gray-500 hover:text-main-blue"
               onClick={(e) => setOrderState("release")}
             >
               발매 ({releaseNums})
             </button>
             <span className="border-r border-gray-500 h-4 my-auto"></span>
             <button
-              className="mx-3 font-Pretendard text-gray-500 hover:text-main-blue"
+              className="ml-3 font-Pretendard text-gray-500 hover:text-main-blue"
               onClick={() => setOrderState("join")}
             >
               참여 ({joinNums})
             </button>
           </div>
         </div>
-        <ol>
-          {releaseSongs && orderState === "release"
+        <ol className="grid grid-cols-3 gap-3 min-[750px]:grid-cols-4 min-[1000px]:grid-cols-6">
+          {releaseAlbums && orderState === "release"
+            ? Object.keys(releaseAlbums).map((key, idx) => {
+                return (
+                  <div key={idx}>
+                    <img src={releaseAlbums[key][0]} alt="앨범 이미지" />
+                  </div>
+                );
+              })
+            : Object.keys(joinAlbums).map((key, idx) => {
+                return (
+                  <div key={idx}>
+                    <img src={joinAlbums[key][0]} alt="앨범 이미지" />
+                  </div>
+                );
+              })}
+          {/* {releaseSongs && orderState === "release"
             ? releaseSongs.map((song) => {
                 return (
                   <SongItem
@@ -91,8 +106,11 @@ export const SongsList = (props) => {
                     imgSrc={song.imgSource}
                   />
                 );
-              })}
+              })} */}
         </ol>
+        <p className="font-Pretendard text-sm py-5 text-gray-400">
+          * 앨범은 최신순으로 정렬되어 있습니다.
+        </p>
       </div>
     </div>
   );

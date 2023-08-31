@@ -3,7 +3,7 @@ import React from "react";
 export const LatestSong = ({ songInfo }) => {
   const { imgSource, ablum, artists, release } = { ...songInfo };
   return (
-    <div className="flex flex-row px-3 pt-3 pb-10">
+    <div className="flex flex-row px-3 pt-5 pb-10">
       <div className="w-1/2 min-[600px]:w-1/4">
         <img src={imgSource} className="w-full h-auto" alt={ablum} />
       </div>

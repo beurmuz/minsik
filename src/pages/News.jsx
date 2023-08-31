@@ -8,7 +8,7 @@ export const News = (props) => {
   return (
     <div className="w-full flex flex-col bg-white">
       <Header changeColor={true} />
-      <div className="m-7">
+      <div className="m-10">
         <div className="flex flex-row justify-between pt-1 px-1">
           <p className="font-Pretendard text-main-blue/80 text-2xl font-bold">
             최신 뉴스

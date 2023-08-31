@@ -9,7 +9,7 @@ export const Header = ({ changeColor }) => {
     if (showMenu === false) setShowMenu();
   };
   return changeColor ? (
-    <div className="flex flex-row h-1/8 justify-between mx-7 mt-10 text-main-blue">
+    <div className="flex flex-row h-1/8 justify-between mx-10 mt-12 text-main-blue">
       <Link to="/">
         <h1 className="font-NotoSerif text-5xl font-semibold ">SIK-K</h1>
       </Link>
@@ -18,7 +18,7 @@ export const Header = ({ changeColor }) => {
       </button>
     </div>
   ) : (
-    <div className="flex flex-row h-1/8 justify-between mx-7 mt-10 text-white">
+    <div className="flex flex-row h-1/8 justify-between mx-10 mt-12 text-white">
       <Link to="/">
         <h1 className="font-NotoSerif text-5xl font-semibold ">SIK-K</h1>
       </Link>

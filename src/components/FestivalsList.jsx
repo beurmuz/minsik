@@ -19,7 +19,7 @@ const FestivalsList = (props) => {
   }, []);
 
   return (
-    <section className="w-screen h-screen flex flex-col justify-center p-7">
+    <section className="w-screen h-screen flex flex-col justify-center p-10">
       <div className="flex flex-row justify-between pt-1 px-1">
         <p className="font-Pretendard text-main-blue/80 text-2xl font-bold">
           최신 공연 정보
