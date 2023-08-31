@@ -17,17 +17,19 @@ export const Intro = (props) => {
           <div className="m-auto w-72">
             <img src={faceImg} alt="Sik-K face" />
           </div>
-          <h2 className="font-NotoSerif text-main-blue text-4xl font-bold mt-7 mb-2">
-            SIK-K
+          <h2 className="font-Pretendard text-3xl font-bold mt-7 mb-2">
+            권민식 (SIK-K)
           </h2>
-          <p className="font-Pretendard text-lg">권민식</p>
-          <p className="font-Pretendard text-lg">(1994.02.26)</p>
-          <p className="font-NotoSerif text-xl mb-7">Korean Rapper</p>
+          <ol>
+            <li className="font-Pretendard text-lg">알앤비/어반, 랩/힙합</li>
+            <li className="font-Pretendard text-lg">(1994.02.26)</li>
+          </ol>
+
           <a
-            href="https://ko.wikipedia.org/wiki/%EC%8B%9D%EC%BC%80%EC%9D%B4"
+            href="https://en.wikipedia.org/wiki/Sik-K"
             target="_blank"
             rel="noreferrer"
-            className="font-NotoSerif font-normal text-gray-500"
+            className="font-Pretendard font-normal text-gray-500 pt-5"
           >
             * more info ...
           </a>
