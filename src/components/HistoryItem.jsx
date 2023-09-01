@@ -1,8 +1,11 @@
 import React from "react";
 
-export const HistoryItem = ({ imgUrl, newsUrl, children }) => {
+export const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
   return (
-    <li className="text-black font-Pretendard rounded-md p-2 text-base list-none">
+    <li
+      className="text-black font-Pretendard rounded-md p-2 text-base list-none"
+      key={keys}
+    >
       {children}
       <div className="min-[540px]:w-1/2 min-[700px]:w-1/3">
         <img src={imgUrl} alt="historyImg" className="max-w-full h-auto" />

@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-const useModal = (props) => {
-  const [showModal, setShowModal] = useState(false);
+// const useModal = (props) => {
+//   const [showModal, setShowModal] = useState(false);
 
-  function toggle() {
-    setShowModal(!showModal);
-  }
+//   function toggle() {
+//     setShowModal(!showModal);
+//   }
 
-  return {
-    showModal,
-    toggle,
-  };
-};
+//   return {
+//     showModal,
+//     toggle,
+//   };
+// };
 
-export default useModal;
+// export default useModal;

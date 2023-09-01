@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { songsApi } from "../shared/axios";
 import { dataStore } from "../shared/store";
-import { LatestSong } from "./LatestSong";
 
 export const SongsList = (props) => {
   const {
-    releaseList,
-    releaseNums,
     setsReleaseList,
+    setsJoinList,
+    releaseNums,
     releaseAlbums,
     joinNums,
     joinAlbums,
-    setsJoinList,
   } = dataStore((state) => state);
 
   const [orderState, setOrderState] = useState("release");
@@ -46,13 +44,11 @@ export const SongsList = (props) => {
 
   return (
     <div className="m-7 p-30 ">
-      <LatestSong songInfo={releaseList[0]} />
-
       {/* 전체곡 리스트 */}
       <div className="overflow-auto p-3">
         <div className="w-full mb-3 flex flex-row justify-between">
           <p className="font-Pretendard text-main-blue/80 text-xl font-bold">
-            전체곡
+            전체곡 ({releaseNums + joinNums})
           </p>
           <div className="">
             <button

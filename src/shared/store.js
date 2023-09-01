@@ -15,6 +15,7 @@ export const dataStore = create(
     releaseList: [],
     releaseNums: 0,
     releaseAlbums: [],
+    releaseYears: [],
 
     setsReleaseList: (jsonData) => {
       set((state) => ({ releaseList: jsonData }));
@@ -30,11 +31,26 @@ export const dataStore = create(
         }
       }
       set((state) => ({ releaseAlbums: ablumSet }));
+
+      let yearMap = new Map();
+      for (let i = 2023; i > 2014; i--) {
+        yearMap.set(String(i), 0);
+      }
+      for (let song of jsonData) {
+        let year = song.release.split(".")[0];
+        yearMap.set(year, yearMap.get(year) + 1);
+      }
+      let yearList = [];
+      for (let [year, count] of yearMap.entries()) {
+        yearList.push([year, count]);
+      }
+      set((state) => ({ releaseYears: yearList }));
     },
 
     joinList: [],
     joinNums: 0,
     joinAlbums: [],
+    joinYears: [],
 
     setsJoinList: (jsonData) => {
       set((state) => ({ joinList: jsonData }));
@@ -50,6 +66,20 @@ export const dataStore = create(
         }
       }
       set((state) => ({ joinAlbums: ablumJSet }));
+
+      let yearMap = new Map();
+      for (let i = 2015; i < 2024; i++) {
+        yearMap.set(String(i), 0);
+      }
+      for (let song of jsonData) {
+        let year = song.release.split(".")[0];
+        yearMap.set(year, yearMap.get(year) + 1);
+      }
+      let yearList = [];
+      for (let [year, count] of yearMap.entries()) {
+        yearList.push([year, count]);
+      }
+      set((state) => ({ joinYears: yearList }));
     },
 
     festivalDatas: [],

@@ -1,24 +1,28 @@
 {
   "2023": [
     {
+      "id": 16,
       "month": "2023.08",
       "content": "3년 만의 솔로 정규앨범 'POP A LOT' 발매",
       "imgUrl": "https://img.hankyung.com/photo/202308/BF.34190138.1.jpg",
       "newsUrl": "https://tenasia.hankyung.com/topic/article/2023080980314"
     },
     {
+      "id": 15,
       "month": "2023.05",
       "content": "식케이, 레이블 ‘KC(케이씨)’ 설립",
       "imgUrl": "https://cdn.gvalley.co.kr/news/photo/202305/609577_80249_4557.jpg",
       "newsUrl": "http://www.gvalley.co.kr/news/articleView.html?idxno=609577"
     },
     {
+      "id": 14,
       "month": "2023.01",
       "content": "북미·유럽 투어 ‘POP A LOT’ 스타트",
       "imgUrl": "https://www.sportsw.kr/news/data/20230119/p1065600230911436_107_thum.jpg",
       "newsUrl": "https://www.sportsw.kr/news/newsview.php?ncode=1065600230911436"
     },
     {
+      "id": 13,
       "month": "2023.01",
       "content": "'겐조 2023 F/W 컬렉션 초청'",
       "imgUrl": "http://img.wowtv.co.kr/wowtv_news/dnrs/20230126/B20230126144759063.jpg",
@@ -27,12 +31,14 @@
   ],
   "2022": [
     {
+      "id": 12,
       "month": "2022.07",
       "content": "하이어뮤직 전속계약 만료",
       "imgUrl": "https://cdnweb01.wikitree.co.kr/webdata/editor/202207/27/img_20220727092611_137e5ebb.webp",
       "newsUrl": "https://www.wikitree.co.kr/articles/775421"
     },
     {
+      "id": 11,
       "month": "2022.01",
       "content": "전역 직후, 겐조 2022 가을&겨울 컬렉션에 유일한 한국 아티스트로 참석",
       "imgUrl": "https://image.ytn.co.kr/general/jpg/2022/0125/202201251637115595_d.jpg",
@@ -41,18 +47,21 @@
   ],
   "2020": [
     {
+      "id": 10,
       "month": "2020.06",
       "content": "'잘 다녀오겠습니다'... 입대",
       "imgUrl": "https://www.breaknews.com/imgdata/breaknews_com/202006/2020062952326378.jpg",
       "newsUrl": "https://www.breaknews.com/739202"
     },
     {
+      "id": 9,
       "month": "2020.06",
       "content": "정규 2집 ‘HEADLINER’ 발매",
       "imgUrl": "https://dimg.donga.com/wps/SPORTS/IMAGE/2020/06/11/101461111.1.jpg",
       "newsUrl": "https://sports.donga.com/article/all/20200611/101461112/1"
     },
     {
+      "id": 8,
       "month": "2020.02",
       "content": "'2020 F/W 패션위크' 오프화이트 파리 패션쇼 런웨이 모델",
       "imgUrl": "https://img.tvreportcdn.de/cms-content/uploads/2020/03/01/b0bbd601-bdf5-4379-80f4-035cc722bd1f.jpg",
@@ -61,12 +70,14 @@
   ],
   "2019": [
     {
+      "id": 7,
       "month": "2019.12",
       "content": "첫 월드 투어 'FL1P Sik-K World Tour ASIA'",
       "imgUrl": "http://res.heraldm.com/phpwas/restmb_allidxmake.php?idx=5&simg=201912200727017175198_20191220072809_01.jpg",
       "newsUrl": "http://www.heraldpop.com/view.php?ud=201912200727017175198_1"
     },
     {
+      "id": 6,
       "month": "2019.02",
       "content": "데뷔 첫 정규앨범 ‘플립(FL1P)’ 발매",
       "imgUrl": "https://newsimg.sedaily.com/2019/02/26/1VFGNY86OA_1.jpg",
@@ -75,6 +86,7 @@
   ],
   "2018": [
     {
+      "id": 5,
       "month": "2018.01",
       "content": "11트랙 수록 믹스테잎 ‘TRAPART’ 공개",
       "imgUrl": "https://cdn.topstarnews.net/news/photo/first/201801/img_349573_1.jpg",
@@ -83,18 +95,21 @@
   ],
   "2017": [
     {
+      "id": 4,
       "month": "2017.09",
       "content": "세 번째 EP 앨범 ‘BOYCOLD’ 발매",
       "imgUrl": "https://cdn.topstarnews.net/news/photo/first/201709/img_307114_1.jpg",
       "newsUrl": "https://www.topstarnews.net/news/articleView.html?idxno=307114"
     },
     {
+      "id": 3,
       "month": "2017.07",
       "content": "‘H.A.L.F’ 앨범 발매",
       "imgUrl": "https://file.mk.co.kr/meet/neds/2017/06/image_readtop_2017_375145_14966236592907067.png",
       "newsUrl": "https://www.mk.co.kr/star/hot-issues/view/2017/06/375145/"
     },
     {
+      "id": 2,
       "month": "2017.05",
       "content": "H1GHR MUSIC의 첫 아티스트로 낙점",
       "imgUrl": "https://cdn.gukjenews.com/news/photo/201705/717345_505759_3015.jpg",
@@ -103,6 +118,7 @@
   ],
   "2016": [
     {
+      "id": 1,
       "month": "2016.09",
       "content": "첫 단독 콘서트 진행",
       "imgUrl": "http://res.heraldm.com/content/image/2016/08/21/20160821000030_0.jpg",
@@ -111,6 +127,7 @@
   ],
   "2015": [
     {
+      "id": 0,
       "month": "2015.08",
       "content": "쇼미더머니4 출신 식케이,'My Man'으로 데뷔",
       "imgUrl": "https://file.mk.co.kr/meet/neds/2015/08/image_readtop_2015_758111_14389077402062249.jpeg",
