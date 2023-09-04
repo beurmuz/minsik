@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoIosClose } from "react-icons/io";
 import {
   FaInstagram,
@@ -20,6 +20,16 @@ export const Menu = (props) => {
     closeMenu();
     navigate(`/${pageName}`);
   };
+
+  useEffect(() => {
+    // 외부 스크롤 막기
+    const $body = document.querySelector("body");
+    const overflow = $body.style.overflow;
+    $body.style.overflow = "hidden";
+    return () => {
+      $body.style.overflow = overflow;
+    };
+  });
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle">
