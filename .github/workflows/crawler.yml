@@ -3,7 +3,7 @@ name: NewsDataCrawler
 on:
   # [push]
   schedule:
-    - cron: "0 20 * * wed"
+    - cron: "0 0 * * wed"
 
 jobs:
   build:

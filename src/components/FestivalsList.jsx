@@ -25,7 +25,7 @@ const FestivalsList = (props) => {
           최신 공연 정보
         </p>
         <p className="font-Pretendard text-gray-400 text-sm my-auto">
-          업데이트: 2023.08.30
+          Updated: 매주 수요일
         </p>
       </div>
       <ol className="flex flex-row overflow-x-auto py-5">
