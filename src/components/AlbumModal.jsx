@@ -20,6 +20,13 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
 
   useEffect(() => {
     albumData && renderAblumList();
+    // 외부 스크롤 막기
+    const $body = document.querySelector("body");
+    const overflow = $body.style.overflow;
+    $body.style.overflow = "hidden";
+    return () => {
+      $body.style.overflow = overflow;
+    };
     // eslint-disable-next-line
   }, []);
 
@@ -29,7 +36,7 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle">
-      <div className="flex flex-col w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-white rounded-md">
+      <div className="flex flex-col w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto pb-14 text-center z-99 bg-white rounded-md">
         <div className="flex flex-row justify-between">
           <span />
           <button
@@ -40,7 +47,7 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
           </button>
         </div>
 
-        <article className="flex flex-col w-full px-7 overflow-y-auto">
+        <article className="flex flex-col w-full px-7 overflow-y-auto ">
           <div className="flex flex-row">
             <div className="p-auto w-1/4">
               <img src={albumImgSrc} alt={`${albumName} img`} />
@@ -57,7 +64,7 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
           <p className="w-full text-left font-Pretendard text-main-blue text-base font-bold pt-7">
             수록곡 ({albumData.length})
           </p>
-          <ul className="flex flex-col justify-center text-left pb-8">
+          <ul className="flex flex-col justify-center text-left pb-3">
             {albumData.map((song) => {
               return (
                 <li

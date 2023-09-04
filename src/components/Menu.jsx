@@ -39,7 +39,7 @@ export const Menu = (props) => {
               className="font-NotoSerif font-semibold"
               onClick={() => gotoPage("intro")}
             >
-              Intro
+              Introduce
             </button>
           </span>
           <span className="ml-7 my-3">
