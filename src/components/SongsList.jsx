@@ -8,14 +8,12 @@ export const SongsList = (props) => {
     setsReleaseList,
     setsJoinList,
     releaseNums,
-    // releaseList,
     releaseAlbums,
     joinNums,
-    // joinList,
     joinAlbums,
   } = dataStore((state) => state);
 
-  // const [ablumDatas, setAlbumDatas] = useState();
+  const [clickedAlbum, setClickedAlbum] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [orderState, setOrderState] = useState("release");
 
@@ -47,25 +45,27 @@ export const SongsList = (props) => {
     // eslint-disable-next-line
   }, []);
 
-  const openModal = () => {
+  const openModal = (nowInfo) => {
     setShowModal(!showModal);
+    setClickedAlbum(nowInfo);
   };
-  // const clickAblum = (album) => {
-  //   let keySongs = releaseList.filter((song) => song.ablum === album);
-  //   setAlbumDatas(keySongs);
-  //   setShowModal(!showModal);
-  // };
 
   return (
     <div className="m-7 p-30 ">
-      {/* <AblumModal /> */}
+      {showModal && (
+        <AblumModal
+          albumInfo={clickedAlbum}
+          showModal={showModal}
+          setShowModal={setShowModal}
+        />
+      )}
       {/* 전체곡 리스트 */}
       <div className="overflow-auto p-3">
         <div className="w-full mb-3 flex flex-row justify-between">
           <p className="font-Pretendard text-main-blue/80 text-xl font-bold">
             전체곡 ({releaseNums + joinNums})
           </p>
-          <div className="">
+          <div>
             <button
               className="mr-3 font-Pretendard text-gray-500 hover:text-main-blue"
               onClick={(e) => setOrderState("release")}
@@ -83,28 +83,36 @@ export const SongsList = (props) => {
         </div>
         <ol className="grid grid-cols-3 gap-3 min-[750px]:grid-cols-4 min-[1000px]:grid-cols-6">
           {releaseAlbums && orderState === "release"
-            ? Object.keys(releaseAlbums).map((album, idx) => {
+            ? Object.keys(releaseAlbums).map((album) => {
                 return (
-                  <>
-                    <div onClick={() => openModal()}>
-                      <img src={releaseAlbums[album][0]} alt="앨범 이미지" />
-                    </div>
-                    {showModal && (
-                      <AblumModal
-                        ablumName={album}
-                        ablumRelease={releaseAlbums[album][1]}
-                        // datas={ablumDatas}
-                        musicSort={"R"}
-                        showModal={showModal}
-                        setShowModal={setShowModal}
-                      />
-                    )}
-                  </>
+                  <div
+                    key={album}
+                    onClick={() =>
+                      openModal([
+                        album,
+                        releaseAlbums[album][0],
+                        releaseAlbums[album][1],
+                        "R",
+                      ])
+                    }
+                  >
+                    <img src={releaseAlbums[album][0]} alt="앨범 이미지" />
+                  </div>
                 );
               })
-            : Object.keys(joinAlbums).map((album, idx) => {
+            : Object.keys(joinAlbums).map((album) => {
                 return (
-                  <div key={idx}>
+                  <div
+                    key={album}
+                    onClick={() =>
+                      openModal([
+                        album,
+                        joinAlbums[album][0],
+                        joinAlbums[album][1],
+                        "J",
+                      ])
+                    }
+                  >
                     <img src={joinAlbums[album][0]} alt="앨범 이미지" />
                   </div>
                 );

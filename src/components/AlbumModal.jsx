@@ -1,29 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { dataStore } from "../shared/store";
+import baseImg from "../assets/images/base_music.png";
 
-const AblumModal = ({
-  ablumName,
-  ablumRelease,
-  // datas,
-  musicSort,
-  showModal,
-  setShowModal,
-}) => {
+const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
+  const [albumName, albumImgSrc, albumDate, ablumSort] = [...albumInfo];
   const { releaseList, joinList } = dataStore((state) => state);
-  const [ablumData, setAlbumDatas] = useState([]);
+  const [albumData, setAlbumDatas] = useState([]);
+
   const renderAblumList = () => {
-    if (musicSort === "R") {
-      let keySongs = releaseList.filter((song) => song.ablum === ablumName);
+    if (ablumSort === "R") {
+      let keySongs = releaseList.filter((song) => song.ablum === albumName);
       setAlbumDatas(keySongs);
     } else {
-      let keySongs = joinList.filter((song) => song.ablum === ablumName);
+      let keySongs = joinList.filter((song) => song.ablum === albumName);
       setAlbumDatas(keySongs);
     }
   };
 
   useEffect(() => {
-    renderAblumList();
+    albumData && renderAblumList();
     // eslint-disable-next-line
   }, []);
 
@@ -31,11 +27,9 @@ const AblumModal = ({
     setShowModal(!showModal);
   };
 
-  console.log(...ablumData);
-
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle">
-      <div className="w-5/6 h-4/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-main-white flex flex-col justify-between rounded-md">
+      <div className="flex flex-col w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-white rounded-md">
         <div className="flex flex-row justify-between">
           <span />
           <button
@@ -45,17 +39,45 @@ const AblumModal = ({
             <IoIosClose size="40" />
           </button>
         </div>
-        <div className="flex flex-row">
-          <div>
-            <h1 className="font-Pretendard">{ablumName}</h1>
-            <p className="font-Pretendard">{ablumRelease}</p>
+
+        <article className="flex flex-col w-full px-7 overflow-y-auto">
+          <div className="flex flex-row">
+            <div className="p-auto w-1/4">
+              <img src={albumImgSrc} alt={`${albumName} img`} />
+            </div>
+            <div className="flex flex-col w-full my-auto ml-3 text-left ">
+              <h1 className="font-Pretendard text-xl font-bold text-main-blue">
+                {albumName}
+              </h1>
+              <h2 className="font-Pretendard text-sm text-main-blue">
+                발매일: {albumDate}
+              </h2>
+            </div>
           </div>
-        </div>
-        <ul className="h-full flex flex-col justify-center text-left text-4xl text-main-blue">
-          {/* {datas.map((song) => {
-            return <li>{song.title}</li>;
-          })} */}
-        </ul>
+          <p className="w-full text-left font-Pretendard text-main-blue text-base font-bold pt-7">
+            수록곡 ({albumData.length})
+          </p>
+          <ul className="flex flex-col justify-center text-left pb-8">
+            {albumData.map((song) => {
+              return (
+                <li
+                  key={song.title}
+                  className="flex flex-row font-Pretendard text-base text-black/8 border-b py-2"
+                >
+                  <div className="w-10">
+                    <img src={baseImg} alt="album" />
+                  </div>
+                  <div className="flex flex-col w-full justify-between m-auto text-start pl-2">
+                    <h2 className="font-normal text-sm font-Pretendard">
+                      {song.title}
+                    </h2>
+                    <h3 className=" text-xs font-Pretendard">{song.artists}</h3>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </article>
       </div>
     </div>
   );
