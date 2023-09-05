@@ -11,7 +11,7 @@ export const Home = (props) => {
       <div className="m-10 h-3/5 flex flex-col text-center ">
         <img
           src={homeLogo}
-          className="m-auto w-96 animate-[spin_10s_linear_infinite] "
+          className="m-auto w-80 animate-[spin_10s_linear_infinite] "
           alt="home Logo"
         />
         <p className=" h-10 flex items-center m-auto">

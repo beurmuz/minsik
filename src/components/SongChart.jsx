@@ -3,21 +3,19 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  //   BarElement,
   PointElement,
   LineElement,
   Title,
   Tooltip,
   Legend,
 } from "chart.js";
-// import { Bar } from "react-chartjs-2";
+
 import { Line } from "react-chartjs-2";
 import { dataStore } from "../shared/store";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  //   BarElement,
   PointElement,
   LineElement,
   Title,

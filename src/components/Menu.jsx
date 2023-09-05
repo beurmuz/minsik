@@ -68,22 +68,6 @@ export const Menu = (props) => {
               News
             </button>
           </span>
-          {/* <span className='ml-7 my-3'>
-            <button
-              className='font-NotoSerif font-semibold'
-              onClick={() => gotoPage("schedules")}
-            >
-              Schedules
-            </button>
-          </span> */}
-          {/* <span className='ml-7 my-3'>
-            <button
-              className='font-NotoSerif font-semibold'
-              onClick={() => gotoPage("cheering")}
-            >
-              Cheering
-            </button>
-          </span> */}
         </div>
         <div className="flex flex-row justify-start text-1xl text-main-blue-light">
           <span className="flex flex-row">
