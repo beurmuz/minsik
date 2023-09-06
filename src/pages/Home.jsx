@@ -15,7 +15,7 @@ export const Home = (props) => {
         }
         ogUrl={"https://sik-k.netlify.app/"}
         ogTitle={"SIK-K 사이트"}
-        ogDescription={"SIK-K(식케이) 사이트"}
+        ogDescription={"6년차 팬이 만든 SIK-K(식케이) 웹 사이트"}
       />
       <div className="w-full h-full flex flex-col justify-between">
         <Header />

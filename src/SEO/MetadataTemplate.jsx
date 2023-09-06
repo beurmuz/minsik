@@ -15,6 +15,10 @@ const MetadataTemplate = ({
       <meta property="og:url" content={ogUrl} />
       <meta property="og:title" content={ogTitle} />
       <meta property="og:description" content={ogDescription} />
+      <meta
+        property="og:image"
+        content={`${process.env.PUBLIC_URL}/metaImg.png`}
+      />
     </Helmet>
   );
 };

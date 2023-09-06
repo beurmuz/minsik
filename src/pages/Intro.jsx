@@ -17,7 +17,7 @@ export const Intro = (props) => {
           "SIK-K의 기본 정보, 바이오그래피, 활동 로그에 대해 알 수 있는 사이트입니다."
         }
         ogUrl={"https://sik-k.netlify.app/intro"}
-        ogTitle={"SIK-K란?"}
+        ogTitle={"SIK-K가 누구?"}
         ogDescription={"SIK-K에 대해 알아보기"}
       />
       <div className=" bg-white">

@@ -14,8 +14,8 @@ export const News = (props) => {
           "SIK-K에 대한 최신 뉴스, 최신 공연 정보에 대해 확인할 수 있는 사이트입니다."
         }
         ogUrl={"https://sik-k.netlify.app/news"}
-        ogTitle={"SIK-K 근황"}
-        ogDescription={"SIK-K의 최신 뉴스, 공연 정보 확인하기"}
+        ogTitle={"요즘 SIK-K는?"}
+        ogDescription={"식케이의 최신 뉴스, 공연 정보 확인하기"}
       />
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
