@@ -19,6 +19,7 @@ const MetadataTemplate = ({
       <meta property="og:description" content={ogDescription} />
       <meta property="og:site_name" content="SIK-K" />
       <meta property="og:locale" content="ko_KR" />
+      <meta property="og:image" content="%PUBLIC_URL%/metaImg.png" />
 
       <link rel="canonical" href="" />
     </Helmet>
