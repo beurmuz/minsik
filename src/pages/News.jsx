@@ -9,11 +9,13 @@ export const News = (props) => {
   return (
     <>
       <MetadataTemplate
-        metaUrl={"https://sik-k.netlify.app/news"}
         metaTitle={"News"}
         metaDescription={
-          "SIK-K에 대한 최신 뉴스, 최신 공연 정보에 대해 확인할 수 있는 페이지입니다."
+          "SIK-K에 대한 최신 뉴스, 최신 공연 정보에 대해 확인할 수 있는 사이트입니다."
         }
+        ogUrl={"https://sik-k.netlify.app/news"}
+        ogTitle={"SIK-K 근황"}
+        ogDescription={"SIK-K의 최신 뉴스, 공연 정보 확인하기"}
       />
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />

@@ -12,11 +12,13 @@ export const Intro = (props) => {
   return (
     <>
       <MetadataTemplate
-        metaUrl={"https://sik-k.netlify.app/intro"}
         metaTitle={"Introduce"}
         metaDescription={
-          "SIK-K의 기본 정보, 바이오그래피, 활동 로그에 대한 정보를 제공하는 페이지입니다."
+          "SIK-K의 기본 정보, 바이오그래피, 활동 로그에 대해 알 수 있는 사이트입니다."
         }
+        ogUrl={"https://sik-k.netlify.app/intro"}
+        ogTitle={"SIK-K란?"}
+        ogDescription={"SIK-K에 대해 알아보기"}
       />
       <div className=" bg-white">
         {/* info */}

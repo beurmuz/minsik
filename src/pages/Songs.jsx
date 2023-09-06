@@ -13,11 +13,13 @@ export const Songs = (props) => {
   return (
     <>
       <MetadataTemplate
-        metaUrl={"https://sik-k.netlify.app/songs"}
-        metaTitle={"Songs"}
+        metaTitle={"Song"}
         metaDescription={
-          "SIK-K가 최근에 발매한 앨범, 지금까지 발매 및 참여한 노래 정보를 확인할 수 있는 페이지입니다."
+          "SIK-K의 최근 발매 앨범, 지금까지 발매 및 참여한 노래 정보를 확인할 수 있는 페이지입니다."
         }
+        ogUrl={"https://sik-k.netlify.app/songs"}
+        ogTitle={"SIK-K 전체 앨범"}
+        ogDescription={"SIK-K의 최신 앨범, 노래 정보 확인하기"}
       />
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />

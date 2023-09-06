@@ -9,9 +9,13 @@ export const Home = (props) => {
   return (
     <>
       <MetadataTemplate
-        metaUrl={"https://sik-k.netlify.app/"}
         metaTitle={"SIK-K"}
-        metaDescription={"SIK-K 팬이 개발한 홈페이지 입니다."}
+        metaDescription={
+          "SIK-K(식케이(=권민식)) 팬이 개발한 SIK-K 사이트 입니다."
+        }
+        ogUrl={"https://sik-k.netlify.app/"}
+        ogTitle={"SIK-K 사이트"}
+        ogDescription={"SIK-K(식케이) 사이트"}
       />
       <div className="w-full h-full flex flex-col justify-between">
         <Header />
