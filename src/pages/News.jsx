@@ -9,7 +9,7 @@ export const News = (props) => {
   return (
     <>
       <MetadataTemplate
-        metaTitle={"News"}
+        metaTitle={"SIK-K | News"}
         metaDescription={
           "SIK-K에 대한 최신 뉴스, 최신 공연 정보에 대해 확인할 수 있는 사이트입니다."
         }

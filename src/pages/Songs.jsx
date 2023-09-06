@@ -13,7 +13,7 @@ export const Songs = (props) => {
   return (
     <>
       <MetadataTemplate
-        metaTitle={"Song"}
+        metaTitle={"SIK-K | Song"}
         metaDescription={
           "SIK-K의 최근 발매 앨범, 지금까지 발매 및 참여한 노래 정보를 확인할 수 있는 페이지입니다."
         }
