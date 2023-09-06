@@ -1,6 +1,6 @@
 import React from "react";
 import { BsArrowDown } from "react-icons/bs";
-import faceImg from "../assets/images/minsik.png";
+import faceImg from "../assets/images/minsik.webp";
 import { Header } from "../components/Header";
 import PageName from "../components/PageName";
 import { ImgBox } from "../components/ImgBox";

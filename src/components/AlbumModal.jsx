@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { dataStore } from "../shared/store";
-import baseImg from "../assets/images/base_music.png";
+import baseImg from "../assets/images/base_music.webp";
 
 const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
   const [albumName, albumImgSrc, albumDate, ablumSort] = [...albumInfo];

@@ -16,10 +16,12 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.0",
     "react-scripts": "5.0.1",
+    "source-map-explorer": "^2.5.3",
     "web-vitals": "^2.1.4",
     "zustand": "^4.3.7"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -6,7 +6,7 @@ import { Songs } from "../pages/Songs";
 import { NotFound } from "../pages/NotFound";
 import { Menu } from "../components/Menu";
 import { menuStore } from "../shared/store";
-import imageURL from "../assets/images/back.jpg";
+import imageURL from "../assets/images/back.webp";
 
 const Router = () => {
   const { showMenu } = menuStore((state) => state);
