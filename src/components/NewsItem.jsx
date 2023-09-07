@@ -3,7 +3,7 @@ import React from "react";
 export const NewsItem = ({ id, title, link, content, media, date }) => {
   return (
     <li
-      className=" bg-gray-100 rounded-lg px-4 py-4 mb-4 hover:bg-main-blue"
+      className=" bg-gray-100 rounded-lg px-4 py-4 mb-4 hover:bg-main-blue group"
       key={id}
     >
       <h3 className="font-Pretendard font-bold text-lg py-2 leading-tight group-hover:text-white">
@@ -15,6 +15,7 @@ export const NewsItem = ({ id, title, link, content, media, date }) => {
           href={link}
           target="_blank"
           rel="noreferrer"
+          aria-describedby="클릭 시 뉴스 원문을 볼 수 있습니다."
         >
           {content.slice(0, 90) + "... 더보기"}
         </a>

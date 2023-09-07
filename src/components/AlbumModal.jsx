@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { IoIosClose } from "react-icons/io";
 import { dataStore } from "../shared/store";
+import closeIcon from "../assets/images/icons/closeIcon.webp";
 
 const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
   const [albumName, albumImgSrc, albumDate, ablumSort] = [...albumInfo];
@@ -23,6 +23,7 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
     const $body = document.querySelector("body");
     const overflow = $body.style.overflow;
     $body.style.overflow = "hidden";
+    $body.ariaHidden = true;
     return () => {
       $body.style.overflow = overflow;
     };
@@ -34,27 +35,35 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle">
-      <nav className="flex flex-col w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto pb-14 text-center z-99 bg-white rounded-md">
+    <div
+      className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle"
+      role="alertdialog"
+      aria-modal="true"
+    >
+      <nav className="flex flex-col w-5/6 h-4/5 fixed top-0 bottom-0 left-0 right-0 m-auto pb-14 text-center z-99 bg-white rounded-md">
         <div className="flex flex-row justify-between">
           <span />
           <button
             type="button"
             name="close modal"
             onClick={closeModal}
-            className="hover:cursor-pointer text-main-blue mt-7 mr-4"
+            className="hover:cursor-pointer text-main-blue mt-8 mr-7"
           >
-            <IoIosClose size="40" />
+            <img
+              src={closeIcon}
+              className="w-[30px] h-[30px]"
+              alt="close Icon"
+            />
           </button>
         </div>
 
-        <article className="flex flex-col w-full px-7 overflow-y-auto ">
-          <div className="flex flex-row">
+        <article className="flex flex-col w-full px-10 overflow-y-auto ">
+          <div className="flex flex-row pt-3">
             <div className="p-auto w-1/4">
               <img src={albumImgSrc} alt={`${albumName} img`} />
             </div>
             <div className="flex flex-col w-full my-auto ml-3 text-left ">
-              <h3 className="font-Pretendard text-xl font-bold text-main-blue">
+              <h3 className="font-Pretendard text-xl font-bold text-main-blue leading-snug">
                 {albumName}
               </h3>
               <h4 className="font-Pretendard text-sm text-main-blue">
@@ -70,13 +79,13 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
               return (
                 <li
                   key={song.title}
-                  className="flex flex-row font-Pretendard text-base text-black/8 border-b py-2"
+                  className="flex flex-row font-Pretendard text-base text-black/8 border-b py-2 "
                 >
                   <span className="w-7 mx-auto font-Pretendard text-main-blue">
                     {index + 1 < 10 ? "0" + (index + 1) : index + 1}
                   </span>
                   <div className="flex flex-col w-full justify-between m-auto text-start pl-2">
-                    <p className="font-medium text-sm font-Pretendard">
+                    <p className="font-medium text-sm font-Pretendard ">
                       {song.title}
                     </p>
                     <p className=" text-xs font-Pretendard">{song.artists}</p>

@@ -24,7 +24,7 @@ const FestivalsList = (props) => {
         <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">
           최신 공연 정보
         </h2>
-        <p className="font-Pretendard text-gray-400 text-sm my-auto">
+        <p className="font-Pretendard text-gray-500 text-sm my-auto">
           Update: 매주 수요일
         </p>
       </div>
@@ -34,7 +34,7 @@ const FestivalsList = (props) => {
             return <FestivalItem festivalInfo={festival} key={index} />;
           })}
       </ol>
-      <p className="font-Pretendard text-sm py-5 text-gray-400">
+      <p className="font-Pretendard text-sm py-5 text-gray-500">
         * 공연명을 누르면 상세페이지로 이동합니다.
       </p>
     </article>

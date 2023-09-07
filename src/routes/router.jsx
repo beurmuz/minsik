@@ -12,7 +12,7 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-      <div class="App" className="w-screen h-screen bg-white">
+      <div className="w-screen h-screen bg-white">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/intro" element={<Intro />} />

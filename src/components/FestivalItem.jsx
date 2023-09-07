@@ -22,7 +22,11 @@ const FestivalItem = ({ festivalInfo }) => {
           {id + 1 < 10 ? "0" + (id + 1) : id + 1}
         </li>
         <li className=" text-main-blue-light/70">
-          <a className="font-Pretendard text-xl font-bold" href={link}>
+          <a
+            className="font-Pretendard text-xl font-bold"
+            href={link}
+            aria-describedby="클릭 시 상세 페이지로 넘어갑니다."
+          >
             {title}
           </a>
         </li>

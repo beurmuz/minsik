@@ -5,9 +5,9 @@ import { Footer } from "../components/Footer";
 export const NotFound = (props) => {
   return (
     <div className=" bg-white">
-      <section className="w-screen h-screen flex flex-col text-center">
+      <section className="w-screen h-screen flex flex-col">
         <BackHeader />
-        <div className="flex flex-col m-auto ">
+        <div className="flex flex-col m-auto text-center">
           <p className="m-auto text-main-blue font-NotoSerif text-3xl font-bold">
             Oops!
           </p>

@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
-import { IoIosClose } from "react-icons/io";
-import {
-  FaInstagram,
-  FaTwitter,
-  FaYoutube,
-  FaSoundcloud,
-} from "react-icons/fa";
 import { menuStore } from "../shared/store";
 import { useNavigate } from "react-router-dom";
+import closeIcon from "../assets/images/icons/closeIcon.webp";
 
 export const Menu = (props) => {
   const { showMenu, setShowMenu } = menuStore((state) => state);
@@ -28,28 +22,34 @@ export const Menu = (props) => {
     $body.style.overflow = "hidden";
     return () => {
       $body.style.overflow = overflow;
+      $body.ariaHidden = true;
     };
   });
 
   return (
-    <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle">
-      <nav className="w-5/6 h-4/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-sky-50 flex flex-col justify-between rounded-md">
-        <div className="flex flex-row justify-between pt-7 px-4">
-          <span />
-          <button
-            type="button"
-            name="close menu"
-            className="hover:cursor-pointer text-main-blue"
-            onClick={closeMenu}
-          >
-            <IoIosClose size="60" />
-          </button>
-        </div>
-        <div className="h-full flex flex-col justify-center text-4xl text-main-blue">
+    <div
+      className="fixed top-0 left-0 right-0 bottom-0 w-full h-full z-99 bg-white/95 flex flex-col justify-between align-middle"
+      role="alertdialog"
+      aria-modal="true"
+    >
+      <div className="flex flex-row justify-between pt-12 px-12">
+        <span />
+        <button
+          type="button"
+          name="close menu"
+          className="hover:cursor-pointer text-main-blue"
+          onClick={closeMenu}
+        >
+          <img src={closeIcon} className="w-10 h-10" alt="close Icon" />
+        </button>
+      </div>
+      {/* navigation */}
+      <nav className="flex flex-col text-3xl text-main-blue px-12 pb-16">
+        <div className="flex flex-col py-10 border-b border-main-blue">
           <button
             type="button"
             name="go to Introduce Page"
-            className="font-NotoSerif font-semibold text-left ml-7 my-3"
+            className="font-Pretendard font-bold text-left py-2"
             onClick={() => gotoPage("intro")}
           >
             Introduce
@@ -57,7 +57,7 @@ export const Menu = (props) => {
           <button
             type="button"
             name="go to Songs Page"
-            className="font-NotoSerif font-semibold text-left ml-7 my-3"
+            className="font-Pretendard font-bold text-left py-2"
             onClick={() => gotoPage("songs")}
           >
             Songs
@@ -65,44 +65,50 @@ export const Menu = (props) => {
           <button
             type="button"
             name="go to News Page"
-            className="font-NotoSerif font-semibold text-left ml-7 my-3"
+            className="font-Pretendard font-bold text-left py-2"
             onClick={() => gotoPage("news")}
           >
             News
           </button>
         </div>
-        <div className="flex flex-row justify-center text-1xl text-main-blue-light p-3">
+        {/* SNS */}
+        <div className="flex flex-col justify-center font-3xl text-left text-main-blue py-10">
           <a
             href="https://www.instagram.com/younghotyellow94/"
             target="_blank"
             rel="noreferrer"
-            className="m-2 p-1"
+            aria-describedby="클릭 시 Instagram으로 연결됩니다."
+            className="font-Pretendard font-bold py-2"
           >
-            <FaInstagram size="30" />
+            Instagram
           </a>
+
           <a
             href="https://twitter.com/younghotyellow"
             target="_blank"
             rel="noreferrer"
-            className="m-2 p-1"
+            aria-describedby="클릭 시 Twitter로 연결됩니다."
+            className="font-Pretendard font-bold py-2"
           >
-            <FaTwitter size="30" />
+            Twitter
           </a>
           <a
             href="https://www.youtube.com/channel/UCxd-HCJDFkaDjpg-y3PgkEA"
             target="_blank"
             rel="noreferrer"
-            className="m-2 p-1"
+            aria-describedby="클릭 시 Youtube로 연결됩니다."
+            className="font-Pretendard font-bold  py-2"
           >
-            <FaYoutube size="30" />
+            Youtube
           </a>
           <a
             href="https://soundcloud.com/younghotyellow"
             target="_blank"
             rel="noreferrer"
-            className="m-2 p-1"
+            aria-describedby="클릭 시 SoundCloud로 연결됩니다."
+            className="font-Pretendard font-bold text-left py-2"
           >
-            <FaSoundcloud size="30" />
+            SoundCloud
           </a>
         </div>
       </nav>

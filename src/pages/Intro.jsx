@@ -1,5 +1,4 @@
 import React from "react";
-import { BsArrowDown } from "react-icons/bs";
 import faceImg from "../assets/images/minsik.webp";
 import { Header } from "../components/Header";
 import PageName from "../components/PageName";
@@ -8,6 +7,7 @@ import { Toolbar } from "../components/Toolbar";
 import { HistoryBox } from "../components/HistoryBox";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import { Footer } from "../components/Footer";
+import arrowIcon from "../assets/images/icons/bottomArrow.webp";
 
 export const Intro = (props) => {
   return (
@@ -40,13 +40,18 @@ export const Intro = (props) => {
                 target="_blank"
                 rel="noreferrer"
                 className="font-Pretendard font-normal text-gray-500"
+                aria-describedby="클릭 시 위키피디아로 연결됩니다."
               >
                 * more info ...
               </a>
             </li>
           </ol>
           <div className="text-center my-10 mx-auto text-main-blue-light animate-bounce">
-            <BsArrowDown size="30" />
+            <img
+              src={arrowIcon}
+              className="w-[30px] h-[30px]"
+              alt="arrow Icon"
+            />
           </div>
         </section>
       </div>
@@ -77,7 +82,8 @@ export const Intro = (props) => {
               href="https://vibe.naver.com/artist/331653"
               target="_blank"
               rel="noreferrer"
-              className="font-Pretendard text-gray-400 text-sm"
+              className="font-Pretendard text-gray-500 text-sm"
+              aria-describedby="클릭 시 네이버 바이브로 연동됩니다."
             >
               [출처] 네이버 바이브
             </a>
