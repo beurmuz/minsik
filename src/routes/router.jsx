@@ -6,20 +6,13 @@ import { Songs } from "../pages/Songs";
 import { NotFound } from "../pages/NotFound";
 import { Menu } from "../components/Menu";
 import { menuStore } from "../shared/store";
-import imageURL from "../assets/images/back.webp";
 
 const Router = () => {
   const { showMenu } = menuStore((state) => state);
 
   return (
     <BrowserRouter>
-      <div
-        className="App"
-        class="w-screen h-screen bg-main-white bg-cover bg-center overflow-x-hidden"
-        style={{
-          backgroundImage: `url(${imageURL})`,
-        }}
-      >
+      <div class="App" className="w-screen h-screen bg-white">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/intro" element={<Intro />} />

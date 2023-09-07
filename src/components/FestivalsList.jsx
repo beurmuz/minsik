@@ -19,13 +19,13 @@ const FestivalsList = (props) => {
   }, []);
 
   return (
-    <section className="w-screen h-screen flex flex-col justify-center p-10">
+    <article className="w-screen h-screen flex flex-col justify-center p-10">
       <div className="flex flex-row justify-between pt-1 px-1">
-        <p className="font-Pretendard text-main-blue/80 text-2xl font-bold">
+        <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">
           최신 공연 정보
-        </p>
+        </h2>
         <p className="font-Pretendard text-gray-400 text-sm my-auto">
-          Updated: 매주 수요일
+          Update: 매주 수요일
         </p>
       </div>
       <ol className="flex flex-row overflow-x-auto py-5">
@@ -37,7 +37,7 @@ const FestivalsList = (props) => {
       <p className="font-Pretendard text-sm py-5 text-gray-400">
         * 공연명을 누르면 상세페이지로 이동합니다.
       </p>
-    </section>
+    </article>
   );
 };
 

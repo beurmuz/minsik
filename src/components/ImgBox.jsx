@@ -9,7 +9,7 @@ export const ImgBox = () => {
   };
 
   return (
-    <div className="flex flex-row overflow-x-auto m-8 py-3">
+    <article className="flex flex-row overflow-x-auto m-8 py-3">
       {imgUrls.map((imgUrl) => {
         return (
           <div key={imgUrl} className="w-full h-full">
@@ -17,13 +17,13 @@ export const ImgBox = () => {
               <img
                 className=" h-[30rem] object-cover"
                 src={imgUrl}
-                alt="profile"
+                alt="식케이 사진"
                 onError={onErrorImg}
               />
             </div>
           </div>
         );
       })}
-    </div>
+    </article>
   );
 };

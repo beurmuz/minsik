@@ -19,19 +19,19 @@ export const News = (props) => {
       />
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
-        <div className="m-10">
-          <div className="flex flex-row justify-between pt-1 px-1">
-            <p className="font-Pretendard text-main-blue/80 text-2xl font-bold">
+        <section className="m-10">
+          <article className="flex flex-row justify-between pt-1 px-1">
+            <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">
               최신 뉴스
-            </p>
+            </h2>
             <p className="font-Pretendard text-gray-400 text-sm my-auto">
-              Updated: 매주 수요일
+              Update: 매주 수요일
             </p>
-          </div>
+          </article>
           <article>
             <NewsList />
           </article>
-        </div>
+        </section>
 
         {/* 페스티벌 정보 */}
         <FestivalsList />

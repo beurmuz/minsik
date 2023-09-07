@@ -51,7 +51,7 @@ export const SongsList = (props) => {
   };
 
   return (
-    <div className="m-7 p-30 ">
+    <section className="m-7 p-30 ">
       {showModal && (
         <AblumModal
           albumInfo={clickedAlbum}
@@ -60,13 +60,15 @@ export const SongsList = (props) => {
         />
       )}
       {/* 전체곡 리스트 */}
-      <div className="overflow-auto p-3">
+      <article className="overflow-auto p-3">
         <div className="w-full mb-3 flex flex-row justify-between">
           <p className="font-Pretendard text-main-blue/80 text-xl font-bold">
             전체곡 ({releaseNums + joinNums})
           </p>
-          <div>
+          <nav>
             <button
+              type="button"
+              name="show the release song list"
               className="mr-3 font-Pretendard text-gray-500 hover:text-main-blue"
               onClick={(e) => setOrderState("release")}
             >
@@ -74,18 +76,20 @@ export const SongsList = (props) => {
             </button>
             <span className="border-r border-gray-500 h-4 my-auto"></span>
             <button
+              type="button"
+              name="show the join song list"
               className="ml-3 font-Pretendard text-gray-500 hover:text-main-blue"
               onClick={() => setOrderState("join")}
             >
               참여 ({joinNums})
             </button>
-          </div>
+          </nav>
         </div>
         <ol className="grid grid-cols-3 gap-3 min-[750px]:grid-cols-4 min-[1000px]:grid-cols-6">
           {releaseAlbums && orderState === "release"
             ? Object.keys(releaseAlbums).map((album) => {
                 return (
-                  <div
+                  <li
                     key={album}
                     onClick={() =>
                       openModal([
@@ -97,12 +101,12 @@ export const SongsList = (props) => {
                     }
                   >
                     <img src={releaseAlbums[album][0]} alt="앨범 이미지" />
-                  </div>
+                  </li>
                 );
               })
             : Object.keys(joinAlbums).map((album) => {
                 return (
-                  <div
+                  <li
                     key={album}
                     onClick={() =>
                       openModal([
@@ -114,7 +118,7 @@ export const SongsList = (props) => {
                     }
                   >
                     <img src={joinAlbums[album][0]} alt="앨범 이미지" />
-                  </div>
+                  </li>
                 );
               })}
         </ol>
@@ -122,7 +126,7 @@ export const SongsList = (props) => {
           * 앨범은 최신순으로 정렬되어 있습니다. <br />* 매주 수요일마다 정보가
           업데이트 됩니다.
         </p>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };

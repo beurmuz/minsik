@@ -9,9 +9,9 @@ export const YearBox = ({ children }) => {
           <span class="relative inline-flex rounded-full h-3 w-3 bg-main-blue"></span>
         </span>
       </div>
-      <h2 className="font-Pretendard text-3xl font-bold text-main-blue-light px-1 my-auto">
+      <h3 className="font-Pretendard text-3xl font-bold text-main-blue-light px-1 my-auto">
         {children}
-      </h2>
+      </h3>
     </div>
   );
 };

@@ -9,22 +9,22 @@ export const Header = ({ changeColor }) => {
     if (showMenu === false) setShowMenu();
   };
   return changeColor ? (
-    <div className="flex flex-row h-1/8 justify-between mx-10 mt-12 text-main-blue">
+    <header className="flex flex-row h-1/8 justify-between mx-10 mt-12 text-main-blue">
       <Link to="/">
         <h1 className="font-NotoSerif text-5xl font-semibold ">SIK-K</h1>
       </Link>
-      <button onClick={openMenu}>
+      <button type="button" name="open Menu" onClick={openMenu}>
         <IoIosMenu size="50" />
       </button>
-    </div>
+    </header>
   ) : (
-    <div className="flex flex-row h-1/8 justify-between mx-10 mt-12 text-white">
+    <header className="flex flex-row h-1/8 justify-between mx-10 mt-12 text-white">
       <Link to="/">
         <h1 className="font-NotoSerif text-5xl font-semibold ">SIK-K</h1>
       </Link>
-      <button onClick={openMenu}>
+      <button type="button" name="open Menu" onClick={openMenu}>
         <IoIosMenu size="50" />
       </button>
-    </div>
+    </header>
   );
 };

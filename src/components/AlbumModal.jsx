@@ -36,10 +36,12 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle">
-      <div className="flex flex-col w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto pb-14 text-center z-99 bg-white rounded-md">
+      <nav className="flex flex-col w-5/6 h-5/6 fixed top-0 bottom-0 left-0 right-0 m-auto pb-14 text-center z-99 bg-white rounded-md">
         <div className="flex flex-row justify-between">
           <span />
           <button
+            type="button"
+            name="close modal"
             onClick={closeModal}
             className="hover:cursor-pointer text-main-blue mt-7 mr-4"
           >
@@ -53,12 +55,12 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
               <img src={albumImgSrc} alt={`${albumName} img`} />
             </div>
             <div className="flex flex-col w-full my-auto ml-3 text-left ">
-              <h1 className="font-Pretendard text-xl font-bold text-main-blue">
+              <h3 className="font-Pretendard text-xl font-bold text-main-blue">
                 {albumName}
-              </h1>
-              <h2 className="font-Pretendard text-sm text-main-blue">
+              </h3>
+              <h4 className="font-Pretendard text-sm text-main-blue">
                 발매일: {albumDate}
-              </h2>
+              </h4>
             </div>
           </div>
           <p className="w-full text-left font-Pretendard text-main-blue text-base font-bold pt-7">
@@ -75,17 +77,17 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
                     <img src={baseImg} alt="album" />
                   </div>
                   <div className="flex flex-col w-full justify-between m-auto text-start pl-2">
-                    <h2 className="font-normal text-sm font-Pretendard">
+                    <p className="font-normal text-sm font-Pretendard">
                       {song.title}
-                    </h2>
-                    <h3 className=" text-xs font-Pretendard">{song.artists}</h3>
+                    </p>
+                    <p className=" text-xs font-Pretendard">{song.artists}</p>
                   </div>
                 </li>
               );
             })}
           </ul>
         </article>
-      </div>
+      </nav>
     </div>
   );
 };

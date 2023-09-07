@@ -10,7 +10,7 @@ export const HistoryBox = () => {
     <div className="flex flex-col justify-center">
       {years.map((year) => {
         return (
-          <div className="flex flex-col">
+          <article className="flex flex-col">
             <YearBox>{year}</YearBox>
             <div className="flex flex-row" key={year}>
               <div className="w-12" />
@@ -31,10 +31,9 @@ export const HistoryBox = () => {
                 })}
               </ol>
             </div>
-          </div>
+          </article>
         );
       })}
     </div>
-    // </div>
   );
 };

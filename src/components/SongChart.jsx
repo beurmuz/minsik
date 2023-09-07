@@ -29,7 +29,7 @@ const SongChart = () => {
   const options = {
     responsive: true,
     animation: {
-      duration: 500,
+      duration: 300,
     },
     plugins: {
       legend: {
@@ -67,14 +67,14 @@ const SongChart = () => {
   };
 
   return (
-    <div className="px-10 py-5 w-screen">
-      <div className="w-full mb-3 flex flex-row justify-between">
+    <section className="px-10 py-5 w-screen">
+      <article className="w-full mb-3 flex flex-row justify-between">
         <p className="font-Pretendard text-main-blue/80 text-xl font-bold">
           연도별 활동 내역
         </p>
-      </div>
+      </article>
       <Line options={options} data={data} />
-    </div>
+    </section>
   );
 };
 

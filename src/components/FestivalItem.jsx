@@ -17,17 +17,17 @@ const FestivalItem = ({ festivalInfo }) => {
           onError={onErrorImg}
         />
       </div>
-      <article className="py-5">
-        <p className="text-7xl text-main-blue/30 font-extrabold py-1">
+      <ol className="py-5">
+        <li className="text-7xl text-main-blue/30 font-extrabold py-1">
           {id + 1 < 10 ? "0" + (id + 1) : id + 1}
-        </p>
-        <p className=" text-main-blue-light/70">
+        </li>
+        <li className=" text-main-blue-light/70">
           <a className="font-Pretendard text-xl font-bold" href={link}>
             {title}
           </a>
-        </p>
-        <p className="font-Pretendard text-gray-500 font-semibold">{date}</p>
-      </article>
+        </li>
+        <li className="font-Pretendard text-gray-500 font-semibold">{date}</li>
+      </ol>
     </li>
   );
 };
