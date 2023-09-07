@@ -3,7 +3,7 @@ import { menuStore } from "../shared/store";
 import { useNavigate } from "react-router-dom";
 import closeIcon from "../assets/images/icons/closeIcon.webp";
 
-export const Menu = (props) => {
+const Menu = (props) => {
   const { showMenu, setShowMenu } = menuStore((state) => state);
   const closeMenu = () => {
     if (showMenu) setShowMenu();
@@ -115,3 +115,5 @@ export const Menu = (props) => {
     </div>
   );
 };
+
+export default Menu;

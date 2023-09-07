@@ -1,6 +1,6 @@
 import React from "react";
 
-export const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
+const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
   return (
     <li
       className="text-black font-Pretendard rounded-md p-2 text-base list-none"
@@ -22,3 +22,5 @@ export const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
     </li>
   );
 };
+
+export default HistoryItem;

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const YearBox = ({ children }) => {
+const YearBox = ({ children }) => {
   return (
     <div className="flex flex-row mx-7">
       <div className="my-auto mx-3">

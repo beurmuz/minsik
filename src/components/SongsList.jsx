@@ -3,7 +3,7 @@ import { songsApi } from "../shared/axios";
 import { dataStore } from "../shared/store";
 import AblumModal from "./AlbumModal";
 
-export const SongsList = (props) => {
+const SongsList = (props) => {
   const {
     setsReleaseList,
     setsJoinList,
@@ -130,3 +130,5 @@ export const SongsList = (props) => {
     </section>
   );
 };
+
+export default SongsList;

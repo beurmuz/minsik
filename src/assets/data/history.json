@@ -11,8 +11,8 @@
       "id": 15,
       "month": "2023.05",
       "content": "식케이, 레이블 ‘KC(케이씨)’ 설립",
-      "imgUrl": "https://cdn.gvalley.co.kr/news/photo/202305/609577_80249_4557.jpg",
-      "newsUrl": "http://www.gvalley.co.kr/news/articleView.html?idxno=609577"
+      "imgUrl": "https://img.gqkorea.co.kr/gq/2023/05/style_6453463515ade-1200x1508.png",
+      "newsUrl": "https://www.gqkorea.co.kr/2023/05/04/%EC%8B%9D%EC%BC%80%EC%9D%B4sik-k-%EB%A0%88%EC%9D%B4%EB%B8%94-%EC%BC%80%EC%9D%B4%EC%94%A8-%EB%9F%B0%EC%B9%AD/"
     },
     {
       "id": 14,
@@ -25,8 +25,9 @@
       "id": 13,
       "month": "2023.01",
       "content": "'겐조 2023 F/W 컬렉션 초청'",
-      "imgUrl": "http://img.wowtv.co.kr/wowtv_news/dnrs/20230126/B20230126144759063.jpg",
-      "newsUrl": "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202301260203&t=NN"
+
+      "imgUrl": "https://cdn.newsculture.press/news/photo/202301/516272_633333_3932.jpg",
+      "newsUrl": "https://www.newsculture.press/news/articleView.html?idxno=516272"
     }
   ],
   "2022": [
@@ -71,10 +72,10 @@
   "2019": [
     {
       "id": 7,
-      "month": "2019.12",
+      "month": "2019.06",
       "content": "첫 월드 투어 'FL1P Sik-K World Tour ASIA'",
-      "imgUrl": "http://res.heraldm.com/phpwas/restmb_allidxmake.php?idx=5&simg=201912200727017175198_20191220072809_01.jpg",
-      "newsUrl": "http://www.heraldpop.com/view.php?ud=201912200727017175198_1"
+      "imgUrl": "https://images.khan.co.kr/article/2019/06/03/l_2019060302000060400011381.jpg",
+      "newsUrl": "https://sports.khan.co.kr/entertainment/sk_index.html?art_id=201906031000013&sec_id=540301&pt=nv"
     },
     {
       "id": 6,
@@ -114,15 +115,6 @@
       "content": "H1GHR MUSIC의 첫 아티스트로 낙점",
       "imgUrl": "https://cdn.gukjenews.com/news/photo/201705/717345_505759_3015.jpg",
       "newsUrl": "https://www.gukjenews.com/news/articleView.html?idxno=717345"
-    }
-  ],
-  "2016": [
-    {
-      "id": 1,
-      "month": "2016.09",
-      "content": "첫 단독 콘서트 진행",
-      "imgUrl": "http://res.heraldm.com/content/image/2016/08/21/20160821000030_0.jpg",
-      "newsUrl": "http://news.heraldcorp.com/view.php?ud=20160821000030"
     }
   ],
   "2015": [

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const LatestSong = ({ songInfo }) => {
+const LatestSong = ({ songInfo }) => {
   const { imgSource, ablum, artists, release } = { ...songInfo };
   return (
     <section className="flex flex-row m-10 ">
@@ -24,3 +24,5 @@ export const LatestSong = ({ songInfo }) => {
     </section>
   );
 };
+
+export default LatestSong;

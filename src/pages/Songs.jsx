@@ -1,13 +1,13 @@
 import React from "react";
-import { Header } from "../components/Header";
-import { SongsList } from "../components/SongsList";
-import { Footer } from "../components/Footer";
-import { LatestSong } from "../components/LatestSong";
+import Header from "../components/Header";
+import SongsList from "../components/SongsList";
+import Footer from "../components/Footer";
+import LatestSong from "../components/LatestSong";
 import { dataStore } from "../shared/store";
 import SongChart from "../components/SongChart";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 
-export const Songs = (props) => {
+const Songs = (props) => {
   const { releaseList } = dataStore((state) => state);
 
   return (
@@ -31,3 +31,5 @@ export const Songs = (props) => {
     </>
   );
 };
+
+export default Songs;

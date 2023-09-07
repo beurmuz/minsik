@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Footer = (props) => {
+const Footer = (props) => {
   return (
     <div className="h-1/8 flex flex-col  justify-center mx-7 mb-10">
       <p className=" text-sky-700 font-NotoSerif text-xs">
@@ -12,3 +12,5 @@ export const Footer = (props) => {
     </div>
   );
 };
+
+export default Footer;

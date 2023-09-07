@@ -2,7 +2,7 @@ import React from "react";
 import { img0, img1, img2, img3, img4 } from "../assets/images/intro/intro";
 import baseImg from "../assets/images/base_intro.png";
 
-export const ImgBox = () => {
+const ImgBox = () => {
   let imgUrls = [img0, img1, img2, img3, img4];
   const onErrorImg = (e) => {
     e.target.src = baseImg;
@@ -27,3 +27,5 @@ export const ImgBox = () => {
     </article>
   );
 };
+
+export default ImgBox;

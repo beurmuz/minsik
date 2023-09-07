@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NewsItem = ({ id, title, link, content, media, date }) => {
+const NewsItem = ({ id, title, link, content, media, date }) => {
   return (
     <li
       className=" bg-gray-100 rounded-lg px-4 py-4 mb-4 hover:bg-main-blue group"
@@ -28,3 +28,5 @@ export const NewsItem = ({ id, title, link, content, media, date }) => {
     </li>
   );
 };
+
+export default NewsItem;

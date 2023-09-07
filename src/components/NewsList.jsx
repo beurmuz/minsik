@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { newsApi } from "../shared/axios";
-import { NewsItem } from "./NewsItem";
+import NewsItem from "./NewsItem";
 
-export const NewsList = () => {
+const NewsList = () => {
   const [newsData, setNewsData] = useState([]);
 
   const getNewsData = async () => {
@@ -36,3 +36,5 @@ export const NewsList = () => {
     </ol>
   );
 };
+
+export default NewsList;

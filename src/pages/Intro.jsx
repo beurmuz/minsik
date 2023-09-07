@@ -1,15 +1,15 @@
 import React from "react";
 import faceImg from "../assets/images/minsik.webp";
-import { Header } from "../components/Header";
+import Header from "../components/Header";
 import PageName from "../components/PageName";
-import { ImgBox } from "../components/ImgBox";
-import { Toolbar } from "../components/Toolbar";
-import { HistoryBox } from "../components/HistoryBox";
+import ImgBox from "../components/ImgBox";
+import Toolbar from "../components/Toolbar";
+import HistoryBox from "../components/HistoryBox";
 import MetadataTemplate from "../SEO/MetadataTemplate";
-import { Footer } from "../components/Footer";
+import Footer from "../components/Footer";
 import arrowIcon from "../assets/images/icons/bottomArrow.webp";
 
-export const Intro = (props) => {
+const Intro = (props) => {
   return (
     <>
       <MetadataTemplate
@@ -109,3 +109,5 @@ export const Intro = (props) => {
     </>
   );
 };
+
+export default Intro;

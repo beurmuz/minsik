@@ -1,11 +1,11 @@
 import React from "react";
-import { Header } from "../components/Header";
-import { NewsList } from "../components/NewsList";
-import { Footer } from "../components/Footer";
+import Header from "../components/Header";
+import NewsList from "../components/NewsList";
+import Footer from "../components/Footer";
 import FestivalsList from "../components/FestivalsList";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 
-export const News = (props) => {
+const News = (props) => {
   return (
     <>
       <MetadataTemplate
@@ -40,3 +40,5 @@ export const News = (props) => {
     </>
   );
 };
+
+export default News;

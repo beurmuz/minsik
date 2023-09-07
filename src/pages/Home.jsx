@@ -1,12 +1,12 @@
 import React from "react";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import homeLogo from "../assets/images/homeLogo.svg";
 import { Link } from "react-router-dom";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import imageURL from "../assets/images/back.webp";
 
-export const Home = (props) => {
+const Home = (props) => {
   return (
     <>
       <MetadataTemplate
@@ -48,3 +48,5 @@ export const Home = (props) => {
     </>
   );
 };
+
+export default Home;

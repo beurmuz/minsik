@@ -1,8 +1,8 @@
 import React from "react";
-import { BackHeader } from "../components/BackHeader";
-import { Footer } from "../components/Footer";
+import BackHeader from "../components/BackHeader";
+import Footer from "../components/Footer";
 
-export const NotFound = (props) => {
+const NotFound = (props) => {
   return (
     <div className=" bg-white">
       <section className="w-screen h-screen flex flex-col">
@@ -20,3 +20,5 @@ export const NotFound = (props) => {
     </div>
   );
 };
+
+export default NotFound;

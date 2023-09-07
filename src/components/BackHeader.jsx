@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import backIcon from "../assets/images/icons/backIcon.webp";
 
-export const BackHeader = (props) => {
+const BackHeader = (props) => {
   const navigate = useNavigate(); // navigation에 특정 순간을 넘기면 현재 페이지에서 해당 숫자만큼 히스토리 이동 가능
 
   return (
@@ -13,3 +13,5 @@ export const BackHeader = (props) => {
     </div>
   );
 };
+
+export default BackHeader;

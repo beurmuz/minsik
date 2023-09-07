@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import menuBIcon from "../assets/images/icons/menuBIcon.webp";
 import menuWIcon from "../assets/images/icons/menuWIcon.webp";
 
-export const Header = ({ changeColor }) => {
+const Header = ({ changeColor }) => {
   const { showMenu, setShowMenu } = menuStore((state) => state);
   const openMenu = () => {
     if (showMenu === false) setShowMenu();
@@ -29,3 +29,5 @@ export const Header = ({ changeColor }) => {
     </header>
   );
 };
+
+export default Header;

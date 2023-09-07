@@ -18,10 +18,10 @@ const FestivalItem = ({ festivalInfo }) => {
         />
       </div>
       <ol className="py-5">
-        <li className="text-7xl text-main-blue/30 font-Pretendard font-bold py-1">
+        <li className="text-7xl text-[#2C62B8] font-Pretendard font-bold py-1">
           {id + 1 < 10 ? "0" + (id + 1) : id + 1}
         </li>
-        <li className=" text-main-blue-light/70">
+        <li className=" text-[#77A0E1]">
           <a
             className="font-Pretendard text-xl font-bold"
             href={link}
