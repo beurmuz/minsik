@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { dataStore } from "../shared/store";
-import baseImg from "../assets/images/base_music.webp";
 
 const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
   const [albumName, albumImgSrc, albumDate, ablumSort] = [...albumInfo];
@@ -67,17 +66,17 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
             수록곡 ({albumData.length})
           </p>
           <ul className="flex flex-col justify-center text-left pb-3">
-            {albumData.map((song) => {
+            {albumData.map((song, index) => {
               return (
                 <li
                   key={song.title}
                   className="flex flex-row font-Pretendard text-base text-black/8 border-b py-2"
                 >
-                  <div className="w-10">
-                    <img src={baseImg} alt="album" />
-                  </div>
+                  <span className="w-7 mx-auto font-Pretendard text-main-blue">
+                    {index + 1 < 10 ? "0" + (index + 1) : index + 1}
+                  </span>
                   <div className="flex flex-col w-full justify-between m-auto text-start pl-2">
-                    <p className="font-normal text-sm font-Pretendard">
+                    <p className="font-medium text-sm font-Pretendard">
                       {song.title}
                     </p>
                     <p className=" text-xs font-Pretendard">{song.artists}</p>

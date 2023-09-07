@@ -7,6 +7,7 @@ import { ImgBox } from "../components/ImgBox";
 import { Toolbar } from "../components/Toolbar";
 import { HistoryBox } from "../components/HistoryBox";
 import MetadataTemplate from "../SEO/MetadataTemplate";
+import { Footer } from "../components/Footer";
 
 export const Intro = (props) => {
   return (
@@ -95,6 +96,9 @@ export const Intro = (props) => {
       <section className="w-screen flex flex-col">
         <PageName>Timeline</PageName>
         <HistoryBox />
+      </section>
+      <section className="h-24">
+        <Footer />
       </section>
     </>
   );

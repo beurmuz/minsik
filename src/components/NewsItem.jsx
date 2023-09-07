@@ -3,7 +3,7 @@ import React from "react";
 export const NewsItem = ({ id, title, link, content, media, date }) => {
   return (
     <li
-      className="font-NotoKo bg-gray-100 rounded-lg px-4 py-4 mb-4 text-base list-none group hover:bg-main-blue"
+      className=" bg-gray-100 rounded-lg px-4 py-4 mb-4 hover:bg-main-blue"
       key={id}
     >
       <h3 className="font-Pretendard font-bold text-lg py-2 leading-tight group-hover:text-white">

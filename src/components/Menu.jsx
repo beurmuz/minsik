@@ -33,7 +33,7 @@ export const Menu = (props) => {
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle">
-      <nav className="w-5/6 h-4/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-main-white flex flex-col justify-between rounded-md">
+      <nav className="w-5/6 h-4/6 fixed top-0 bottom-0 left-0 right-0 m-auto text-center z-99 bg-sky-50 flex flex-col justify-between rounded-md">
         <div className="flex flex-row justify-between pt-7 px-4">
           <span />
           <button
