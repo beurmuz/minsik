@@ -10,6 +10,8 @@ import Footer from "../components/Footer";
 import arrowIcon from "../assets/images/icons/bottomArrow.webp";
 
 const Intro = (props) => {
+  console.log("😄 Intro 컴포넌트 호출");
+
   return (
     <>
       <MetadataTemplate
@@ -110,4 +112,4 @@ const Intro = (props) => {
   );
 };
 
-export default Intro;
+export default React.memo(Intro);
