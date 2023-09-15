@@ -3,8 +3,6 @@ import React from "react";
 const LatestSong = ({ songInfo }) => {
   const { imgSource, ablum, artists, release } = { ...songInfo };
 
-  console.log("🎼 LatestSong 컴포넌트 호출");
-
   return (
     <section className="flex flex-row m-10 ">
       <div className="w-1/2 min-[600px]:w-1/4">

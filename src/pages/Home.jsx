@@ -7,8 +7,6 @@ import MetadataTemplate from "../SEO/MetadataTemplate";
 import imageURL from "../assets/images/back.webp";
 
 const Home = (props) => {
-  console.log("🏡 Home 컴포넌트 호출");
-
   return (
     <>
       <MetadataTemplate

@@ -1,6 +1,11 @@
 import React from "react";
+import baseImg from "../assets/images/base_intro.png";
 
 const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
+  const onErrorImg = (e) => {
+    e.target.src = baseImg;
+  };
+
   return (
     <li
       className="text-black font-Pretendard rounded-md p-2 text-base list-none"
@@ -8,7 +13,12 @@ const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
     >
       {children}
       <div className="min-[540px]:w-1/2 min-[700px]:w-1/3">
-        <img src={imgUrl} alt="historyImg" className="max-w-full h-auto" />
+        <img
+          src={imgUrl}
+          alt="historyImg"
+          className="max-w-full h-auto"
+          onError={onErrorImg}
+        />
         <p className="text-right">
           <a
             href={newsUrl}

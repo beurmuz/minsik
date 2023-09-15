@@ -26,8 +26,6 @@ ChartJS.register(
 const SongChart = () => {
   const { releaseYears, joinYears } = dataStore((state) => state);
 
-  console.log("🎧 SongChart 컴포넌트 호출");
-
   const options = {
     responsive: true,
     animation: {

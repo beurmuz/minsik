@@ -3,7 +3,6 @@ import { festivalApi } from "../shared/axios";
 import FestivalItem from "./FestivalItem";
 
 const FestivalsList = (props) => {
-  console.log("💩 FestivalList 컴포넌트 호출");
   const [festivals, setFestivals] = useState([]);
 
   const getFestivalData = async () => {

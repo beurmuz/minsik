@@ -6,7 +6,6 @@ import FestivalsList from "../components/FestivalsList";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 
 const News = (props) => {
-  console.log("🥶 News 컴포넌트 호출~!!");
   return (
     <>
       <MetadataTemplate

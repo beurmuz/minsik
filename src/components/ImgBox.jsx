@@ -8,8 +8,6 @@ const ImgBox = () => {
     e.target.src = baseImg;
   };
 
-  console.log("😛 ImgBox 컴포넌트 호출");
-
   return (
     <article className="flex flex-row overflow-x-auto m-8 py-3">
       {imgUrls.map((imgUrl) => {
