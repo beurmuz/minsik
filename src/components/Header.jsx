@@ -5,6 +5,8 @@ import menuBIcon from "../assets/images/icons/menuBIcon.webp";
 import menuWIcon from "../assets/images/icons/menuWIcon.webp";
 
 const Header = ({ changeColor }) => {
+  console.log("Header 컴포넌트 호출");
+
   const { showMenu, setShowMenu } = menuStore((state) => state);
   const openMenu = () => {
     if (showMenu === false) setShowMenu();
@@ -30,4 +32,4 @@ const Header = ({ changeColor }) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

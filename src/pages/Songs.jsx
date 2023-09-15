@@ -10,6 +10,8 @@ import MetadataTemplate from "../SEO/MetadataTemplate";
 const Songs = (props) => {
   const { releaseList } = dataStore((state) => state);
 
+  console.log("🎤 Songs 컴포넌트 호출");
+
   return (
     <>
       <MetadataTemplate

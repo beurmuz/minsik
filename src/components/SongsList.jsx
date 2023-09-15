@@ -4,6 +4,8 @@ import { dataStore } from "../shared/store";
 import AblumModal from "./AlbumModal";
 
 const SongsList = (props) => {
+  console.log("🎹 SongList 컴포넌트 호출");
+
   const {
     setsReleaseList,
     setsJoinList,
@@ -24,6 +26,7 @@ const SongsList = (props) => {
       .then((res) => res.data)
       .catch((error) => console.log(error));
     setsReleaseList(result);
+    console.log("발매 노래 데이터 받아오기");
   };
 
   // 참여 곡 데이터 받아오기
@@ -33,6 +36,7 @@ const SongsList = (props) => {
       .then((res) => res.data)
       .catch((error) => console.log(error));
     setsJoinList(result);
+    console.log("피처링 노래 데이터 받아오기");
   };
 
   useEffect(() => {

@@ -1,6 +1,8 @@
 import React from "react";
 
 const Footer = (props) => {
+  console.log("🦶🏻 Footer 컴포넌트 호출");
+
   return (
     <div className="h-1/8 flex flex-col  justify-center mx-7 mb-10">
       <p className=" text-sky-700 font-NotoSerif text-xs">

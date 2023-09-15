@@ -7,6 +7,8 @@ import MetadataTemplate from "../SEO/MetadataTemplate";
 import imageURL from "../assets/images/back.webp";
 
 const Home = (props) => {
+  console.log("🏡 Home 컴포넌트 호출");
+
   return (
     <>
       <MetadataTemplate
@@ -49,4 +51,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default React.memo(Home);

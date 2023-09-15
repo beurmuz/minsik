@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import closeIcon from "../assets/images/icons/closeIcon.webp";
 
 const Menu = (props) => {
+  console.log("⭐️ Menu 컴포넌트 호출");
+
   const { showMenu, setShowMenu } = menuStore((state) => state);
   const closeMenu = () => {
     if (showMenu) setShowMenu();
