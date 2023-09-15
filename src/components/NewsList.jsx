@@ -3,6 +3,7 @@ import { newsApi } from "../shared/axios";
 import NewsItem from "./NewsItem";
 
 const NewsList = () => {
+  console.log("😈 NewsList 컴포넌트 호출");
   const [newsData, setNewsData] = useState([]);
 
   const getNewsData = async () => {

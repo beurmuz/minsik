@@ -6,6 +6,7 @@ import FestivalsList from "../components/FestivalsList";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 
 const News = (props) => {
+  console.log("🥶 News 컴포넌트 호출~!!");
   return (
     <>
       <MetadataTemplate
@@ -41,4 +42,4 @@ const News = (props) => {
   );
 };
 
-export default News;
+export default React.memo(News);

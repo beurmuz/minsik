@@ -6,6 +6,8 @@ import YearBox from "./YearBox";
 const HistoryBox = () => {
   let years = Object.keys(historyData).sort((a, b) => b - a);
 
+  console.log("😤 HistoryBox 컴포넌트 호출!");
+
   return (
     <div className="flex flex-col justify-center">
       {years.map((year) => {
