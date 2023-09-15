@@ -34,4 +34,4 @@ const Songs = (props) => {
   );
 };
 
-export default Songs;
+export default React.memo(Songs);
