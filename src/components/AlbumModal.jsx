@@ -98,7 +98,7 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
                     aria-describedby="클릭 시 멜론 페이지로 연결됩니다."
                     className="w-6 my-auto"
                   >
-                    <img src={moreIcon} />
+                    <img src={moreIcon} alt={`${song.title} link icon`} />
                   </a>
                 </li>
               );
