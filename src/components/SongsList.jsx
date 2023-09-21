@@ -123,8 +123,8 @@ const SongsList = (props) => {
               })}
         </ol>
         <p className="font-Pretendard text-sm py-5 text-gray-500">
-          * 앨범은 최신순으로 정렬되어 있습니다. <br />* 매주 수요일마다 정보가
-          업데이트 됩니다.
+          * 앨범은 최신순으로 정렬되어 있습니다. <br />* 매주 수요일 오전
+          9시마다 정보가 업데이트 됩니다.
         </p>
       </article>
     </section>
