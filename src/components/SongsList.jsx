@@ -69,7 +69,7 @@ const SongsList = (props) => {
             <button
               type="button"
               name="show the release song list"
-              className="mr-3 font-Pretendard text-gray-500 hover:text-main-blue"
+              className="mr-2 font-Pretendard text-gray-500 hover:text-main-blue"
               onClick={(e) => setOrderState("release")}
             >
               발매 ({releaseNums})
@@ -78,7 +78,7 @@ const SongsList = (props) => {
             <button
               type="button"
               name="show the join song list"
-              className="ml-3 font-Pretendard text-gray-500 hover:text-main-blue"
+              className="ml-2 font-Pretendard text-gray-500 hover:text-main-blue"
               onClick={() => setOrderState("join")}
             >
               참여 ({joinNums})
