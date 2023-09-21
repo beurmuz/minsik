@@ -65,7 +65,7 @@ const SongsList = (props) => {
           <p className="font-Pretendard text-main-blue/80 text-xl font-bold">
             전체곡 ({releaseNums + joinNums})
           </p>
-          <nav>
+          <nav className="flex flex-row">
             <button
               type="button"
               name="show the release song list"

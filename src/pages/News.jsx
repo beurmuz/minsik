@@ -20,12 +20,12 @@ const News = (props) => {
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
         <section className="m-10 animate-pageLoadEffect">
-          <article className="flex flex-row justify-between pt-1 px-1">
+          <article className="flex flex-row justify-between pt-1 px-1 max-[350px]:flex-col">
             <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">
               최신 뉴스
             </h2>
             <p className="font-Pretendard text-gray-500 text-sm my-auto">
-              업데이트: 매주 수요일
+              업데이트: 매주 수요일 9시
             </p>
           </article>
           <article>
