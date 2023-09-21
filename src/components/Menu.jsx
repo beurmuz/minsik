@@ -28,7 +28,7 @@ const Menu = (props) => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 bottom-0 w-full h-full z-99 bg-white/95 flex flex-col justify-between align-middle animate-fadeInEffect"
+      className="fixed top-0 left-0 right-0 bottom-0 w-full h-full z-99 bg-white/95 flex flex-col justify-between align-middle animate-menuLoadEffect"
       role="alertdialog"
       aria-modal="true"
     >

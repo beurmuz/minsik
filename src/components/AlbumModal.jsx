@@ -36,11 +36,11 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle"
+      className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle animate-ablumModalLoadEffect"
       role="alertdialog"
       aria-modal="true"
     >
-      <nav className="flex flex-col w-5/6 h-4/5 fixed top-0 bottom-0 left-0 right-0 m-auto pb-14 text-center z-99 bg-white rounded-md">
+      <nav className="flex flex-col w-5/6 h-4/5 fixed top-0 bottom-0 left-0 right-0 m-auto pb-14 text-center z-99 bg-white rounded-md ">
         <div className="flex flex-row justify-between">
           <span />
           <button
