@@ -51,7 +51,7 @@ const SongsList = (props) => {
   };
 
   return (
-    <section className="m-7 p-30 ">
+    <section className="m-7 p-30 animate-pageLoadEffect">
       {showModal && (
         <AblumModal
           albumInfo={clickedAlbum}

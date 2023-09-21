@@ -7,7 +7,7 @@ import Toolbar from "../components/Toolbar";
 import HistoryBox from "../components/HistoryBox";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import Footer from "../components/Footer";
-import arrowIcon from "../assets/images/icons/bottomArrow.webp";
+import mouseIcon from "../assets/images/icons/mouseIcon.webp";
 
 const Intro = (props) => {
   return (
@@ -22,14 +22,14 @@ const Intro = (props) => {
         ogDescription={"SIK-K에 대해 알아보기"}
       />
       {/* info */}
-      <div className="w-screen h-screen flex flex-col text-center ">
+      <div className="w-screen h-screen flex flex-col text-center">
         <Header changeColor={true} />
-        <section className="flex flex-col m-auto ">
-          <div className="m-auto w-64">
+        <section className="flex flex-col m-auto animate-pageLoadEffect">
+          <div className="m-auto w-64 max-[380px]:w-48">
             <img src={faceImg} alt="식케이 프로필 사진" />
           </div>
           <ol>
-            <li className="font-Pretendard text-3xl font-bold mt-7 mb-2">
+            <li className="font-Pretendard text-3xl font-bold mt-7 mb-2 max-[380px]:text-2xl">
               권민식 (SIK-K)
             </li>
             <li className="font-Pretendard text-lg">알앤비/어반, 랩/힙합</li>
@@ -46,12 +46,13 @@ const Intro = (props) => {
               </a>
             </li>
           </ol>
-          <div className="text-center my-10 mx-auto text-main-blue-light animate-bounce">
+          <div className="text-center mt-20 mx-auto text-main-blue-light">
             <img
-              src={arrowIcon}
-              className="w-[30px] h-[30px]"
+              src={mouseIcon}
+              className="w-[30px] h-[30px] m-auto animate-bounce"
               alt="arrow Icon"
             />
+            <p className="font-Pretendard font-xs py-2">scroll down</p>
           </div>
         </section>
       </div>
@@ -60,7 +61,7 @@ const Intro = (props) => {
       <section className="w-screen h-screen flex flex-col justify-center">
         <PageName>Biography</PageName>
         <div className="px-10">
-          <article className="font-Pretendard text-base font-base">
+          <article className="font-Pretendard text-base font-base max-[380px]:text-sm">
             KC 레이블의 대표 SIK-K는 꾸준하게 서울을 중심으로 새로운 사운드를 전
             세계에 선사하고 있는 아티스트이다.
             <br />

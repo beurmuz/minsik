@@ -19,7 +19,7 @@ const News = (props) => {
       />
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
-        <section className="m-10">
+        <section className="m-10 animate-pageLoadEffect">
           <article className="flex flex-row justify-between pt-1 px-1">
             <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">
               최신 뉴스

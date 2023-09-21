@@ -67,7 +67,7 @@ const SongChart = () => {
   };
 
   return (
-    <section className="px-10 py-5 w-screen">
+    <section className="px-10 py-5 w-screen animate-pageLoadEffect">
       <article className="w-full mb-3 flex flex-row justify-between">
         <p className="font-Pretendard text-main-blue/80 text-xl font-bold">
           연도별 활동 내역

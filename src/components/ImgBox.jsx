@@ -15,7 +15,7 @@ const ImgBox = () => {
           <div key={imgUrl} className="w-full h-full">
             <div className="w-72 mr-7">
               <img
-                className=" h-[30rem] object-cover"
+                className=" h-[30rem] object-cover max-[380px]:h-[22rem]"
                 src={imgUrl}
                 alt="식케이 사진"
                 onError={onErrorImg}
