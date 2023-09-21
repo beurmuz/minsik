@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { dataStore } from "../shared/store";
 import closeIcon from "../assets/images/icons/closeIcon.webp";
+import moreIcon from "../assets/images/icons/moreIcon.webp";
 
 const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
   const [albumName, albumImgSrc, albumDate, ablumSort] = [...albumInfo];
@@ -90,6 +91,15 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
                     </p>
                     <p className=" text-xs font-Pretendard">{song.artists}</p>
                   </div>
+                  <a
+                    href={`https://www.melon.com/song/detail.htm?songId=${song.songId}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-describedby="클릭 시 멜론 페이지로 연결됩니다."
+                    className="w-6 my-auto"
+                  >
+                    <img src={moreIcon} />
+                  </a>
                 </li>
               );
             })}
