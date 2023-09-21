@@ -1,13 +1,14 @@
 import React from "react";
+import { getYear } from "../utils/day.js";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <div className="h-1/8 flex flex-col  justify-center mx-7 mb-10">
       <p className=" text-sky-700 font-NotoSerif text-xs">
         Contact | fallinta2@gmail.com
       </p>
       <p className=" text-sky-700 font-NotoSerif text-xs">
-        Copyright | ⓒ 2023 beurmuz. All rights reserved.
+        Copyright | ⓒ {getYear()} beurmuz. All rights reserved.
       </p>
     </div>
   );
