@@ -32,6 +32,7 @@ module.exports = {
         ablumModalLoadEffect: "fadeIn 0.1s ease-out",
         fadeOutEffect: "fadeOut 3s ease-out",
         pageLoadEffect: "fadeIn 1.5s ease-out",
+        fadeInEffect: "fadeIn 1s ease-out",
       },
     },
   },

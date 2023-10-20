@@ -8,6 +8,7 @@ import HistoryBox from "../components/HistoryBox";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import Footer from "../components/Footer";
 import mouseIcon from "../assets/images/icons/mouseIcon.webp";
+import GotoTopButton from "../components/GotoTopButton";
 
 const Intro = (props) => {
   return (
@@ -24,6 +25,7 @@ const Intro = (props) => {
       {/* info */}
       <div className="w-screen h-screen flex flex-col text-center">
         <Header changeColor={true} />
+        <GotoTopButton />
         <section className="flex flex-col m-auto animate-pageLoadEffect">
           <div className="m-auto w-64 max-[380px]:w-48">
             <img src={faceImg} alt="식케이 프로필 사진" />
