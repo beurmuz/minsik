@@ -4,6 +4,7 @@ import NewsList from "../components/NewsList";
 import Footer from "../components/Footer";
 import FestivalsList from "../components/FestivalsList";
 import MetadataTemplate from "../SEO/MetadataTemplate";
+import GotoTopButton from "../components/GotoTopButton";
 
 const News = (props) => {
   return (
@@ -19,6 +20,7 @@ const News = (props) => {
       />
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
+        <GotoTopButton />
         <section className="m-10 animate-pageLoadEffect">
           <article className="flex flex-row justify-between pt-1 px-1 max-[350px]:flex-col">
             <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">

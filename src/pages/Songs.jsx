@@ -6,6 +6,7 @@ import LatestSong from "../components/LatestSong";
 import { dataStore } from "../shared/store";
 import SongChart from "../components/SongChart";
 import MetadataTemplate from "../SEO/MetadataTemplate";
+import GotoTopButton from "../components/GotoTopButton";
 
 const Songs = (props) => {
   const { releaseList } = dataStore((state) => state);
@@ -23,6 +24,7 @@ const Songs = (props) => {
       />
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
+        <GotoTopButton />
         <LatestSong songInfo={releaseList[0]} />
         <SongChart />
         <SongsList />
