@@ -28,15 +28,20 @@ const Intro = (props) => {
         <Header changeColor={true} />
         <GotoTopButton />
         <section className="flex flex-col m-auto animate-pageLoadEffect">
-          <div className="m-auto w-64 max-[380px]:w-48">
+          <div className="m-auto w-56 max-[380px]:w-48">
             <img src={faceImg} alt="식케이 프로필 사진" />
           </div>
           <ol>
-            <li className="font-Pretendard text-3xl font-bold mt-7 mb-2 max-[380px]:text-2xl">
+            <li className="font-Pretendard text-3xl font-bold mt-7 mb-1 max-[380px]:text-2xl">
               권민식 (SIK-K)
             </li>
-            <li className="font-Pretendard font-xs">1994.02.26 (31살)</li>
-            <li className="font-Pretendard text-lg">데뷔일: 2015.08.07</li>
+            <li className="font-Pretendard font-xs mb-3">1994.02.26 (31살)</li>
+            <li className="font-Pretendard text-lg">
+              데뷔: 2015.08.07{" "}
+              <span className="bg-slate-500 text-white font-Pretendard text-lg">
+                D+{dday()}
+              </span>
+            </li>
             <li className="font-Pretendard text-lg">
               알앤비/어반, 일렉트로니카, 랩/힙합
             </li>

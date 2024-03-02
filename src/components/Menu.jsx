@@ -72,7 +72,7 @@ const Menu = (props) => {
           </button>
         </div>
         {/* SNS */}
-        <div className="flex flex-col justify-center font-3xl text-left text-main-blue py-10">
+        <div className="flex flex-col justify-center font-3xl text-left text-main-blue/75 py-10">
           <a
             href="https://www.instagram.com/younghotyellow94/"
             target="_blank"

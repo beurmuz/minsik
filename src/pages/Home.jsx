@@ -28,7 +28,7 @@ const Home = (props) => {
         <section className="m-10 h-3/5 flex flex-col text-center animate-pageLoadEffect">
           <img
             src={homeLogo}
-            className="m-auto w-80 animate-[spin_10s_linear_infinite] "
+            className="m-auto w-72 animate-[spin_10s_linear_infinite] "
             alt="home Logo"
           />
           <p className=" h-10 flex items-center m-auto">
