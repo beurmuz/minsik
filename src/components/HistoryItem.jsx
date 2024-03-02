@@ -19,15 +19,17 @@ const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
           className="max-w-full h-auto"
           onError={onErrorImg}
         />
-        <p className="text-right">
-          <a
-            href={newsUrl}
-            className="text-sm text-gray-500 font-Pretendard"
-            aria-describedby="클릭 시 상세 페이지로 넘어갑니다."
-          >
-            자세히 보기
-          </a>
-        </p>
+        {newsUrl && (
+          <p className="text-right">
+            <a
+              href={newsUrl}
+              className="text-sm text-gray-500 font-Pretendard"
+              aria-describedby="클릭 시 상세 페이지로 넘어갑니다."
+            >
+              자세히 보기
+            </a>
+          </p>
+        )}
       </div>
     </li>
   );
