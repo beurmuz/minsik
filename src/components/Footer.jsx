@@ -1,5 +1,5 @@
 import React from "react";
-import { getYear } from "../utils/day.js";
+import { getYear } from "../utils/date.js";
 
 const Footer = () => {
   return (
