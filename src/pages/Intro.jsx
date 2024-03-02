@@ -28,7 +28,7 @@ const Intro = (props) => {
         <Header changeColor={true} />
         <GotoTopButton />
         <section className="flex flex-col m-auto animate-pageLoadEffect">
-          <div className="m-auto w-64 max-[380px]:w-48">
+          <div className="m-auto w-56 max-[380px]:w-48">
             <img src={faceImg} alt="식케이 프로필 사진" />
           </div>
           <ol>
@@ -37,7 +37,7 @@ const Intro = (props) => {
             </li>
             <li className="font-Pretendard font-xs mb-3">1994.02.26 (31살)</li>
             <li className="font-Pretendard text-lg">
-              데뷔일: 2015.08.07{" "}
+              데뷔: 2015.08.07{" "}
               <span className="bg-slate-500 text-white font-Pretendard text-lg">
                 D+{dday()}
               </span>

@@ -12,19 +12,19 @@ const Header = ({ changeColor }) => {
   return changeColor ? (
     <header className="flex flex-row h-1/8 justify-between mx-10 mt-12 text-main-blue">
       <Link to="/">
-        <h1 className="font-NotoSerif text-5xl font-semibold ">SIK-K</h1>
+        <h1 className="font-NotoSerif text-4xl font-semibold ">SIK-K</h1>
       </Link>
       <button type="button" name="open Menu" onClick={openMenu}>
-        <img src={menuBIcon} className="w-[50px] h-[50px]" alt="open Icon" />
+        <img src={menuBIcon} className="w-[40px] h-[40px]" alt="open Icon" />
       </button>
     </header>
   ) : (
     <header className="flex flex-row h-1/8 justify-between mx-10 mt-12 text-white">
       <Link to="/">
-        <h1 className="font-NotoSerif text-5xl font-semibold ">SIK-K</h1>
+        <h1 className="font-NotoSerif text-4xl font-semibold ">SIK-K</h1>
       </Link>
       <button type="button" name="open Menu" onClick={openMenu}>
-        <img src={menuWIcon} className="w-[50px] h-[50px]" alt="open Icon" />
+        <img src={menuWIcon} className="w-[40px] h-[40px]" alt="open Icon" />
       </button>
     </header>
   );
