@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
+import { getYear } from "../utils/date";
 
 // 메뉴 오픈 유무에 따른 관리
 export const menuStore = create(
@@ -33,7 +34,7 @@ export const dataStore = create(
       set((state) => ({ releaseAlbums: ablumSet }));
 
       let yearMap = new Map();
-      for (let i = 2023; i > 2014; i--) {
+      for (let i = getYear(); i > 2014; i--) {
         yearMap.set(String(i), 0);
       }
       for (let song of jsonData) {
@@ -68,7 +69,7 @@ export const dataStore = create(
       set((state) => ({ joinAlbums: ablumJSet }));
 
       let yearMap = new Map();
-      for (let i = 2015; i < 2024; i++) {
+      for (let i = 2015; i <= getYear(); i++) {
         yearMap.set(String(i), 0);
       }
       for (let song of jsonData) {
