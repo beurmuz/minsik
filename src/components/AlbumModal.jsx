@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { dataStore } from "../shared/store";
 import closeIcon from "../assets/images/icons/closeIcon.webp";
-import moreIcon from "../assets/images/icons/moreIcon.webp";
 import linkIcon from "../assets/images/icons/linkIcon.webp";
 
 const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
