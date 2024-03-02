@@ -20,7 +20,7 @@ const HistoryBox = () => {
                     <HistoryItem
                       imgUrl={contents.imgUrl}
                       newsUrl={contents.newsUrl}
-                      // key={contents.id}
+                      key={contents.id}
                     >
                       <h3
                         className="font-Pretendard font-bold text-lg"

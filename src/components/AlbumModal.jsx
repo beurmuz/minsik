@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { dataStore } from "../shared/store";
 import closeIcon from "../assets/images/icons/closeIcon.webp";
 import moreIcon from "../assets/images/icons/moreIcon.webp";
+import linkIcon from "../assets/images/icons/linkIcon.webp";
 
 const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
   const [albumName, albumImgSrc, albumDate, ablumSort] = [...albumInfo];
@@ -98,7 +99,7 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
                     aria-describedby="클릭 시 멜론 페이지로 연결됩니다."
                     className="w-6 my-auto"
                   >
-                    <img src={moreIcon} alt={`${song.title} link icon`} />
+                    <img src={linkIcon} alt={`${song.title} link icon`} />
                   </a>
                 </li>
               );
