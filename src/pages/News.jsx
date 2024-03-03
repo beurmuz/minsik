@@ -27,7 +27,7 @@ const News = (props) => {
               최신 뉴스
             </h2>
             <p className="font-Pretendard text-gray-500 text-sm my-auto">
-              업데이트: 매주 수요일 9시
+              update: 매주 수요일 9시
             </p>
           </article>
           <article>
