@@ -19,7 +19,7 @@ const Home = (props) => {
         ogDescription={"6년차 팬이 만든 SIK-K(식케이) 웹 사이트"}
       />
       <div
-        className="w-full h-full flex flex-col justify-between bg-cover bg-center overflow-x-hidden"
+        className="w-full h-full flex flex-col justify-between bg-cover bg-center overflow-x-hidden px-52 max-[900px]:px-32 max-[800px]:px-0"
         style={{
           backgroundImage: `url(${imageURL})`,
         }}
