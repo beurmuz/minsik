@@ -41,14 +41,14 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
       role="alertdialog"
       aria-modal="true"
     >
-      <nav className="flex flex-col w-5/6 h-4/5 fixed top-0 bottom-0 left-0 right-0 m-auto pb-14 text-center z-99 bg-white rounded-md ">
+      <nav className="flex flex-col w-[380px] h-4/5 fixed top-0 bottom-0 left-0 right-0 m-auto pb-10 text-center z-99 bg-white rounded-md max-[480px]:w-5/6">
         <div className="flex flex-row justify-between">
           <span />
           <button
             type="button"
             name="close modal"
             onClick={closeModal}
-            className="hover:cursor-pointer text-main-blue mt-8 mr-7"
+            className="hover:cursor-pointer text-main-blue mt-3 my-1 mr-5"
           >
             <img
               src={closeIcon}
@@ -58,24 +58,22 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
           </button>
         </div>
 
-        <article className="flex flex-col w-full px-10 overflow-y-auto ">
-          <div className="flex flex-row pt-3">
-            <div className="p-auto w-1/4">
-              <img src={albumImgSrc} alt={`${albumName} img`} />
-            </div>
-            <div className="flex flex-col w-full my-auto ml-3 text-left ">
-              <h3 className="font-Pretendard text-xl font-bold text-main-blue leading-snug">
+        <article className="flex flex-col w-full px-0 overflow-x-hidden overflow-y-auto ">
+          <div className="flex flex-col">
+            <img src={albumImgSrc} alt={`${albumName} img`} />
+            <div className="flex flex-col w-full mx-5 my-3 text-left ">
+              <h3 className="font-Pretendard text-3xl font-bold text-main-blue leading-snug">
                 {albumName}
               </h3>
-              <h4 className="font-Pretendard text-sm text-main-blue">
-                발매일: {albumDate}
+              <h4 className="font-Pretendard text-base text-main-blue">
+                {albumDate}
               </h4>
             </div>
           </div>
-          <p className="w-full text-left font-Pretendard text-main-blue text-base font-bold pt-7">
+          <p className="w-full text-left font-Pretendard text-main-blue text-lg font-bold mx-5 pt-7">
             수록곡 ({albumData.length})
           </p>
-          <ul className="flex flex-col justify-center text-left pb-3">
+          <ul className="flex flex-col justify-center text-left pb-3 mx-5 ">
             {albumData.map((song, index) => {
               return (
                 <li
