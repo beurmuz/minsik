@@ -54,14 +54,14 @@ const SongChart = () => {
       {
         label: "발매 수",
         data: releaseYears.map((year) => year[1]),
-        backgroundColor: "rgba(224, 114, 182, 0.8)",
-        borderColor: "rgb(244, 114, 182)",
+        backgroundColor: "rgba(60, 170, 232, 0.8)",
+        borderColor: "rgb(60, 179, 232)",
       },
       {
         label: "참여(피처링) 수",
         data: joinYears.map((year) => year[1]),
-        backgroundColor: "rgba(251, 191, 36, 0.8)",
-        borderColor: "rgb(251, 191, 36)",
+        backgroundColor: "rgba(37, 126, 190, 0.8)",
+        borderColor: "rgb(37, 126, 190)",
       },
     ],
   };
