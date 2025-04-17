@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { newsApi } from "../shared/axios";
+import { DataFetchApi } from "../shared/axios";
 import NewsItem from "./NewsItem";
 
 const NewsList = () => {
   const [newsData, setNewsData] = useState([]);
 
   const getNewsData = async () => {
-    const result = await newsApi
-      .get("news_data.json")
+    const result = await DataFetchApi.get("news_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
     setNewsData(result);

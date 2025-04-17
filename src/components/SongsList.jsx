@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { songsApi } from "../shared/axios";
+import { DataFetchApi } from "../shared/axios";
 import { dataStore } from "../shared/store";
 import AblumModal from "./AlbumModal";
 
@@ -19,8 +19,7 @@ const SongsList = (props) => {
 
   // 발매 곡 데이터 받아오기
   const getSongsData = async () => {
-    const result = await songsApi
-      .get("songs_data.json")
+    const result = await DataFetchApi.get("songs_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
     setsReleaseList(result);
@@ -28,8 +27,7 @@ const SongsList = (props) => {
 
   // 참여 곡 데이터 받아오기
   const getJoinSongsData = async () => {
-    const result = await songsApi
-      .get("join_songs_data.json")
+    const result = await DataFetchApi.get("join_songs_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
     setsJoinList(result);

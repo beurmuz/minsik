@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { festivalApi } from "../shared/axios";
+import { DataFetchApi } from "../shared/axios";
 import FestivalItem from "./FestivalItem";
 
 const FestivalsList = (props) => {
   const [festivals, setFestivals] = useState([]);
 
   const getFestivalData = async () => {
-    const result = await festivalApi
+    const result = await DataFetchApi
       .get("festival_data.json")
       .then((res) => res.data)
       .catch((error) => console.log(error));
