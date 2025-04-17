@@ -1,49 +1,74 @@
-# 크롤링시 필요한 라이브러리 import
-from bs4 import BeautifulSoup
-import requests
-import csv
+import os
 import json
+import requests
+from bs4 import BeautifulSoup
 
-# ConnectionError 방지용
-headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Whale/3.21.192.18"}
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Whale/3.21.192.18"
+}
+
 pageNums = [1, 51, 101, 151, 201]
 JoinSongsData = []
 songsId = []
 
-for j in pageNums:
-  url = "https://www.melon.com/artist/songPaging.htm?startIndex="+str(j)+"&pageSize=50&listType=F&orderBy=ISSUE_DATE&artistId=786648"
-  songs = requests.get(url, headers=headers)
-  songsHtml = BeautifulSoup(songs.text,"html.parser")
-  totalSongs = songsHtml.select('table > tbody > tr')
+# 저장 경로
+save_path = "src/crawlingData/join_songs_data.json"
+backup_path = "src/crawlingData/join_songs_data_backup.json"
 
-  for i in range(len(totalSongs)):
-    m = totalSongs[i]
-    try:
-      songsId.append(m.select_one('input.input_check')['value'])
-      JoinSongsData.append({
-        "no": m.select_one('td.no > div.wrap').text,
-        "songId": m.select_one('input.input_check')['value'],
-        "title": m.select_one('a.fc_gray').text,
-        "artists": m.select_one('span.checkEllipsis').text,
-        "ablum": m.select('div.ellipsis')[2].text.strip(),
-        "types": "J"
-      })
-    except Exception as e:
-      continue
+try:
+    for j in pageNums:
+        url = f"https://www.melon.com/artist/songPaging.htm?startIndex={j}&pageSize=50&listType=F&orderBy=ISSUE_DATE&artistId=786648"
+        songs = requests.get(url, headers=headers, timeout=5)
+        songs.raise_for_status()
+        songsHtml = BeautifulSoup(songs.text, "html.parser")
+        totalSongs = songsHtml.select("table > tbody > tr")
 
-# 곡 상세정보 가져오기
-for i in range(0, len(JoinSongsData)):
-  url = "https://www.melon.com/song/detail.htm?songId="+str(songsId[i])
-  song = requests.get(url, headers=headers)
-  songHtml = BeautifulSoup(song.text, "html.parser")
-  info = songHtml.find('div', attrs={'id':'conts'})
-  meta = info.find('dl', attrs={'class':'list'})
-  release = meta.select('dd')[1].text
-  imgSource = info.find('img', attrs={'width': '282'})['src']
+        for m in totalSongs:
+            try:
+                songId = m.select_one("input.input_check")["value"]
+                songsId.append(songId)
+                JoinSongsData.append(
+                    {
+                        "no": m.select_one("td.no > div.wrap").text,
+                        "songId": songId,
+                        "title": m.select_one("a.fc_gray").text,
+                        "artists": m.select_one("span.checkEllipsis").text,
+                        "ablum": m.select("div.ellipsis")[2].text.strip(),
+                        "types": "J",
+                    }
+                )
+            except Exception:
+                continue
 
-  JoinSongsData[i]["release"] = release
-  JoinSongsData[i]["imgSource"] = imgSource
+    # 곡 상세정보 추가
+    for i in range(len(JoinSongsData)):
+        url = f"https://www.melon.com/song/detail.htm?songId={songsId[i]}"
+        song = requests.get(url, headers=headers, timeout=5)
+        song.raise_for_status()
+        songHtml = BeautifulSoup(song.text, "html.parser")
+        info = songHtml.find("div", attrs={"id": "conts"})
+        meta = info.find("dl", attrs={"class": "list"})
+        release = meta.select("dd")[1].text
+        imgSource = info.find("img", attrs={"width": "282"})["src"]
 
-# json 형식으로 만들기
-with open('src/crawlingData/join_songs_data.json', "w", encoding="UTF-8-sig") as f_write:
-  json.dump(JoinSongsData, f_write, ensure_ascii=False, indent=4)
+        JoinSongsData[i]["release"] = release
+        JoinSongsData[i]["imgSource"] = imgSource
+
+except Exception as e:
+    JoinSongsData = []
+
+# 크롤링 실패 또는 빈 리스트인 경우 → 백업 데이터 사용
+if not JoinSongsData:
+    if os.path.exists(backup_path):
+        with open(backup_path, "r", encoding="utf-8-sig") as backup_file:
+            JoinSongsData = json.load(backup_file)
+    else:
+        JoinSongsData = []
+
+# 정상 데이터 저장 및 백업 갱신
+if JoinSongsData:
+    with open(save_path, "w", encoding="utf-8-sig") as f:
+        json.dump(JoinSongsData, f, ensure_ascii=False, indent=4)
+
+    with open(backup_path, "w", encoding="utf-8-sig") as backup:
+        json.dump(JoinSongsData, backup, ensure_ascii=False, indent=4)
