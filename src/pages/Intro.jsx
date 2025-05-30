@@ -1,5 +1,5 @@
 import React from "react";
-import faceImg from "../assets/images/minsik.webp";
+import faceImg from "../assets/images/newMinsik.webp";
 import Header from "../components/Header";
 import PageName from "../components/PageName";
 import ImgBox from "../components/ImgBox";

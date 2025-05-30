@@ -9,7 +9,7 @@ const ImgBox = () => {
   };
 
   return (
-    <article className="flex flex-row overflow-x-auto m-8 py-3">
+    <article className="flex flex-row overflow-x-auto my-8 py-3">
       {imgUrls.map((imgUrl) => {
         return (
           <div key={imgUrl} className="w-full h-full">
