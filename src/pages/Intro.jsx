@@ -9,9 +9,11 @@ import MetadataTemplate from "../SEO/MetadataTemplate";
 import Footer from "../components/Footer";
 import mouseIcon from "../assets/images/icons/mouseIcon.webp";
 import GotoTopButton from "../components/GotoTopButton";
-import { dday } from "../utils/date";
+import { dday, convertDday } from "../utils/date";
 
 const Intro = (props) => {
+  let debutDays = dday();
+  let { years, months, days } = convertDday(debutDays);
   return (
     <>
       <MetadataTemplate
@@ -42,7 +44,7 @@ const Intro = (props) => {
               <li className="font-Pretendard text-lg">
                 데뷔: 2015.08.07{" "}
                 <span className="bg-slate-500 text-white font-Pretendard text-lg">
-                  D+{dday()}
+                  D+{debutDays} ({years}년 {months}개월 {days}일째)
                 </span>
               </li>
               <li className="font-Pretendard text-lg">
