@@ -6,7 +6,7 @@ const NewsItem = ({ id, title, link, content, media, date }) => {
       className=" bg-gray-100 rounded-lg px-4 py-4 mb-4 hover:bg-main-blue group"
       key={id}
     >
-      <h3 className="font-Pretendard font-bold text-lg py-2 leading-tight group-hover:text-white">
+      <h3 className="font-Pretendard font-bold text-lg py-2 group-hover:text-white">
         {title}
       </h3>
       <p className="leading-none">
@@ -17,7 +17,7 @@ const NewsItem = ({ id, title, link, content, media, date }) => {
           rel="noreferrer"
           aria-describedby="클릭 시 뉴스 원문을 볼 수 있습니다."
         >
-          {content.slice(0, 90) + "... 더보기"}
+          {content.slice(0, 150) + "... 더보기"}
         </a>
       </p>
       <p className="text-right pt-2">
