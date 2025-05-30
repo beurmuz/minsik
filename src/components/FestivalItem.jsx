@@ -9,9 +9,9 @@ const FestivalItem = ({ festivalInfo }) => {
 
   return (
     <li className="w-full">
-      <div className="w-72">
+      <div className="w-72 h-96 mr-5 bg-gray-300">
         <img
-          className="max-w-full h-auto"
+          className="w-full h-full object-contain"
           src={imgUrl}
           alt={title}
           onError={onErrorImg}
