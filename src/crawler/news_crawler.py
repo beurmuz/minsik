@@ -103,8 +103,26 @@ if not newsData:
     else:
         newsData = []
 
-# newsData가 존재할 경우 저장 + 백업 갱신
+# newsData가 존재할 경우 날짜 기준 최신순 정렬 후 저장 + 백업 갱신
 if newsData:
+    # 날짜 기준으로 최신순 정렬 (날짜가 없는 경우는 맨 뒤로)
+    def parse_date(date_str):
+        """날짜 문자열을 datetime 객체로 변환"""
+        if not date_str:
+            return datetime.min  # 날짜가 없으면 가장 오래된 것으로 처리
+        try:
+            # "YYYY.MM.DD" 형식 파싱
+            return datetime.strptime(date_str, "%Y.%m.%d")
+        except:
+            return datetime.min  # 파싱 실패 시 가장 오래된 것으로 처리
+    
+    # 날짜 기준 내림차순 정렬 (최신순)
+    newsData.sort(key=lambda x: parse_date(x.get("date", "")), reverse=True)
+    
+    # 정렬 후 id 재할당
+    for i, news in enumerate(newsData):
+        news["id"] = i
+    
     with open(save_path, "w", encoding="utf-8-sig") as f:
         json.dump(newsData, f, ensure_ascii=False, indent=4)
 
