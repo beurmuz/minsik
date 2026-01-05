@@ -1,11 +1,7 @@
-import React from "react";
-import { Route, Switch } from "react-router";
-
-export default (
-  <Switch>
-    <Route path={"/"} />
-    <Route path={"/intro"} />
-    <Route path={"/news"} />
-    <Route path={"/songs"} />
-  </Switch>
-);
+// React Router v6용 sitemap 라우트 정의
+export default [
+  "/",
+  "/intro",
+  "/news",
+  "/songs",
+];
