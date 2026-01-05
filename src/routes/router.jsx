@@ -14,7 +14,11 @@ const Router = () => {
   const { showMenu } = menuStore((state) => state);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_relativeSplatPath: true,
+      }}
+    >
       <Suspense fallback={<Loading />}>
         <div className="w-screen h-screen bg-white">
           <Routes>

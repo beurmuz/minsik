@@ -8,7 +8,7 @@ const Footer = () => {
         Contact | fallinta2@gmail.com
       </p>
       <p className=" text-sky-700 font-NotoSerif text-xs">
-        Copyright | ⓒ {getYear()} beurmuz. All rights reserved.
+        Copyright | ⓒ 2023-{getYear()} beurmuz. All rights reserved.
       </p>
     </div>
   );
