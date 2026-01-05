@@ -56,8 +56,8 @@
     ]
   },
   "reactHydratable": {
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
-    "timeout": 30000
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+    "timeout": 60000
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
