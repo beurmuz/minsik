@@ -8,7 +8,7 @@ const FestivalItem = ({ festivalInfo }) => {
   };
 
   return (
-    <li className="w-full">
+    <li className="flex-shrink-0">
       <div className="w-72 h-96 mr-5 bg-gray-300">
         <img
           className="w-full h-full object-contain"

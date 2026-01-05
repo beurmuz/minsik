@@ -19,7 +19,7 @@ const FestivalsList = (props) => {
   }, []);
 
   return (
-    <article className="w-screen h-screen flex flex-col justify-center p-10 animate-pageLoadEffect">
+    <article className="w-full min-h-screen flex flex-col justify-center p-10 animate-pageLoadEffect">
       <div className="flex flex-row justify-between pt-1 px-1 max-sm:flex-col">
         <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">
           최신 공연 정보
@@ -28,7 +28,7 @@ const FestivalsList = (props) => {
           update: 매주 수요일 9시
         </p>
       </div>
-      <ol className="flex flex-row overflow-x-auto py-5">
+      <ol className="flex flex-row overflow-x-auto overflow-y-hidden py-5">
         {festivals &&
           festivals.map((festival, index) => {
             return <FestivalItem festivalInfo={festival} key={index} />;
