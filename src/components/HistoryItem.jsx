@@ -18,6 +18,7 @@ const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
           alt="historyImg"
           className="max-w-full h-auto"
           onError={onErrorImg}
+          loading="lazy"
         />
         {newsUrl && (
           <p className="text-right">

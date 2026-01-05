@@ -19,6 +19,7 @@ const ImgBox = () => {
                 src={imgUrl}
                 alt="식케이 사진"
                 onError={onErrorImg}
+                loading="lazy"
               />
             </div>
           </div>

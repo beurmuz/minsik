@@ -15,6 +15,7 @@ const FestivalItem = ({ festivalInfo }) => {
           src={imgUrl}
           alt={title}
           onError={onErrorImg}
+          loading="lazy"
         />
       </div>
       <ol className="py-5">

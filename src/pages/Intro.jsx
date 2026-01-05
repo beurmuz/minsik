@@ -32,7 +32,7 @@ const Intro = (props) => {
           <GotoTopButton />
           <section className="flex flex-col m-auto animate-pageLoadEffect">
             <div className="m-auto w-56 max-sm:w-48">
-              <img src={faceImg} alt="식케이 프로필 사진" />
+              <img src={faceImg} alt="식케이 프로필 사진" loading="lazy" />
             </div>
             <ol>
               <li className="font-Pretendard text-3xl font-bold mt-7 mb-1 max-sm:text-2xl">

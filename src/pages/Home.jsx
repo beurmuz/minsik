@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import homeLogo from "../assets/images/homeLogo.svg";
 import { Link } from "react-router-dom";
 import MetadataTemplate from "../SEO/MetadataTemplate";
+import { Helmet } from "react-helmet-async";
 import imageURL from "../assets/images/back.webp";
 
 const Home = (props) => {
@@ -18,6 +19,10 @@ const Home = (props) => {
         ogTitle={"SIK-K 사이트"}
         ogDescription={"8년차 팬이 만든 SIK-K(식케이) 웹 사이트"}
       />
+      {/* 배경 이미지 preload for LCP */}
+      <Helmet>
+        <link rel="preload" as="image" href={imageURL} fetchPriority="high" />
+      </Helmet>
       <div
         className="w-full h-full flex flex-col justify-between bg-cover bg-center overflow-x-hidden px-52 max-lg:px-32 max-md:px-0"
         style={{
@@ -30,6 +35,7 @@ const Home = (props) => {
             src={homeLogo}
             className="m-auto w-72 animate-[spin_10s_linear_infinite] "
             alt="home Logo"
+            fetchPriority="high"
           />
           <p className=" h-10 flex items-center m-auto">
             <Link to="/intro">

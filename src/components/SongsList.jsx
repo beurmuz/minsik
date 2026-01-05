@@ -73,7 +73,10 @@ const SongsList = (props) => {
             >
               발매 ({releaseNums})
             </button>
-            <span className="border-r border-gray-400 h-4 my-auto" aria-hidden="true"></span>
+            <span
+              className="border-r border-gray-400 h-4 my-auto"
+              aria-hidden="true"
+            ></span>
             <button
               type="button"
               aria-label={`참여 곡 목록 보기, 총 ${joinNums}개`}
@@ -115,7 +118,11 @@ const SongsList = (props) => {
                     }}
                     className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-blue rounded"
                   >
-                    <img src={releaseAlbums[album][0]} alt={`${album} 앨범 커버`} />
+                    <img
+                      src={releaseAlbums[album][0]}
+                      alt={`${album} 앨범 커버`}
+                      loading="lazy"
+                    />
                   </li>
                 );
               })
@@ -147,7 +154,11 @@ const SongsList = (props) => {
                     }}
                     className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-blue rounded"
                   >
-                    <img src={joinAlbums[album][0]} alt={`${album} 앨범 커버`} />
+                    <img
+                      src={joinAlbums[album][0]}
+                      alt={`${album} 앨범 커버`}
+                      loading="lazy"
+                    />
                   </li>
                 );
               })}

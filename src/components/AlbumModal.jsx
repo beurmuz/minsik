@@ -75,7 +75,7 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
         <article className="flex flex-col w-full px-10 overflow-y-auto ">
           <div className="flex flex-row pt-3">
             <div className="p-auto w-1/4">
-              <img src={albumImgSrc} alt={`${albumName} img`} />
+              <img src={albumImgSrc} alt={`${albumName} img`} loading="lazy" />
             </div>
             <div className="flex flex-col w-full my-auto ml-3 text-left ">
               <h3
