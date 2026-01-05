@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { menuStore } from "../shared/store";
 import { useNavigate } from "react-router-dom";
 import closeIcon from "../assets/images/icons/closeIcon.webp";
 
 const Menu = (props) => {
   const { showMenu, setShowMenu } = menuStore((state) => state);
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     if (showMenu) setShowMenu();
-  };
+  }, [showMenu, setShowMenu]);
 
   let navigate = useNavigate();
   const gotoPage = (pageName) => {
@@ -35,7 +35,7 @@ const Menu = (props) => {
       $body.ariaHidden = false;
       window.removeEventListener("keydown", handleEscape);
     };
-  }, [showMenu]);
+  }, [showMenu, closeMenu]);
 
   return (
     <div
