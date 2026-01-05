@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild": "react-hydratable"
+    "postbuild": "PUPPETEER_ARGS='--no-sandbox --disable-setuid-sandbox' react-hydratable"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +53,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "reactHydratable": {
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "timeout": 30000
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
