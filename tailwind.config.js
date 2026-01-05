@@ -34,6 +34,9 @@ module.exports = {
         pageLoadEffect: "fadeIn 1.5s ease-out",
         fadeInEffect: "fadeIn 1s ease-out",
       },
+      height: {
+        screen: "100dvh", // 모바일 Safari viewport 높이 문제 해결
+      },
     },
   },
   plugins: [],
