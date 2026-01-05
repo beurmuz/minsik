@@ -13,9 +13,9 @@ const ImgBox = () => {
       {imgUrls.map((imgUrl) => {
         return (
           <div key={imgUrl} className="w-full h-full">
-            <div className="w-72 mr-5 max-[380px]:w-64">
+            <div className="w-72 mr-5 max-sm:w-64">
               <img
-                className=" h-[30rem] object-cover max-[380px]:h-[24rem]"
+                className=" h-[30rem] object-cover max-sm:h-[24rem]"
                 src={imgUrl}
                 alt="식케이 사진"
                 onError={onErrorImg}

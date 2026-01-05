@@ -22,7 +22,7 @@ const Songs = (props) => {
         ogTitle={"SIK-K 노래 구경하기"}
         ogDescription={"식케이의 최신 앨범, 노래 정보 확인하기"}
       />
-      <div className="w-full flex flex-col bg-white px-52 max-[900px]:px-32 max-[800px]:px-0">
+      <div className="w-full flex flex-col bg-white px-52 max-lg:px-32 max-md:px-0">
         <Header changeColor={true} />
         <GotoTopButton />
         <LatestSong songInfo={releaseList[0]} />

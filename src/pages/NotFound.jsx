@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 const NotFound = (props) => {
   return (
-    <div className=" bg-white px-52 max-[900px]:px-32 max-[800px]:px-0">
+    <div className=" bg-white px-52 max-lg:px-32 max-md:px-0">
       <section className="w-full h-screen flex flex-col">
         <BackHeader />
         <div className="flex flex-col m-auto text-center">

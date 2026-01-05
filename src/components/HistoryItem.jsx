@@ -12,7 +12,7 @@ const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
       key={keys}
     >
       {children}
-      <div className="min-[540px]:w-1/2 min-[700px]:w-1/3">
+      <div className="sm:w-1/2 md:w-1/3">
         <img
           src={imgUrl}
           alt="historyImg"

@@ -83,7 +83,7 @@ const SongsList = (props) => {
             </button>
           </nav>
         </div>
-        <ol className="grid grid-cols-3 gap-3 min-[750px]:grid-cols-4 min-[1000px]:grid-cols-6">
+        <ol className="grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-6">
           {releaseAlbums && orderState === "release"
             ? Object.keys(releaseAlbums).map((album) => {
                 return (

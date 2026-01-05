@@ -18,11 +18,11 @@ const News = (props) => {
         ogTitle={"요즘 SIK-K는?"}
         ogDescription={"식케이의 최신 뉴스, 공연 정보 확인하기"}
       />
-      <div className="w-full flex flex-col bg-white px-52 max-[900px]:px-32 max-[800px]:px-0">
+      <div className="w-full flex flex-col bg-white px-52 max-lg:px-32 max-md:px-0">
         <Header changeColor={true} />
         <GotoTopButton />
         <section className="m-10 animate-pageLoadEffect">
-          <article className="flex flex-row justify-between pt-1 px-1 max-[350px]:flex-col">
+          <article className="flex flex-row justify-between pt-1 px-1 max-sm:flex-col">
             <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">
               최신 뉴스
             </h2>

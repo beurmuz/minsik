@@ -20,7 +20,7 @@ const FestivalsList = (props) => {
 
   return (
     <article className="w-screen h-screen flex flex-col justify-center p-10 animate-pageLoadEffect">
-      <div className="flex flex-row justify-between pt-1 px-1 max-[350px]:flex-col">
+      <div className="flex flex-row justify-between pt-1 px-1 max-sm:flex-col">
         <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">
           최신 공연 정보
         </h2>

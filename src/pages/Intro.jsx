@@ -25,17 +25,17 @@ const Intro = (props) => {
         ogTitle={"SIK-K가 누구?"}
         ogDescription={"SIK-K에 대해 알아보기"}
       />
-      <div className="w-full flex flex-col bg-white px-52 max-[900px]:px-32 max-[800px]:px-0">
+      <div className="w-full flex flex-col bg-white px-52 max-lg:px-32 max-md:px-0">
         {/* info */}
         <div className="h-screen flex flex-col text-center">
           <Header changeColor={true} />
           <GotoTopButton />
           <section className="flex flex-col m-auto animate-pageLoadEffect">
-            <div className="m-auto w-56 max-[380px]:w-48">
+            <div className="m-auto w-56 max-sm:w-48">
               <img src={faceImg} alt="식케이 프로필 사진" />
             </div>
             <ol>
-              <li className="font-Pretendard text-3xl font-bold mt-7 mb-1 max-[380px]:text-2xl">
+              <li className="font-Pretendard text-3xl font-bold mt-7 mb-1 max-sm:text-2xl">
                 권민식 (SIK-K)
               </li>
               <li className="font-Pretendard font-xs mb-3">
@@ -78,7 +78,7 @@ const Intro = (props) => {
         <section className="w-full h-screen flex flex-col justify-center">
           <PageName>Biography</PageName>
           <div className="px-10">
-            <article className="font-Pretendard text-base font-base max-[380px]:text-sm">
+            <article className="font-Pretendard text-base font-base max-sm:text-sm">
               KC 레이블의 대표 SIK-K는 꾸준하게 서울을 중심으로 새로운 사운드를
               전 세계에 선사하고 있는 아티스트이다.
               <br />
