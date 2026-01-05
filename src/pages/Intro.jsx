@@ -56,7 +56,7 @@ const Intro = (props) => {
                   href="https://en.wikipedia.org/wiki/Sik-K"
                   target="_blank"
                   rel="noreferrer"
-                  className="font-Pretendard font-normal text-gray-500"
+                  className="font-Pretendard font-normal text-gray-700 focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
                   aria-describedby="클릭 시 위키피디아로 연결됩니다."
                 >
                   * more info ...
@@ -101,7 +101,7 @@ const Intro = (props) => {
                 href="https://vibe.naver.com/artist/331653"
                 target="_blank"
                 rel="noreferrer"
-                className="font-Pretendard text-gray-500 text-sm"
+                className="font-Pretendard text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
                 aria-describedby="클릭 시 네이버 바이브로 연동됩니다."
               >
                 [출처] 네이버 바이브

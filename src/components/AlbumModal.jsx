@@ -25,11 +25,23 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
     const overflow = $body.style.overflow;
     $body.style.overflow = "hidden";
     $body.ariaHidden = true;
+
+    // ESC 키로 모달 닫기
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && showModal) {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
     return () => {
       $body.style.overflow = overflow;
+      $body.ariaHidden = false;
+      window.removeEventListener("keydown", handleEscape);
     };
     // eslint-disable-next-line
-  }, []);
+  }, [showModal]);
 
   const closeModal = () => {
     setShowModal(!showModal);
@@ -38,22 +50,24 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
   return (
     <div
       className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle animate-ablumModalLoadEffect"
-      role="alertdialog"
+      role="dialog"
       aria-modal="true"
+      aria-labelledby="album-modal-title"
     >
       <nav className="flex flex-col w-5/6 md:w-3/4 lg:w-3/5 h-4/5 fixed top-0 bottom-0 left-0 right-0 m-auto pb-10 text-center z-99 bg-white rounded-md ">
         <div className="flex flex-row justify-between">
           <span />
           <button
             type="button"
-            name="close modal"
+            aria-label="앨범 모달 닫기"
             onClick={closeModal}
-            className="hover:cursor-pointer text-main-blue mt-6 mr-7"
+            className="hover:cursor-pointer text-main-blue mt-6 mr-7 focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
           >
             <img
               src={closeIcon}
               className="w-[30px] h-[30px]"
-              alt="close Icon"
+              alt=""
+              aria-hidden="true"
             />
           </button>
         </div>
@@ -64,7 +78,10 @@ const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
               <img src={albumImgSrc} alt={`${albumName} img`} />
             </div>
             <div className="flex flex-col w-full my-auto ml-3 text-left ">
-              <h3 className="font-Pretendard text-xl font-bold text-main-blue leading-snug">
+              <h3
+                id="album-modal-title"
+                className="font-Pretendard text-xl font-bold text-main-blue leading-snug"
+              >
                 {albumName}
               </h3>
               <h4 className="font-Pretendard text-sm text-main-blue">

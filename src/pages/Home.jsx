@@ -35,8 +35,8 @@ const Home = (props) => {
             <Link to="/intro">
               <button
                 type="button"
-                name="go to Introduce page"
-                className="font-NotoSerif text-white text-xl font-bold"
+                aria-label="소개 페이지로 이동"
+                className="font-NotoSerif text-white text-xl font-bold focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded px-2 py-1"
               >
                 who is he? →
               </button>

@@ -30,7 +30,7 @@ const FestivalItem = ({ festivalInfo }) => {
             {title}
           </a>
         </li>
-        <li className="font-Pretendard text-gray-500 font-semibold">{date}</li>
+        <li className="font-Pretendard text-gray-700 font-semibold">{date}</li>
       </ol>
     </li>
   );

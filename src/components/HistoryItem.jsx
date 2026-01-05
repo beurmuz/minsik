@@ -23,7 +23,7 @@ const HistoryItem = ({ imgUrl, newsUrl, children, keys }) => {
           <p className="text-right">
             <a
               href={newsUrl}
-              className="text-sm text-gray-500 font-Pretendard"
+              className="text-sm text-gray-700 font-Pretendard"
               aria-describedby="클릭 시 상세 페이지로 넘어갑니다."
             >
               자세히 보기

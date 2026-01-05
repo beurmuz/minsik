@@ -66,17 +66,19 @@ const SongsList = (props) => {
           <nav className="flex flex-row">
             <button
               type="button"
-              name="show the release song list"
-              className="mr-2 font-Pretendard text-gray-500 hover:text-main-blue"
+              aria-label={`발매 곡 목록 보기, 총 ${releaseNums}개`}
+              aria-pressed={orderState === "release"}
+              className="mr-2 font-Pretendard text-gray-700 hover:text-main-blue focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded px-2"
               onClick={(e) => setOrderState("release")}
             >
               발매 ({releaseNums})
             </button>
-            <span className="border-r border-gray-500 h-4 my-auto"></span>
+            <span className="border-r border-gray-400 h-4 my-auto" aria-hidden="true"></span>
             <button
               type="button"
-              name="show the join song list"
-              className="ml-2 font-Pretendard text-gray-500 hover:text-main-blue"
+              aria-label={`참여 곡 목록 보기, 총 ${joinNums}개`}
+              aria-pressed={orderState === "join"}
+              className="ml-2 font-Pretendard text-gray-700 hover:text-main-blue focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded px-2"
               onClick={() => setOrderState("join")}
             >
               참여 ({joinNums})
@@ -89,6 +91,9 @@ const SongsList = (props) => {
                 return (
                   <li
                     key={album}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`${album} 앨범 상세 정보 보기`}
                     onClick={() =>
                       openModal([
                         album,
@@ -97,8 +102,20 @@ const SongsList = (props) => {
                         "R",
                       ])
                     }
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        openModal([
+                          album,
+                          releaseAlbums[album][0],
+                          releaseAlbums[album][1],
+                          "R",
+                        ]);
+                      }
+                    }}
+                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-blue rounded"
                   >
-                    <img src={releaseAlbums[album][0]} alt="앨범 이미지" />
+                    <img src={releaseAlbums[album][0]} alt={`${album} 앨범 커버`} />
                   </li>
                 );
               })
@@ -106,6 +123,9 @@ const SongsList = (props) => {
                 return (
                   <li
                     key={album}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`${album} 앨범 상세 정보 보기`}
                     onClick={() =>
                       openModal([
                         album,
@@ -114,13 +134,25 @@ const SongsList = (props) => {
                         "J",
                       ])
                     }
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        openModal([
+                          album,
+                          joinAlbums[album][0],
+                          joinAlbums[album][1],
+                          "J",
+                        ]);
+                      }
+                    }}
+                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-blue rounded"
                   >
-                    <img src={joinAlbums[album][0]} alt="앨범 이미지" />
+                    <img src={joinAlbums[album][0]} alt={`${album} 앨범 커버`} />
                   </li>
                 );
               })}
         </ol>
-        <p className="font-Pretendard text-sm py-5 text-gray-500">
+        <p className="font-Pretendard text-sm py-5 text-gray-700">
           * 앨범은 최신순으로 정렬되어 있습니다. <br />* 매주 수요일 오전
           9시마다 정보가 업데이트 됩니다.
         </p>

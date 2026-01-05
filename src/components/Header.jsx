@@ -14,8 +14,18 @@ const Header = ({ changeColor }) => {
       <Link to="/">
         <h1 className="font-NotoSerif text-4xl font-semibold ">SIK-K</h1>
       </Link>
-      <button type="button" name="open Menu" onClick={openMenu}>
-        <img src={menuBIcon} className="w-[40px] h-[40px]" alt="open Icon" />
+      <button
+        type="button"
+        aria-label="메뉴 열기"
+        onClick={openMenu}
+        className="focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
+      >
+        <img
+          src={menuBIcon}
+          className="w-[40px] h-[40px]"
+          alt=""
+          aria-hidden="true"
+        />
       </button>
     </header>
   ) : (
@@ -23,8 +33,18 @@ const Header = ({ changeColor }) => {
       <Link to="/">
         <h1 className="font-NotoSerif text-4xl font-semibold ">SIK-K</h1>
       </Link>
-      <button type="button" name="open Menu" onClick={openMenu}>
-        <img src={menuWIcon} className="w-[40px] h-[40px]" alt="open Icon" />
+      <button
+        type="button"
+        aria-label="메뉴 열기"
+        onClick={openMenu}
+        className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded"
+      >
+        <img
+          src={menuWIcon}
+          className="w-[40px] h-[40px]"
+          alt=""
+          aria-hidden="true"
+        />
       </button>
     </header>
   );

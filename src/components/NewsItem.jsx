@@ -11,7 +11,7 @@ const NewsItem = ({ id, title, link, content, media, date }) => {
       </h3>
       <p className="leading-none">
         <a
-          className="font-Pretendard text-sm group-hover:text-white "
+          className="font-Pretendard text-sm text-gray-800 group-hover:text-white focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
           href={link}
           target="_blank"
           rel="noreferrer"

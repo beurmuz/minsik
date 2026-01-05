@@ -7,8 +7,17 @@ const BackHeader = (props) => {
 
   return (
     <div className="flex flex-row h-1/8 justify-start mx-7 mt-10 text-main-blue">
-      <button onClick={() => navigate(-1)}>
-        <img src={backIcon} className="w-[50px] h-[50px]" alt="back Icon" />
+      <button
+        onClick={() => navigate(-1)}
+        aria-label="이전 페이지로 돌아가기"
+        className="focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
+      >
+        <img
+          src={backIcon}
+          className="w-[50px] h-[50px]"
+          alt=""
+          aria-hidden="true"
+        />
       </button>
     </div>
   );
