@@ -7,6 +7,7 @@ import { dataStore } from "../shared/store";
 import SongChart from "../components/SongChart";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import GotoTopButton from "../components/GotoTopButton";
+import PageContainer from "../components/PageContainer";
 
 const Songs = (props) => {
   const { releaseList } = dataStore((state) => state);
@@ -22,12 +23,14 @@ const Songs = (props) => {
         ogTitle={"SIK-K 노래 구경하기"}
         ogDescription={"식케이의 최신 앨범, 노래 정보 확인하기"}
       />
-      <div className="w-full flex flex-col bg-white px-52 max-lg:px-32 max-md:px-0">
+      <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
         <GotoTopButton />
-        <LatestSong songInfo={releaseList[0]} />
-        <SongChart />
-        <SongsList />
+        <PageContainer>
+          <LatestSong songInfo={releaseList[0]} />
+          <SongChart />
+          <SongsList />
+        </PageContainer>
         <Footer />
       </div>
     </>

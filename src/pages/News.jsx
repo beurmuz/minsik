@@ -3,10 +3,12 @@ import Header from "../components/Header";
 import NewsList from "../components/NewsList";
 import Footer from "../components/Footer";
 import FestivalsList from "../components/FestivalsList";
+import MainCard from "../components/MainCard";
+import PageContainer from "../components/PageContainer";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import GotoTopButton from "../components/GotoTopButton";
 
-const News = (props) => {
+const News = () => {
   return (
     <>
       <MetadataTemplate
@@ -18,25 +20,26 @@ const News = (props) => {
         ogTitle={"요즘 SIK-K는?"}
         ogDescription={"식케이의 최신 뉴스, 공연 정보 확인하기"}
       />
-      <div className="w-full flex flex-col bg-white px-52 max-lg:px-32 max-md:px-0">
+      <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
         <GotoTopButton />
-        <section className="m-10 animate-pageLoadEffect">
-          <article className="flex flex-row justify-between pt-1 px-1 max-sm:flex-col">
-            <h2 className="font-Pretendard text-main-blue/80 text-2xl font-bold">
-              최신 뉴스
-            </h2>
-            <p className="font-Pretendard text-gray-700 text-sm my-auto">
-              update: 매주 수요일 9시
-            </p>
-          </article>
-          <article>
-            <NewsList />
-          </article>
-        </section>
+        <PageContainer>
+          <section className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <MainCard title="최신 뉴스">
+                <NewsList />
+              </MainCard>
+            </div>
+            <div className="lg:col-span-1">
+              <MainCard title="공연 정보">
+                <div className="mt-4">
+                  <FestivalsList pastLimit={3} />
+                </div>
+              </MainCard>
+            </div>
+          </section>
+        </PageContainer>
 
-        {/* 페스티벌 정보 */}
-        <FestivalsList />
         <Footer />
       </div>
     </>

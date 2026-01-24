@@ -4,7 +4,7 @@ const LatestSong = ({ songInfo }) => {
   const { imgSource, ablum, artists, release } = { ...songInfo };
 
   return (
-    <section className="flex flex-row m-10 animate-pageLoadEffect">
+    <section className="flex flex-row animate-pageLoadEffect">
       <div className="w-1/2 sm:w-1/4">
         <img
           src={imgSource}

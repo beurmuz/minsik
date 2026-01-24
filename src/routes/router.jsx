@@ -19,8 +19,8 @@ const Router = () => {
         v7_relativeSplatPath: true,
       }}
     >
-      <Suspense fallback={<Loading />}>
-        <div className="w-screen h-screen bg-white">
+      <div className="w-screen h-screen overflow-x-hidden">
+        <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/intro" element={<Intro />} />
@@ -28,9 +28,14 @@ const Router = () => {
             <Route path="/songs" element={<Songs />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          {showMenu ? <Menu /> : ""}
-        </div>
-      </Suspense>
+        </Suspense>
+
+        {showMenu ? (
+          <Suspense fallback={null}>
+            <Menu />
+          </Suspense>
+        ) : null}
+      </div>
     </BrowserRouter>
   );
 };

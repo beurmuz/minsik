@@ -1,84 +1,214 @@
 {
+  "2026": [
+    {
+      "id": 43,
+      "month": "2026.01",
+      "content": "NOWIMYOUNG 신곡 'AH AH'에 식케이 피처링",
+      "imgUrl": "https://i0.wp.com/ariastar.net/wp-content/uploads/2025/05/Template-insta-post-2025-05-01T170142.274.png?fit=640%2C640&ssl=1",
+      "newsUrl": "https://ariastar.net/?p=5223"
+    },
+    {
+      "id": 42,
+      "month": "2026.01",
+      "content": "식케이 'Lalala (Snitch Club)' 공개",
+      "imgUrl": "https://i0.wp.com/ariastar.net/wp-content/uploads/2025/01/ab67616d0000b273891d93d1399c0f8f2bd75599.jpg?resize=640%2C640&ssl=1",
+      "newsUrl": "https://ariastar.net/?p=4526"
+    }
+  ],
   "2025": [
     {
-      "id": 18,
+      "id": 41,
+      "month": "2025.12",
+      "content": "POP A LOT 콘서트 성료",
+      "imgUrl": "https://image.edaily.co.kr/images/photo/files/NP/S/2025/12/PS25122400955.jpg",
+      "newsUrl": "https://www.edaily.co.kr/News/Read?newsId=04027846642401800&mediaCodeNo=257&OutLnkChk=Y"
+    },
+    {
+      "id": 40,
+      "month": "2025.11",
+      "content": "DIMO REX 신곡 'On The Table' 피처링 참여",
+      "imgUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/77/64/0f/77640ffc-0eb7-1b09-5cf2-995e37addbcb/5026854222950.jpg/416x416bb.webp",
+      "newsUrl": "https://music.apple.com/gb/song/on-the-table-feat-sik-k/1852500830"
+    },
+    {
+      "id": 39,
+      "month": "2025.11",
+      "content": "KOLLECTIVE, Seoul 콘서트 전석 매진",
+      "imgUrl": "https://img.mydaily.co.kr/photos/2025/11/21/2025112113554622341_l.jpg",
+      "newsUrl": "https://www.mydaily.co.kr/page/view/2025112114023499942"
+    },
+    {
+      "id": 38,
+      "month": "2025.08",
+      "content": "KC 컴필 앨범 'KC2.5' 발매",
+      "imgUrl": "http://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/086/591/241/86591241_1754543513645_1_600x600.JPG",
+      "newsUrl": "http://mw.genie.co.kr/detail/albumInfo?axnm=86591241"
+    },
+    {
+      "id": 37,
+      "month": "2025.06",
+      "content": "JMIN EP 'YIN & YANG' 공개(식케이 참여)",
+      "imgUrl": "https://hiphopkr.com/wp-content/uploads/2025/06/ab67616d0000b2737f6dc64de159604a5d55687f-600x600.webp",
+      "newsUrl": "https://hiphopkr.com/music-release/jmin-yin-and-yang-ep/"
+    },
+    {
+      "id": 36,
+      "month": "2025.03",
+      "content": "Sik-K & Lil Moshpit, 'K-FLIP+' 발매",
+      "imgUrl": "https://image.bugsm.co.kr/album/images/200/41163/4116386.jpg?version=20250712011629",
+      "newsUrl": "https://music.bugs.co.kr/album/4116386?wl_ref=list_tr_11_ar"
+    },
+    {
+      "id": 35,
       "month": "2025.02",
       "content": "Korean Hiphop Awards 2025 올해의 아티스트로 선정",
       "imgUrl": "http://hpawards2.cdn3.cafe24.com/2025/win/winner1.jpg"
+    },
+    {
+      "id": 34,
+      "month": "2025.01",
+      "content": "Sik-K & Lil Moshpit, 합작 EP 'K-FLIP' 발매",
+      "imgUrl": "data:image/jpeg;base64,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",
+      "newsUrl": "https://www.slist.kr/news/articleView.html?idxno=618571"
     }
   ],
   "2024": [
     {
-      "id": 17,
+      "id": 33,
+      "month": "2024.10",
+      "content": "싱글 'TRAP (feat. Jimmy Paige)' 발매",
+      "imgUrl": "https://i0.wp.com/ariastar.net/wp-content/uploads/2024/10/Screenshot-2024-10-04T123206.367.png?w=1280&ssl=1",
+      "newsUrl": "https://ariastar.net/?p=4095"
+    },
+    {
+      "id": 32,
+      "month": "2024.07",
+      "content": "HAON·vangdale·Sik-K, 'KCTAPE, Vol. 2' 발매",
+      "imgUrl": "https://t2.genius.com/unsafe/1536x0/https%3A%2F%2Fimages.genius.com%2F18e062825f37471ed4bdb83c7f556010.1000x1000x1.png",
+      "newsUrl": "https://genius.com/albums/Haon-vangdale-and-sik-k/Kctape-vol-2"
+    },
+    {
+      "id": 31,
+      "month": "2024.05",
+      "content": "HAON·vangdale·Sik-K, 'KCTAPE, Vol. 1' 발매",
+      "imgUrl": "https://static.wikia.nocookie.net/k-hip-hop/images/e/e8/Kctape%2C_vol._1_haon_vangdale_sik-k.png/revision/latest/scale-to-width-down/1000?cb=20240522092345",
+      "newsUrl": "https://khiphop.fandom.com/wiki/KCTape,_Vol._1"
+    },
+    {
+      "id": 30,
       "month": "2024.02",
       "content": "'3=1' 앨범 발매",
-      "imgUrl": "https://musicmeta-phinf.pstatic.net/album/030/878/30878845.jpg?type=r360Fll&v=20240221141040"
+      "imgUrl": "https://musicmeta-phinf.pstatic.net/album/030/878/30878845.jpg?type=r360Fll&v=20240221141040",
+      "newsUrl": "https://hiphopkr.com/music-release/albums/leellamarz-sik-k-haon-release-collaborative-ep-31/"
+    },
+    {
+      "id": 29,
+      "month": "2024.02",
+      "content": "JMIN EP 'Sorry I'm Late' 공개(식케이 참여)",
+      "imgUrl": "https://hiphopkr.com/wp-content/uploads/2024/02/JMIN-600x600.jpeg",
+      "newsUrl": "https://hiphopkr.com/music-release/music-videos/jmin-releases-ep-sorry-im-late/"
+    },
+    {
+      "id": 28,
+      "month": "2024.02",
+      "content": "Sik-K·HAON, 싱글 'KC (BUST IT DOWN)' 공개",
+      "imgUrl": "https://hiphopkr.com/wp-content/uploads/2024/02/KC-BUST-IT-DOWN-600x600.png",
+      "newsUrl": "https://hiphopkr.com/music-release/music-videos/sik-k-haon-drop-kc-bust-it-down-feat-leellamarz/"
     }
   ],
   "2023": [
     {
-      "id": 16,
+      "id": 27,
       "month": "2023.08",
       "content": "3년 만의 솔로 정규앨범 'POP A LOT' 발매",
       "imgUrl": "https://img.hankyung.com/photo/202308/BF.34190138.1.jpg",
       "newsUrl": "https://tenasia.hankyung.com/topic/article/2023080980314"
     },
     {
-      "id": 15,
+      "id": 26,
       "month": "2023.05",
       "content": "식케이, 레이블 ‘KC(케이씨)’ 설립",
       "imgUrl": "https://img.gqkorea.co.kr/gq/2023/05/style_6453463515ade-1200x1508.png",
       "newsUrl": "https://www.gqkorea.co.kr/2023/05/04/%EC%8B%9D%EC%BC%80%EC%9D%B4sik-k-%EB%A0%88%EC%9D%B4%EB%B8%94-%EC%BC%80%EC%9D%B4%EC%94%A8-%EB%9F%B0%EC%B9%AD/"
     },
     {
-      "id": 14,
+      "id": 25,
       "month": "2023.01",
       "content": "북미·유럽 투어 ‘POP A LOT’ 스타트",
       "imgUrl": "https://www.sportsw.kr/news/data/20230119/p1065600230911436_107_thum.jpg",
       "newsUrl": "https://www.sportsw.kr/news/newsview.php?ncode=1065600230911436"
     },
     {
-      "id": 13,
+      "id": 24,
       "month": "2023.01",
       "content": "'겐조 2023 F/W 컬렉션 초청'",
-
-      "imgUrl": "https://cdn.newsculture.press/news/photo/202301/516272_633333_3932.jpg",
+      "imgUrl": "https://cdn.nc.press/news/photo/202301/516272_633333_3932.jpg",
       "newsUrl": "https://www.newsculture.press/news/articleView.html?idxno=516272"
     }
   ],
   "2022": [
     {
-      "id": 12,
+      "id": 23,
       "month": "2022.07",
       "content": "하이어뮤직 전속계약 만료",
       "imgUrl": "https://cdnweb01.wikitree.co.kr/webdata/editor/202207/27/img_20220727092611_137e5ebb.webp",
       "newsUrl": "https://www.wikitree.co.kr/articles/775421"
     },
     {
-      "id": 11,
+      "id": 22,
       "month": "2022.01",
       "content": "전역 직후, 겐조 2022 가을&겨울 컬렉션에 유일한 한국 아티스트로 참석",
       "imgUrl": "https://image.ytn.co.kr/general/jpg/2022/0125/202201251637115595_d.jpg",
       "newsUrl": "https://star.ytn.co.kr/_sn/0117_202201251637115595"
     }
   ],
+  "2021": [
+    {
+      "id": 21,
+      "month": "2021.12",
+      "content": "식케이, 미복귀 만기 전역",
+      "imgUrl": "https://imgnews.pstatic.net/image/311/2021/12/28/0001390402_001_20211228082101384.jpg?type=w647",
+      "newsUrl": "https://m.entertain.naver.com/article/311/0001390402"
+    },
+    {
+      "id": 20,
+      "month": "2021.10",
+      "content": "에픽하이 'Face ID' 공개(Feat. GIRIBOY, Sik-K, JUSTHIS)",
+      "imgUrl": "https://img.youtube.com/vi/0opKLeNlZ_8/0.jpg",
+      "newsUrl": "https://www.youtube.com/watch?v=0opKLeNlZ_8"
+    },
+    {
+      "id": 19,
+      "month": "2021.01",
+      "content": "릴러말즈 '0(YOUNG)'에 식케이 피처링 참여",
+      "imgUrl": "https://image.bugsm.co.kr/album/images/200/203705/20370598.jpg?version=20251125070205",
+      "newsUrl": "https://music.bugs.co.kr/track/32114000?wl_ref=list_tr_08_ab"
+    }
+  ],
   "2020": [
     {
-      "id": 10,
+      "id": 18,
       "month": "2020.06",
       "content": "'잘 다녀오겠습니다'... 입대",
       "imgUrl": "https://www.breaknews.com/imgdata/breaknews_com/202006/2020062952326378.jpg",
       "newsUrl": "https://www.breaknews.com/739202"
     },
     {
-      "id": 9,
+      "id": 17,
       "month": "2020.06",
       "content": "정규 2집 ‘HEADLINER’ 발매",
       "imgUrl": "https://dimg.donga.com/wps/SPORTS/IMAGE/2020/06/11/101461111.1.jpg",
       "newsUrl": "https://sports.donga.com/article/all/20200611/101461112/1"
     },
     {
-      "id": 8,
+      "id": 16,
+      "month": "2020.03",
+      "content": "EP 'Officially OG' 발매",
+      "imgUrl": "https://img.tvreportcdn.de/cms-content/uploads/2020/03/24/32f30636-e8d8-47f4-bd23-ace9a44eedab.jpg",
+      "newsUrl": "https://tvreport.co.kr/music/article/424613/"
+    },
+    {
+      "id": 15,
       "month": "2020.02",
       "content": "'2020 F/W 패션위크' 오프화이트 파리 패션쇼 런웨이 모델",
       "imgUrl": "https://img.tvreportcdn.de/cms-content/uploads/2020/03/01/b0bbd601-bdf5-4379-80f4-035cc722bd1f.jpg",
@@ -87,23 +217,37 @@
   ],
   "2019": [
     {
-      "id": 7,
+      "id": 14,
       "month": "2019.06",
       "content": "첫 월드 투어 'FL1P Sik-K World Tour ASIA'",
       "imgUrl": "https://images.khan.co.kr/article/2019/06/03/l_2019060302000060400011381.jpg",
       "newsUrl": "https://sports.khan.co.kr/entertainment/sk_index.html?art_id=201906031000013&sec_id=540301&pt=nv"
     },
     {
-      "id": 6,
+      "id": 13,
       "month": "2019.02",
       "content": "데뷔 첫 정규앨범 ‘플립(FL1P)’ 발매",
       "imgUrl": "https://newsimg.sedaily.com/2019/02/26/1VFGNY86OA_1.jpg",
       "newsUrl": "https://www.sedaily.com/NewsView/1VFGNY86OA"
+    },
+    {
+      "id": 12,
+      "month": "2019.02",
+      "content": "식케이 “일 찾아서 해…박재범 신뢰받는 이유”(인터뷰)",
+      "imgUrl": "https://www.news1.kr/_next/image?url=https%3A%2F%2Fi3n.news1.kr%2Fsystem%2Fphotos%2F2019%2F2%2F15%2F3511777%2Fhigh.jpg&w=1920&q=75",
+      "newsUrl": "https://www.news1.kr/entertain/interview/3554958"
     }
   ],
   "2018": [
     {
-      "id": 5,
+      "id": 11,
+      "month": "2018.07",
+      "content": "싱글 'youth.wit.purpose' 발매",
+      "imgUrl": "https://img2.yna.co.kr/etc/inner/KR/2018/07/11/AKR20180711057900005_01_i_P4.jpg",
+      "newsUrl": "https://www.yna.co.kr/view/AKR20180711057900005"
+    },
+    {
+      "id": 10,
       "month": "2018.01",
       "content": "11트랙 수록 믹스테잎 ‘TRAPART’ 공개",
       "imgUrl": "https://cdn.topstarnews.net/news/photo/first/201801/img_349573_1.jpg",
@@ -112,30 +256,67 @@
   ],
   "2017": [
     {
-      "id": 4,
+      "id": 9,
       "month": "2017.09",
       "content": "세 번째 EP 앨범 ‘BOYCOLD’ 발매",
       "imgUrl": "https://cdn.topstarnews.net/news/photo/first/201709/img_307114_1.jpg",
       "newsUrl": "https://www.topstarnews.net/news/articleView.html?idxno=307114"
     },
     {
-      "id": 3,
+      "id": 8,
       "month": "2017.07",
       "content": "‘H.A.L.F’ 앨범 발매",
       "imgUrl": "https://file.mk.co.kr/meet/neds/2017/06/image_readtop_2017_375145_14966236592907067.png",
       "newsUrl": "https://www.mk.co.kr/star/hot-issues/view/2017/06/375145/"
     },
     {
-      "id": 2,
+      "id": 7,
+      "month": "2017.05",
+      "content": "식케이X크러쉬, 신곡 발매",
+      "imgUrl": "https://file.osen.co.kr/article/2017/05/25/201705251016778528_59263213281b1.jpg",
+      "newsUrl": "http://www.osen.co.kr/article/G1110652343"
+    },
+    {
+      "id": 6,
       "month": "2017.05",
       "content": "H1GHR MUSIC의 첫 아티스트로 입사",
       "imgUrl": "https://cdn.gukjenews.com/news/photo/201705/717345_505759_3015.jpg",
       "newsUrl": "https://www.gukjenews.com/news/articleView.html?idxno=717345"
     }
   ],
+  "2016": [
+    {
+      "id": 5,
+      "month": "2016.10",
+      "content": "Yelows Mob, 유럽 투어 ‘FLIP TOUR’ 개최",
+      "imgUrl": "https://unitedkpop.com/wp-content/uploads/2016/07/news_yelows.png",
+      "newsUrl": "https://unitedkpop.com/2016/07/event-sik-k-yelows-mob-flip-tour/"
+    },
+    {
+      "id": 4,
+      "month": "2016.08",
+      "content": "단독 콘서트 개최",
+      "imgUrl": "https://image.news1.kr/system/photos/2016/8/18/2087677/article.jpg/dims/optimize",
+      "newsUrl": "https://www.news1.kr/entertain/music/2750866"
+    },
+    {
+      "id": 3,
+      "month": "2016.07",
+      "content": "EP ‘FLIP’ 발매",
+      "imgUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/45/0a/e3/450ae3b6-bd90-9c94-5e9e-ff7be7814ac4/8809484116847_Cover.jpg/632x632bb.webp",
+      "newsUrl": "https://music.apple.com/au/album/flip/1608512913"
+    }
+  ],
   "2015": [
     {
-      "id": 0,
+      "id": 2,
+      "month": "2015.09",
+      "content": "힙합플레이야 인터뷰",
+      "imgUrl": "https://cdn.mania.kr/hiphopplaya/g2/data/old_img/article/L/20150901_144110071526.jpg",
+      "newsUrl": "https://hiphopplaya.com/g2/bbs/board.php?bo_table=interview&wr_id=14974"
+    },
+    {
+      "id": 1,
       "month": "2015.08",
       "content": "쇼미더머니4 출신 식케이,'My Man'으로 데뷔",
       "imgUrl": "https://file.mk.co.kr/meet/neds/2015/08/image_readtop_2015_758111_14389077402062249.jpeg",

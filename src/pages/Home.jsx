@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import { Helmet } from "react-helmet-async";
 import imageURL from "../assets/images/back.webp";
+import { SITE_CONTAINER } from "../shared/layout";
 
 const Home = (props) => {
   return (
@@ -21,21 +22,23 @@ const Home = (props) => {
       />
       {/* 배경 이미지 preload for LCP */}
       <Helmet>
-        <link rel="preload" as="image" href={imageURL} fetchPriority="high" />
+        <link rel="preload" as="image" href={imageURL} fetchpriority="high" />
       </Helmet>
       <div
-        className="w-full h-full flex flex-col justify-between bg-cover bg-center overflow-x-hidden px-52 max-lg:px-32 max-md:px-0"
+        className="w-full h-full flex flex-col justify-between bg-cover bg-center overflow-x-hidden"
         style={{
           backgroundImage: `url(${imageURL})`,
         }}
       >
         <Header />
-        <section className="m-10 h-3/5 flex flex-col text-center animate-pageLoadEffect">
+        <section
+          className={`${SITE_CONTAINER} h-3/5 flex flex-col text-center animate-pageLoadEffect`}
+        >
           <img
             src={homeLogo}
             className="m-auto w-72 animate-[spin_10s_linear_infinite] "
             alt="home Logo"
-            fetchPriority="high"
+            fetchpriority="high"
           />
           <p className=" h-10 flex items-center m-auto">
             <Link to="/intro">

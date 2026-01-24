@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { DataFetchApi } from "../shared/axios";
 import { dataStore } from "../shared/store";
-import AblumModal from "./AlbumModal";
+import AlbumModal from "./AlbumModal";
 
 const SongsList = (props) => {
   const {
@@ -44,17 +44,16 @@ const SongsList = (props) => {
   }, []);
 
   const openModal = (nowInfo) => {
-    setShowModal(!showModal);
     setClickedAlbum(nowInfo);
+    setShowModal(true);
   };
 
   return (
-    <section className="m-7 p-30 animate-pageLoadEffect">
+    <section className="w-full animate-pageLoadEffect">
       {showModal && (
-        <AblumModal
+        <AlbumModal
           albumInfo={clickedAlbum}
-          showModal={showModal}
-          setShowModal={setShowModal}
+          onClose={() => setShowModal(false)}
         />
       )}
       {/* 전체곡 리스트 */}

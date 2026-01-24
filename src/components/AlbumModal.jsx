@@ -1,130 +1,134 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { dataStore } from "../shared/store";
-import closeIcon from "../assets/images/icons/closeIcon.webp";
-import linkIcon from "../assets/images/icons/linkIcon.webp";
 
-const AblumModal = ({ albumInfo, showModal, setShowModal }) => {
+const AlbumModal = ({ albumInfo, onClose }) => {
   const [albumName, albumImgSrc, albumDate, ablumSort] = [...albumInfo];
   const { releaseList, joinList } = dataStore((state) => state);
-  const [albumData, setAlbumDatas] = useState([]);
+  const closeButtonRef = useRef(null);
 
-  const renderAblumList = () => {
-    if (ablumSort === "R") {
-      let keySongs = releaseList.filter((song) => song.ablum === albumName);
-      setAlbumDatas(keySongs);
-    } else {
-      let keySongs = joinList.filter((song) => song.ablum === albumName);
-      setAlbumDatas(keySongs);
-    }
-  };
+  const albumData = useMemo(() => {
+    const list = ablumSort === "R" ? releaseList : joinList;
+    return (list ?? []).filter((song) => song.ablum === albumName);
+  }, [ablumSort, albumName, releaseList, joinList]);
 
   useEffect(() => {
-    albumData && renderAblumList();
     // 외부 스크롤 막기
-    const $body = document.querySelector("body");
-    const overflow = $body.style.overflow;
+    const $body = document.body;
+    const prevOverflow = $body.style.overflow;
     $body.style.overflow = "hidden";
-    $body.ariaHidden = true;
+
+    // 첫 포커스
+    closeButtonRef.current?.focus();
 
     // ESC 키로 모달 닫기
     const handleEscape = (e) => {
-      if (e.key === "Escape" && showModal) {
-        closeModal();
+      if (e.key === "Escape") {
+        onClose?.();
       }
     };
 
     window.addEventListener("keydown", handleEscape);
 
     return () => {
-      $body.style.overflow = overflow;
-      $body.ariaHidden = false;
+      $body.style.overflow = prevOverflow;
       window.removeEventListener("keydown", handleEscape);
     };
     // eslint-disable-next-line
-  }, [showModal]);
-
-  const closeModal = () => {
-    setShowModal(!showModal);
-  };
+  }, [onClose]);
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-gray-500/50 flex justify-center align-middle animate-ablumModalLoadEffect"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 animate-ablumModalLoadEffect"
       role="dialog"
       aria-modal="true"
       aria-labelledby="album-modal-title"
+      aria-describedby="album-modal-desc"
+      onMouseDown={(e) => {
+        if (e.currentTarget === e.target) onClose?.();
+      }}
     >
-      <nav className="flex flex-col w-5/6 md:w-3/4 lg:w-3/5 h-4/5 fixed top-0 bottom-0 left-0 right-0 m-auto pb-10 text-center z-99 bg-white rounded-md ">
-        <div className="flex flex-row justify-between">
-          <span />
-          <button
-            type="button"
-            aria-label="앨범 모달 닫기"
-            onClick={closeModal}
-            className="hover:cursor-pointer text-main-blue mt-6 mr-7 focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
-          >
+      <div className="relative w-full max-w-4xl max-h-[75dvh] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-xl flex flex-col">
+        <div className="flex items-center justify-between gap-4 border-b border-black/10 px-6 py-5">
+          <div className="flex items-center gap-4 min-w-0">
             <img
-              src={closeIcon}
-              className="w-[30px] h-[30px]"
-              alt=""
-              aria-hidden="true"
+              src={albumImgSrc}
+              alt={`${albumName} 앨범 커버`}
+              className="h-20 w-20 shrink-0 rounded-lg border border-black/10 object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
             />
-          </button>
-        </div>
-
-        <article className="flex flex-col w-full px-10 overflow-y-auto ">
-          <div className="flex flex-row pt-3">
-            <div className="p-auto w-1/4">
-              <img src={albumImgSrc} alt={`${albumName} img`} loading="lazy" />
-            </div>
-            <div className="flex flex-col w-full my-auto ml-3 text-left ">
+            <div className="min-w-0 text-left flex flex-col justify-center">
               <h3
                 id="album-modal-title"
-                className="font-Pretendard text-xl font-bold text-main-blue leading-snug"
+                className="font-Pretendard text-lg font-bold text-black leading-snug truncate"
+                title={albumName}
               >
                 {albumName}
               </h3>
-              <h4 className="font-Pretendard text-sm text-main-blue">
-                발매일: {albumDate}
-              </h4>
+              <p
+                id="album-modal-desc"
+                className="font-Pretendard text-sm text-gray-700 mt-1"
+              >
+                발매일: {albumDate} · 수록곡 {albumData.length}곡
+              </p>
             </div>
           </div>
-          <p className="w-full text-left font-Pretendard text-main-blue text-base font-bold pt-7">
-            수록곡 ({albumData.length})
-          </p>
-          <ul className="flex flex-col justify-center text-left pb-3">
+
+          <button
+            ref={closeButtonRef}
+            type="button"
+            aria-label="앨범 모달 닫기"
+            onClick={() => onClose?.()}
+            className="shrink-0 rounded-md w-10 h-10 flex items-center justify-center font-Pretendard font-normal text-2xl leading-none hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+          >
+            X
+          </button>
+        </div>
+
+        <div
+          className="flex-1 min-h-0 overflow-y-auto px-6 py-5 overscroll-contain"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
+          <ul className="flex flex-col text-left">
             {albumData.map((song, index) => {
+              const melonUrl = `https://www.melon.com/song/detail.htm?songId=${song.songId}`;
               return (
                 <li
-                  key={song.title}
-                  className="flex flex-row font-Pretendard text-base text-black/8 border-b py-2 "
+                  key={`${song.songId ?? "song"}-${song.title}-${index}`}
+                  className="flex items-center gap-3 border-b border-black/10 py-3 last:border-b-0"
                 >
-                  <span className="w-7 mx-auto font-Pretendard text-main-blue">
-                    {index + 1 < 10 ? "0" + (index + 1) : index + 1}
+                  <span className="w-7 shrink-0 font-Pretendard text-sm text-gray-500 tabular-nums">
+                    {index + 1 < 10 ? `0${index + 1}` : index + 1}
                   </span>
-                  <div className="flex flex-col w-full justify-between m-auto text-start pl-2">
-                    <p className="font-medium text-sm font-Pretendard ">
+                  <div className="min-w-0 flex-1">
+                    <p className="font-Pretendard text-sm font-medium text-black truncate">
                       {song.title}
                     </p>
-                    <p className=" text-xs font-Pretendard">{song.artists}</p>
+                    <p className="font-Pretendard text-xs text-gray-700 truncate mt-1">
+                      {song.artists}
+                    </p>
                   </div>
-                  <a
-                    href={`https://www.melon.com/song/detail.htm?songId=${song.songId}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-describedby="클릭 시 멜론 페이지로 연결됩니다."
-                    className="w-6 my-auto"
-                  >
-                    <img src={linkIcon} alt={`${song.title} link icon`} />
-                  </a>
+                  {song.songId ? (
+                    <a
+                      href={melonUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${song.title} 멜론에서 듣기`}
+                      className="inline-flex items-center justify-center rounded-md px-2 py-1 font-Pretendard text-sm text-black/60 hover:text-black hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                      title="멜론에서 듣기"
+                    >
+                      →
+                    </a>
+                  ) : null}
                 </li>
               );
             })}
           </ul>
-        </article>
-      </nav>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default AblumModal;
+export default React.memo(AlbumModal);

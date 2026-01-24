@@ -17,7 +17,7 @@ const NewsList = () => {
   }, []);
 
   return (
-    <ol className="my-5 mb-10">
+    <ol className="mt-4 space-y-3">
       {newsData &&
         newsData.map((data) => {
           return (
