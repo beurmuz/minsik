@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 function getYoutubeId(url) {
   if (!url) return null;
@@ -30,6 +30,9 @@ const FeaturedYoutube = ({
   aspectClassName = "aspect-video",
   aspectRatio,
   showControls = true,
+  loadMode = "immediate", // "immediate" | "interaction" | "idle"
+  idleDelayMs = 1200,
+  showPosterBeforeLoad = true,
 }) => {
   const videoId = useMemo(() => getYoutubeId(youtubeUrl), [youtubeUrl]);
   const posterUrl = useMemo(() => {
@@ -38,6 +41,7 @@ const FeaturedYoutube = ({
   }, [videoId]);
 
   const shouldShowIframe = Boolean(videoId);
+  const [isActivated, setIsActivated] = useState(loadMode === "immediate");
 
   const iframeSrc = useMemo(() => {
     if (!videoId) return null;
@@ -54,13 +58,41 @@ const FeaturedYoutube = ({
     return `${base}?${params.toString()}`;
   }, [videoId, showControls]);
 
+  useEffect(() => {
+    if (loadMode === "immediate") {
+      setIsActivated(true);
+      return;
+    }
+    if (loadMode !== "idle") return;
+    if (!videoId) return;
+
+    let cancelled = false;
+
+    const activate = () => {
+      if (!cancelled) setIsActivated(true);
+    };
+
+    // requestIdleCallback이 있으면 idle에 맞춰, 없으면 timeout으로 폴백
+    const ric = window.requestIdleCallback?.(
+      () => activate(),
+      { timeout: Math.max(1000, idleDelayMs) }
+    );
+    const tid = window.setTimeout(() => activate(), idleDelayMs);
+
+    return () => {
+      cancelled = true;
+      if (ric) window.cancelIdleCallback?.(ric);
+      window.clearTimeout(tid);
+    };
+  }, [idleDelayMs, loadMode, videoId]);
+
   return (
     <div className={className}>
       <div
         className={`relative ${aspectRatio ? "" : aspectClassName} w-full overflow-hidden rounded-xl border border-black/10 bg-black`.trim()}
         style={aspectRatio ? { aspectRatio } : undefined}
       >
-        {shouldShowIframe && iframeSrc ? (
+        {shouldShowIframe && iframeSrc && isActivated ? (
           <iframe
             key={iframeSrc}
             className="absolute inset-0 h-full w-full"
@@ -70,7 +102,7 @@ const FeaturedYoutube = ({
             allow="encrypted-media; picture-in-picture"
             allowFullScreen
           />
-        ) : posterUrl ? (
+        ) : showPosterBeforeLoad && posterUrl ? (
           <img
             src={posterUrl}
             alt={posterAlt}
@@ -87,6 +119,19 @@ const FeaturedYoutube = ({
 
         {/* subtle overlay */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-black/0" />
+
+        {!isActivated && shouldShowIframe ? (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <button
+              type="button"
+              onClick={() => setIsActivated(true)}
+              className="inline-flex items-center justify-center rounded-full border border-white/50 bg-black/40 px-5 py-3 font-Pretendard text-sm font-medium text-white hover:bg-black/55 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="영상 불러오기"
+            >
+              영상 불러오기
+            </button>
+          </div>
+        ) : null}
       </div>
 
       {caption ? (

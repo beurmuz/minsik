@@ -178,6 +178,8 @@ const Home = () => {
                   youtubeUrl={FEATURED_YOUTUBE_URL}
                   posterAlt="대표 영상"
                   showControls={true}
+                  loadMode="interaction"
+                  showPosterBeforeLoad={false}
                 />
                 <a
                   href={FEATURED_YOUTUBE_URL}

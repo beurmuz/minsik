@@ -100,6 +100,7 @@ const Intro = () => {
               <FeaturedYoutube
                 youtubeUrl={FEATURED_YOUTUBE_URL}
                 showControls={true}
+                loadMode="interaction"
               />
               <a
                 href={FEATURED_YOUTUBE_URL}
