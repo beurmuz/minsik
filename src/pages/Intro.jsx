@@ -1,17 +1,18 @@
 import React from "react";
-import faceImg from "../assets/images/newMinsik.webp";
+import faceImg from "../assets/images/newMinsik.jpg";
 import Header from "../components/Header";
-import PageName from "../components/PageName";
-import ImgBox from "../components/ImgBox";
-import Toolbar from "../components/Toolbar";
 import HistoryBox from "../components/HistoryBox";
+import FeaturedYoutube from "../components/FeaturedYoutube";
+import MainCard from "../components/MainCard";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import Footer from "../components/Footer";
-import mouseIcon from "../assets/images/icons/mouseIcon.webp";
 import GotoTopButton from "../components/GotoTopButton";
+import PageContainer from "../components/PageContainer";
 import { dday, convertDday } from "../utils/date";
 
-const Intro = (props) => {
+const FEATURED_YOUTUBE_URL = "https://www.youtube.com/watch?v=oCvA-i9OTyg";
+
+const Intro = () => {
   let debutDays = dday();
   let { years, months, days } = convertDday(debutDays);
   return (
@@ -25,106 +26,93 @@ const Intro = (props) => {
         ogTitle={"SIK-K가 누구?"}
         ogDescription={"SIK-K에 대해 알아보기"}
       />
-      <div className="w-full flex flex-col bg-white px-52 max-lg:px-32 max-md:px-0">
-        {/* info */}
-        <div className="h-screen flex flex-col text-center">
-          <Header changeColor={true} />
-          <GotoTopButton />
-          <section className="flex flex-col m-auto animate-pageLoadEffect">
-            <div className="m-auto w-56 max-sm:w-48">
-              <img src={faceImg} alt="식케이 프로필 사진" loading="lazy" />
-            </div>
-            <ol>
-              <li className="font-Pretendard text-3xl font-bold mt-7 mb-1 max-sm:text-2xl">
-                권민식 (SIK-K)
-              </li>
-              <li className="font-Pretendard font-xs mb-3">
-                1994.02.26 (31살)
-              </li>
-              <li className="font-Pretendard text-lg">
-                데뷔: 2015.08.07{" "}
-                <span className="bg-slate-500 text-white font-Pretendard text-lg">
-                  D+{debutDays} ({years}년 {months}개월 {days}일째)
-                </span>
-              </li>
-              <li className="font-Pretendard text-lg">
-                알앤비/어반, 일렉트로니카, 랩/힙합
-              </li>
+      <div className="w-full flex flex-col bg-white">
+        <Header />
+        <GotoTopButton />
 
-              <li>
-                <a
-                  href="https://en.wikipedia.org/wiki/Sik-K"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-Pretendard font-normal text-gray-700 focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
-                  aria-describedby="클릭 시 위키피디아로 연결됩니다."
-                >
-                  * more info ...
-                </a>
-              </li>
-            </ol>
-            <div className="text-center mt-20 mx-auto text-main-blue-light">
-              <img
-                src={mouseIcon}
-                className="w-[30px] h-[30px] m-auto animate-bounce"
-                alt="arrow Icon"
-              />
-              <p className="font-Pretendard font-xs py-2">scroll down</p>
+        <PageContainer>
+          <header className="mb-8">
+            <p className="font-Pretendard text-base leading-7 text-gray-700">
+              기본 정보와 대표 영상, 연도별 활동 타임라인을 한 번에 볼 수
+              있어요.
+            </p>
+          </header>
+
+          {/* Profile */}
+          <section className="rounded-xl border border-black/10 bg-white p-6">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[220px_1fr]">
+              <div className="w-full max-w-[220px] mx-auto lg:mx-0">
+                <img
+                  src={faceImg}
+                  alt="식케이 프로필 사진"
+                  className="w-full h-auto rounded-xl"
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                <p className="font-Pretendard text-2xl font-bold text-black">
+                  권민식 (SIK-K)
+                </p>
+                <p className="font-Pretendard text-sm text-gray-700 mt-2">
+                  2015.08.07 데뷔 | D+{debutDays} ({years}년 {months}개월 {days}
+                  일)
+                </p>
+                <p className="font-Pretendard text-sm leading-6 text-gray-700 mt-3">
+                  KC 레이블을 기반으로 서울을 중심으로 새로운 사운드를 꾸준히
+                  선보여온 아티스트예요. 군 복무 이후 [POP A LOT] 월드 투어를
+                  성공적으로 진행하며 활동 반경을 넓혀왔어요. 이후 앨범과
+                  무대에서 어떤 새로운 사운드를 보여줄지 계속 주목받고 있어요.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <a
+                    href="https://en.wikipedia.org/wiki/Sik-K"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 font-Pretendard text-xs text-black/70 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                    aria-describedby="클릭 시 위키피디아로 연결됩니다."
+                  >
+                    Wikipedia →
+                  </a>
+                  <a
+                    href="https://vibe.naver.com/artist/331653"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 font-Pretendard text-xs text-black/70 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                    aria-describedby="클릭 시 네이버 바이브로 연동됩니다."
+                  >
+                    VIBE →
+                  </a>
+                </div>
+              </div>
             </div>
           </section>
-        </div>
 
-        {/* 바이오그래피 */}
-        <section className="w-full h-screen flex flex-col justify-center">
-          <PageName>Biography</PageName>
-          <div className="px-10">
-            <article className="font-Pretendard text-base font-base max-sm:text-sm">
-              KC 레이블의 대표 SIK-K는 꾸준하게 서울을 중심으로 새로운 사운드를
-              전 세계에 선사하고 있는 아티스트이다.
-              <br />
-              <br />
-              쇼미더머니 출연, 박재범과 함께한 하이어뮤직의 컴필레이션 참여 등
-              레이블의 전성기를 견인하며, 한국 힙합씬을 전 세계에 알려온
-              식케이는 2023년 새로운 둥지를 스스로 마련하여 다양한 활동을 할
-              준비를 마쳤다.
-              <br />
-              <br />
-              평단과 대중의 호평을 동시에 얻은 두 번째 정규작 [HEADLINER] 이후
-              군입대 기간 공백 후, [POP A LOT] 월드 투어를 성공적으로 진행하며
-              추후 앨범 활동에 대한 기대감을 끌어올리고 있다. <br />
-              <br />
-              항상 새로운 플로우와 사운드의 기준을 제시해 온 그가 어떤 모습의
-              트랙과 앨범들을 선사할지 귀추가 주목된다.
-              <br />
-              <br />
+          {/* Music Video */}
+          <section className="mt-12">
+            <MainCard title="Main Video" variant="section">
+              <FeaturedYoutube
+                youtubeUrl={FEATURED_YOUTUBE_URL}
+                showControls={true}
+              />
               <a
-                href="https://vibe.naver.com/artist/331653"
+                href={FEATURED_YOUTUBE_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="font-Pretendard text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
-                aria-describedby="클릭 시 네이버 바이브로 연동됩니다."
+                className="mt-4 inline-flex items-center rounded-md py-1 font-Pretendard text-sm text-black/70 hover:text-black hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
               >
-                [출처] 네이버 바이브
+                Youtube에서 보기 →
               </a>
-            </article>
-          </div>
-        </section>
+            </MainCard>
+          </section>
 
-        {/* 사진 모음집 */}
-        <section className="w-full h-screen flex flex-col justify-center">
-          <Toolbar />
-          <ImgBox />
-          <Toolbar />
-        </section>
+          {/* Timeline */}
+          <section className="mt-12">
+            <MainCard title="Timeline" variant="section">
+              <HistoryBox />
+            </MainCard>
+          </section>
+        </PageContainer>
 
-        {/* Timeline */}
-        <section className="w-screen flex flex-col">
-          <PageName>Timeline</PageName>
-          <HistoryBox />
-        </section>
-        <section className="h-24">
-          <Footer />
-        </section>
+        <Footer />
       </div>
     </>
   );

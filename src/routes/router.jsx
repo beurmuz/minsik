@@ -20,7 +20,7 @@ const Router = () => {
       }}
     >
       <Suspense fallback={<Loading />}>
-        <div className="w-screen h-screen bg-white">
+        <div className="w-full min-h-screen bg-white overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/intro" element={<Intro />} />
