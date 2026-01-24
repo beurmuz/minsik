@@ -6,17 +6,10 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Noto Sans KR",
-    "Malgun Gothic", sans-serif;
+  font-family: "Noto Serif", serif;
 }
 body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-html {
-  overflow-x: hidden;
+  width: 100vw;
 }
 
 /* 모바일 Safari viewport 높이 문제 해결 */

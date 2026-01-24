@@ -4,7 +4,7 @@ const GotoTopButton = (props) => {
 
   const scrollToTop = () => {
     // Smooth scroll 지원 확인 (구형 Safari 폴백)
-    if ("scrollBehavior" in document.documentElement.style) {
+    if ('scrollBehavior' in document.documentElement.style) {
       window.scroll({
         top: 0,
         behavior: "smooth",
@@ -32,7 +32,7 @@ const GotoTopButton = (props) => {
 
   return (
     showButton && (
-      <div className="fixed right-5 bottom-20 z-20">
+      <div className="fixed right-5 bottom-20 z-1">
         <button
           onClick={scrollToTop}
           type="button"

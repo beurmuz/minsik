@@ -3,16 +3,14 @@ import { getYear } from "../utils/date.js";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white text-black">
-      <div className="w-full max-w-6xl mx-auto px-6 mt-12 mb-10 flex flex-col justify-center">
-      <p className="text-black font-Pretendard text-xs">
+    <div className="h-1/8 flex flex-col  justify-center mx-7 mb-10">
+      <p className=" text-sky-700 font-NotoSerif text-xs">
         Contact | fallinta2@gmail.com
       </p>
-      <p className="text-black font-Pretendard text-xs">
+      <p className=" text-sky-700 font-NotoSerif text-xs">
         Copyright | ⓒ 2023-{getYear()} beurmuz. All rights reserved.
       </p>
-      </div>
-    </footer>
+    </div>
   );
 };
 

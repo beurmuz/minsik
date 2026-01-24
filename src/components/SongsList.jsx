@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { DataFetchApi } from "../shared/axios";
 import { dataStore } from "../shared/store";
-import AlbumModal from "./AlbumModal";
+import AblumModal from "./AlbumModal";
 
-const SongsList = () => {
+const SongsList = (props) => {
   const {
     setsReleaseList,
     setsJoinList,
@@ -17,54 +17,50 @@ const SongsList = () => {
   const [showModal, setShowModal] = useState(false);
   const [orderState, setOrderState] = useState("release");
 
+  // 발매 곡 데이터 받아오기
+  const getSongsData = async () => {
+    const result = await DataFetchApi.get("songs_data.json")
+      .then((res) => res.data)
+      .catch((error) => console.log(error));
+    setsReleaseList(result);
+  };
+
+  // 참여 곡 데이터 받아오기
+  const getJoinSongsData = async () => {
+    const result = await DataFetchApi.get("join_songs_data.json")
+      .then((res) => res.data)
+      .catch((error) => console.log(error));
+    setsJoinList(result);
+  };
+
   useEffect(() => {
-    let cancelled = false;
+    getSongsData();
+    // eslint-disable-next-line
+  }, []);
 
-    const fetchSongs = async () => {
-      const result = await DataFetchApi.get("songs_data.json")
-        .then((res) => res.data)
-        .catch((error) => {
-          console.log(error);
-          return [];
-        });
-      if (!cancelled) setsReleaseList(result);
-    };
-
-    const fetchJoinSongs = async () => {
-      const result = await DataFetchApi.get("join_songs_data.json")
-        .then((res) => res.data)
-        .catch((error) => {
-          console.log(error);
-          return [];
-        });
-      if (!cancelled) setsJoinList(result);
-    };
-
-    fetchSongs();
-    fetchJoinSongs();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [setsJoinList, setsReleaseList]);
+  useEffect(() => {
+    getJoinSongsData();
+    // eslint-disable-next-line
+  }, []);
 
   const openModal = (nowInfo) => {
+    setShowModal(!showModal);
     setClickedAlbum(nowInfo);
-    setShowModal(true);
   };
 
   return (
-    <section className="w-full">
+    <section className="m-7 p-30 animate-pageLoadEffect">
       {showModal && (
-        <AlbumModal
+        <AblumModal
           albumInfo={clickedAlbum}
-          onClose={() => setShowModal(false)}
+          showModal={showModal}
+          setShowModal={setShowModal}
         />
       )}
       {/* 전체곡 리스트 */}
-      <article className="overflow-auto">
-        <div className="w-full mb-3 flex flex-row justify-between py-3">
-          <p className="font-Pretendard text-black text-xl font-bold">
+      <article className="overflow-auto p-3">
+        <div className="w-full mb-3 flex flex-row justify-between">
+          <p className="font-Pretendard text-main-blue/80 text-xl font-bold">
             전체곡 ({releaseNums + joinNums})
           </p>
           <nav className="flex flex-row">
@@ -72,27 +68,27 @@ const SongsList = () => {
               type="button"
               aria-label={`발매 곡 목록 보기, 총 ${releaseNums}개`}
               aria-pressed={orderState === "release"}
-              className="font-Pretendard text-gray-700 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded px-2"
-              onClick={() => setOrderState("release")}
+              className="mr-2 font-Pretendard text-gray-700 hover:text-main-blue focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded px-2"
+              onClick={(e) => setOrderState("release")}
             >
               발매 ({releaseNums})
             </button>
             <span
-              className="border-r border-gray-400 h-4 my-auto mx-1"
+              className="border-r border-gray-400 h-4 my-auto"
               aria-hidden="true"
             ></span>
             <button
               type="button"
               aria-label={`참여 곡 목록 보기, 총 ${joinNums}개`}
               aria-pressed={orderState === "join"}
-              className="font-Pretendard text-gray-700 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded px-2 mr-1"
+              className="ml-2 font-Pretendard text-gray-700 hover:text-main-blue focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded px-2"
               onClick={() => setOrderState("join")}
             >
               참여 ({joinNums})
             </button>
           </nav>
         </div>
-        <ol className="grid grid-cols-3 gap-3 md:grid-cols-4 ">
+        <ol className="grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-6">
           {releaseAlbums && orderState === "release"
             ? Object.keys(releaseAlbums).map((album) => {
                 return (
@@ -120,13 +116,12 @@ const SongsList = () => {
                         ]);
                       }
                     }}
-                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-black rounded"
+                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-blue rounded"
                   >
                     <img
                       src={releaseAlbums[album][0]}
                       alt={`${album} 앨범 커버`}
                       loading="lazy"
-                      className="rounded-md"
                     />
                   </li>
                 );
@@ -157,7 +152,7 @@ const SongsList = () => {
                         ]);
                       }
                     }}
-                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-black rounded"
+                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-blue rounded"
                   >
                     <img
                       src={joinAlbums[album][0]}
@@ -168,6 +163,10 @@ const SongsList = () => {
                 );
               })}
         </ol>
+        <p className="font-Pretendard text-sm py-5 text-gray-700">
+          * 앨범은 최신순으로 정렬되어 있습니다. <br />* 매주 수요일 오전
+          9시마다 정보가 업데이트 됩니다.
+        </p>
       </article>
     </section>
   );

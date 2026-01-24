@@ -4,7 +4,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        NotoSerif: ["Noto Serif", "serif"],
         Pretendard: ["Pretendard"],
+      },
+      colors: {
+        "main-blue": "#144184",
+        "main-blue-light": "#1B53AD",
       },
       keyframes: {
         marquee: {
