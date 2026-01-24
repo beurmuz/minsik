@@ -2,7 +2,7 @@ import React from "react";
 import baseImg from "../assets/images/base_festival.png";
 
 const FestivalItem = ({ festivalInfo }) => {
-  const { imgUrl, title, id, link, date } = { ...festivalInfo };
+  const { imgUrl, title, link, date } = { ...festivalInfo };
   const onErrorImg = (e) => {
     e.target.src = baseImg;
   };
