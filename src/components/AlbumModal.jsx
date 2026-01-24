@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import { dataStore } from "../shared/store";
-import closeIcon from "../assets/images/icons/closeIcon.webp";
 
 const AlbumModal = ({ albumInfo, onClose }) => {
   const [albumName, albumImgSrc, albumDate, ablumSort] = [...albumInfo];
@@ -81,14 +80,9 @@ const AlbumModal = ({ albumInfo, onClose }) => {
             type="button"
             aria-label="앨범 모달 닫기"
             onClick={() => onClose?.()}
-            className="shrink-0 rounded-md p-2 hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+            className="shrink-0 rounded-md w-10 h-10 flex items-center justify-center font-Pretendard font-normal text-2xl leading-none hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
           >
-            <img
-              src={closeIcon}
-              className="w-6 h-6"
-              alt=""
-              aria-hidden="true"
-            />
+            X
           </button>
         </div>
 

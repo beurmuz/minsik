@@ -1,7 +1,6 @@
 import React, { useEffect, useCallback } from "react";
 import { menuStore } from "../shared/store";
 import { useNavigate } from "react-router-dom";
-import closeIcon from "../assets/images/icons/closeIcon.webp";
 
 const Menu = () => {
   const { showMenu, setShowMenu } = menuStore((state) => state);
@@ -49,15 +48,10 @@ const Menu = () => {
           <button
             type="button"
             aria-label="메뉴 닫기"
-            className="hover:cursor-pointer text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded"
+            className="hover:cursor-pointer text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded w-10 h-10 flex items-center justify-center font-Pretendard font-medium text-2xl leading-none"
             onClick={closeMenu}
           >
-            <img
-              src={closeIcon}
-              className="w-10 h-10"
-              alt=""
-              aria-hidden="true"
-            />
+            X
           </button>
         </div>
 

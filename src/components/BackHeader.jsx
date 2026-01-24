@@ -1,8 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import backIcon from "../assets/images/icons/backIcon.webp";
 
-const BackHeader = (props) => {
+const BackHeader = () => {
   const navigate = useNavigate(); // navigation에 특정 순간을 넘기면 현재 페이지에서 해당 숫자만큼 히스토리 이동 가능
 
   return (
@@ -10,14 +9,9 @@ const BackHeader = (props) => {
       <button
         onClick={() => navigate(-1)}
         aria-label="이전 페이지로 돌아가기"
-        className="focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded"
+        className="w-[50px] h-[50px] flex items-center justify-center font-Pretendard font-medium text-2xl leading-none focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded"
       >
-        <img
-          src={backIcon}
-          className="w-[50px] h-[50px]"
-          alt=""
-          aria-hidden="true"
-        />
+        <span aria-hidden="true">{"<-"}</span>
       </button>
     </div>
   );

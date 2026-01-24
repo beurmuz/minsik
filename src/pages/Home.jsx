@@ -9,6 +9,7 @@ import MetadataTemplate from "../SEO/MetadataTemplate";
 import historyData from "../assets/data/history.json";
 import { DataFetchApi } from "../shared/axios";
 import { img0, img1, img2 } from "../assets/images/intro/intro";
+import Loading from "../components/Loading";
 
 const FEATURED_YOUTUBE_URL = "https://www.youtube.com/watch?v=Bzp1yVAeZo8";
 
@@ -65,6 +66,7 @@ const Home = () => {
       <div className="w-full h-full flex flex-col justify-between bg-white overflow-x-hidden">
         <Header />
         <PageContainer>
+          <Loading />
           <section className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {/* Latest release */}
             <MainCard title="최신 발매곡">

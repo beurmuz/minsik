@@ -1,5 +1,5 @@
 import React from "react";
-import faceImg from "../assets/images/newMinsik.jpg";
+import faceImg from "../assets/images/newMinsik.webp";
 import Header from "../components/Header";
 import HistoryBox from "../components/HistoryBox";
 import FeaturedYoutube from "../components/FeaturedYoutube";
