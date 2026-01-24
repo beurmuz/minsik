@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import faceImg from "../assets/images/newMinsik.webp";
 import Header from "../components/Header";
 import HistoryBox from "../components/HistoryBox";
@@ -26,6 +27,9 @@ const Intro = () => {
         ogTitle={"SIK-K가 누구?"}
         ogDescription={"SIK-K에 대해 알아보기"}
       />
+      <Helmet>
+        <link rel="preload" as="image" href={faceImg} />
+      </Helmet>
       <div className="w-full flex flex-col bg-white">
         <Header />
         <GotoTopButton />
@@ -45,6 +49,10 @@ const Intro = () => {
                 <img
                   src={faceImg}
                   alt="식케이 프로필 사진"
+                  fetchPriority="high"
+                  decoding="async"
+                  width="220"
+                  height="220"
                   className="w-full h-auto rounded-xl"
                 />
               </div>

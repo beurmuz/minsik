@@ -9,7 +9,6 @@ import MetadataTemplate from "../SEO/MetadataTemplate";
 import historyData from "../assets/data/history.json";
 import { DataFetchApi } from "../shared/axios";
 import { img0, img1, img2 } from "../assets/images/intro/intro";
-import Loading from "../components/Loading";
 
 const FEATURED_YOUTUBE_URL = "https://www.youtube.com/watch?v=Bzp1yVAeZo8";
 
@@ -66,7 +65,6 @@ const Home = () => {
       <div className="w-full h-full flex flex-col justify-between bg-white overflow-x-hidden">
         <Header />
         <PageContainer>
-          <Loading />
           <section className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {/* Latest release */}
             <MainCard title="최신 발매곡">
@@ -77,6 +75,7 @@ const Home = () => {
                   imageAlt={`${latestSong.ablum} 앨범 커버`}
                   mediaClassName="border-0 bg-transparent"
                   imageClassName="rounded"
+                  imageDecoding="async"
                 >
                   <div className="flex flex-col justify-center min-w-0">
                     <p
@@ -132,6 +131,8 @@ const Home = () => {
                   className="mt-4"
                   imageSrc={latestTimeline.imgUrl}
                   imageAlt="최신 활동 로그 이미지"
+                  imageDecoding="async"
+                  imageFetchPriority="high"
                   fallback={
                     <div className="h-full w-full rounded bg-gray-100 border border-black/10" />
                   }
@@ -201,6 +202,7 @@ const Home = () => {
                     <img
                       src={src}
                       alt={`갤러리 이미지 ${idx + 1}`}
+                      loading="lazy"
                       className="h-full w-full object-cover"
                     />
                   </div>

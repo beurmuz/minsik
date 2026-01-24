@@ -66,6 +66,7 @@ const FeaturedYoutube = ({
             className="absolute inset-0 h-full w-full"
             src={iframeSrc}
             title={posterAlt}
+            loading="lazy"
             allow="encrypted-media; picture-in-picture"
             allowFullScreen
           />
@@ -73,6 +74,7 @@ const FeaturedYoutube = ({
           <img
             src={posterUrl}
             alt={posterAlt}
+            loading="lazy"
             className="absolute inset-0 h-full w-full object-cover opacity-95"
           />
         ) : (

@@ -68,6 +68,7 @@ const HistoryBox = () => {
                         <img
                           src={item.imgUrl}
                           alt=""
+                          loading="lazy"
                           className="h-full w-full object-cover"
                           onError={(e) => {
                             e.currentTarget.style.display = "none";

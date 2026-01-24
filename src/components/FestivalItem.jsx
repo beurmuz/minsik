@@ -21,6 +21,7 @@ const FestivalItem = ({ festivalInfo }) => {
             className="w-full h-full object-cover"
             src={imgUrl}
             alt={title}
+            loading="lazy"
             onError={onErrorImg}
           />
         </div>

@@ -13,6 +13,11 @@ const MediaRow = ({
   className = "",
   mediaClassName = "",
   imageClassName = "",
+  imageLoading,
+  imageDecoding,
+  imageFetchPriority,
+  imageWidth,
+  imageHeight,
   contentClassName = "",
   fallback = null,
   onImageError,
@@ -29,6 +34,11 @@ const MediaRow = ({
           <img
             src={imageSrc}
             alt={imageAlt}
+            loading={imageLoading}
+            decoding={imageDecoding}
+            fetchPriority={imageFetchPriority}
+            width={imageWidth}
+            height={imageHeight}
             className={`h-full w-full object-cover ${imageClassName}`.trim()}
             onError={onImageError}
           />

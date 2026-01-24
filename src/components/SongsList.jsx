@@ -125,6 +125,7 @@ const SongsList = () => {
                     <img
                       src={releaseAlbums[album][0]}
                       alt={`${album} 앨범 커버`}
+                      loading="lazy"
                       className="rounded-md"
                     />
                   </li>
@@ -161,6 +162,7 @@ const SongsList = () => {
                     <img
                       src={joinAlbums[album][0]}
                       alt={`${album} 앨범 커버`}
+                      loading="lazy"
                     />
                   </li>
                 );
