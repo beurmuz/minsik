@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import historyData from "../assets/data/history.json";
+import { getThumbUrl } from "../utils/image";
 
 const HistoryBox = () => {
   const items = useMemo(() => {
@@ -66,7 +67,7 @@ const HistoryBox = () => {
                     <div className="h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-xl border border-black/10 bg-gray-100">
                       {item?.imgUrl ? (
                         <img
-                          src={item.imgUrl}
+                          src={getThumbUrl(item.imgUrl, 192)}
                           alt=""
                           loading="lazy"
                           className="h-full w-full object-cover"

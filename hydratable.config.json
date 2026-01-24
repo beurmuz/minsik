@@ -1,7 +1,7 @@
 {
   "host": "http://localhost",
   "port": 3001,
-  "crawlingUrls": ["/", "/index", "/songs", "/news"],
+  "crawlingUrls": ["/", "/intro", "/songs", "/news"],
   "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
   "timeout": 60000,
   "waitUntil": "domcontentloaded"

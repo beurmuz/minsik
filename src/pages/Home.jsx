@@ -9,6 +9,7 @@ import MetadataTemplate from "../SEO/MetadataTemplate";
 import historyData from "../assets/data/history.json";
 import { DataFetchApi } from "../shared/axios";
 import { img0, img1, img2 } from "../assets/images/intro/intro";
+import { getThumbUrl } from "../utils/image";
 
 const FEATURED_YOUTUBE_URL = "https://www.youtube.com/watch?v=Bzp1yVAeZo8";
 
@@ -129,7 +130,7 @@ const Home = () => {
               {latestTimeline ? (
                 <MediaRow
                   className="mt-4"
-                  imageSrc={latestTimeline.imgUrl}
+                  imageSrc={getThumbUrl(latestTimeline.imgUrl, 192)}
                   imageAlt="최신 활동 로그 이미지"
                   imageDecoding="async"
                   imageFetchPriority="high"
