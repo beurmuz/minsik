@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import faceImg from "../assets/images/newMinsik.webp";
 import Header from "../components/Header";
@@ -10,8 +10,20 @@ import PageContainer from "../components/PageContainer";
 import { dday, convertDday } from "../utils/date";
 
 const Intro = () => {
-  let debutDays = dday();
-  let { years, months, days } = convertDday(debutDays);
+  // 클라이언트에서만 날짜 계산 (hydration 오류 방지)
+  const [debutDays, setDebutDays] = useState(0);
+  const [dateInfo, setDateInfo] = useState({ years: 0, months: 0, days: 0 });
+
+  useEffect(() => {
+    // 클라이언트에서만 실행되어 hydration 오류 방지
+    const days = dday();
+    const info = convertDday(days);
+    setDebutDays(days);
+    setDateInfo(info);
+  }, []);
+
+  const { years, months, days } = dateInfo;
+  
   return (
     <>
       <MetadataTemplate

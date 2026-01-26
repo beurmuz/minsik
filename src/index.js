@@ -5,9 +5,9 @@ import App from "./App";
 import { HelmetProvider } from "react-helmet-async";
 
 const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container);
 
 if (container.hasChildNodes()) {
+  // react-hydratable로 미리 렌더링된 HTML이 있으면 hydration 사용
   ReactDOM.hydrateRoot(
     container,
     <React.StrictMode>
@@ -17,6 +17,8 @@ if (container.hasChildNodes()) {
     </React.StrictMode>
   );
 } else {
+  // 미리 렌더링된 HTML이 없으면 일반 렌더링
+  const root = ReactDOM.createRoot(container);
   root.render(
     <React.StrictMode>
       <HelmetProvider>

@@ -8,6 +8,7 @@ const MetadataTemplate = ({
   ogTitle,
   ogDescription,
 }) => {
+  const publicUrl = process.env.PUBLIC_URL || "";
   return (
     <Helmet>
       <title>{metaTitle}</title>
@@ -17,7 +18,7 @@ const MetadataTemplate = ({
       <meta property="og:description" content={ogDescription} />
       <meta
         property="og:image"
-        content={`${process.env.PUBLIC_URL}/metaImg.png`}
+        content={`${publicUrl}/metaImg.png`}
       />
     </Helmet>
   );

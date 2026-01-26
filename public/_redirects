@@ -1,1 +1,7 @@
+# SPA 라우팅 - 모든 경로를 index.html로
 /* /index.html 200
+
+# 슬래시 제거 - 리디렉션 방지
+/songs/ /songs 301
+/intro/ /intro 301
+/news/ /news 301
