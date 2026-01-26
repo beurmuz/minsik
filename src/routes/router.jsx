@@ -20,7 +20,7 @@ const Router = () => {
         v7_relativeSplatPath: true,
       }}
     >
-      <div className="w-screen min-h-screen overflow-x-hidden">
+      <div className="w-full min-h-screen overflow-x-hidden">
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />

@@ -9,7 +9,7 @@
   font-family: "Noto Serif", serif;
 }
 body {
-  width: 100vw;
+  width: 100%;
 }
 
 /* 모바일 Safari viewport 높이 문제 해결 */
