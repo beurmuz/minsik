@@ -4,6 +4,7 @@ import faceImg from "../assets/images/newMinsik.webp";
 import Header from "../components/Header";
 import HistoryBox from "../components/HistoryBox";
 import MainCard from "../components/MainCard";
+import YouTubeVideo from "../components/YouTubeVideo";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import Footer from "../components/Footer";
 import PageContainer from "../components/PageContainer";
@@ -23,7 +24,7 @@ const Intro = () => {
   }, []);
 
   const { years, months, days } = dateInfo;
-  
+
   return (
     <>
       <MetadataTemplate
@@ -62,14 +63,16 @@ const Intro = () => {
                     권민식 (SIK-K)
                   </p>
                   <p className="font-Pretendard text-sm text-main-color mt-2">
-                    2015.08.07 데뷔 | D+{debutDays} ({years}년 {months}개월 {days}
+                    2015.08.07 데뷔 | D+{debutDays} ({years}년 {months}개월{" "}
+                    {days}
                     일)
                   </p>
                   <p className="font-Pretendard text-sm leading-6 text-sub-color mt-3">
-                    KC 레이블의 설립자이자 대표로 서울을 중심으로 새로운 사운드를
-                    꾸준히 선보여온 아티스트. 군 복무 이후 [POP A LOT] 월드 투어를
-                    성공적으로 진행하며 활동 반경을 넓혀왔다. 이후 앨범과 무대에서
-                    어떤 새로운 사운드를 보여줄지 계속 주목받고 있다.
+                    KC 레이블의 설립자이자 대표로 서울을 중심으로 새로운
+                    사운드를 꾸준히 선보여온 아티스트. 군 복무 이후 [POP A LOT]
+                    월드 투어를 성공적으로 진행하며 활동 반경을 넓혀왔다. 이후
+                    앨범과 무대에서 어떤 새로운 사운드를 보여줄지 계속 주목받고
+                    있다.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <a
@@ -95,6 +98,9 @@ const Intro = () => {
               </div>
             </MainCard>
           </section>
+
+          {/* YouTube Video */}
+          <YouTubeVideo videoId="oCvA-i9OTyg" title="Music Video" />
 
           {/* Timeline */}
           <section className="mt-12">
