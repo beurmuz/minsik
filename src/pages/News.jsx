@@ -38,7 +38,7 @@ const News = () => {
           </section>
         </PageContainer>
 
-        <Footer />
+        <Footer changeColor={true} />
       </div>
     </>
   );

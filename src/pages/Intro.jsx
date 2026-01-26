@@ -92,7 +92,7 @@ const Intro = () => {
           </section>
         </PageContainer>
 
-        <Footer />
+        <Footer changeColor={true} />
       </div>
     </>
   );

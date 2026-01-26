@@ -14,7 +14,7 @@ const Header = ({ changeColor }) => {
     <header className="w-full text-main-color">
       <div className={`${SITE_CONTAINER} flex flex-row h-1/8 justify-between mt-12`}>
         <Link to="/">
-          <h1 className="font-NotoSerif text-4xl font-semibold ">SIK-K</h1>
+          <h1 className="font-NotoSerif text-3xl font-semibold ">SIK-K</h1>
         </Link>
         <button
           type="button"
@@ -24,7 +24,7 @@ const Header = ({ changeColor }) => {
         >
           <img
             src={menuBIcon}
-            className="w-[40px] h-[40px]"
+            className="w-[36px] h-[36px]"
             alt=""
             aria-hidden="true"
           />
@@ -35,7 +35,7 @@ const Header = ({ changeColor }) => {
     <header className="w-full text-white">
       <div className={`${SITE_CONTAINER} flex flex-row h-1/8 justify-between mt-12`}>
         <Link to="/">
-          <h1 className="font-NotoSerif text-4xl font-semibold ">SIK-K</h1>
+          <h1 className="font-NotoSerif text-3xl font-semibold ">SIK-K</h1>
         </Link>
         <button
           type="button"
@@ -45,7 +45,7 @@ const Header = ({ changeColor }) => {
         >
           <img
             src={menuWIcon}
-            className="w-[40px] h-[40px]"
+            className="w-[36px] h-[36px]"
             alt=""
             aria-hidden="true"
           />

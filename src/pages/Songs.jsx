@@ -86,7 +86,7 @@ const Songs = (props) => {
             </MainCard>
           </section>
         </PageContainer>
-        <Footer />
+        <Footer changeColor={true} />
       </div>
     </>
   );

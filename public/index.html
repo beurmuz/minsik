@@ -30,16 +30,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Pretendard Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <!-- Google Fonts (Noto Serif) -->
+    <!-- Google Fonts (Noto Serif) - 비동기 로드 -->
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <!-- Pretendard -->
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <!-- Pretendard - 지연 로드 (media 속성 트릭) -->
     <link
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+        rel="stylesheet"
+      />
+    </noscript>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -49,9 +65,9 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - defer로 변경하여 렌더링 차단 방지 -->
     <script
-      async
+      defer
       src="https://www.googletagmanager.com/gtag/js?id=G-6SVNR2BWCJ"
     ></script>
     <script>

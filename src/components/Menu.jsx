@@ -8,7 +8,7 @@ const MENU_BUTTON_CLASS =
   "font-Pretendard font-bold text-2xl lg:text-3xl text-left py-1 lg:py-2 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded";
 
 const SNS_LINK_CLASS =
-  "font-Pretendard font-bold text-2xl lg:text-3xl py-1 lg:py-2";
+  "font-Pretendard font-bold text-2xl lg:text-3xl py-1 lg:py-2 text-sub-color";
 
 const Menu = (props) => {
   const { showMenu, setShowMenu } = menuStore((state) => state);

@@ -25,7 +25,7 @@ const Home = (props) => {
         <link rel="preload" as="image" href={imageURL} fetchpriority="high" />
       </Helmet>
       <div
-        className="w-full h-screen flex flex-col justify-between bg-cover bg-center overflow-x-hidden"
+        className="w-full h-screen flex flex-col justify-between bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage: `url(${imageURL})`,
         }}

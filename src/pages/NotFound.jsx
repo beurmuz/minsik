@@ -12,7 +12,7 @@ const NotFound = (props) => {
             Page Not Found.
           </p>
         </div>
-        <Footer />
+        <Footer changeColor={true} />
       </section>
     </div>
   );
