@@ -68,7 +68,7 @@ const AlbumModal = ({ albumInfo, onClose }) => {
               </h3>
               <p
                 id="album-modal-desc"
-                className="font-Pretendard text-sm text-gray-700 mt-1"
+                className="font-Pretendard text-sm text-sub-color mt-1"
               >
                 발매일: {albumDate} · 수록곡 {albumData.length}곡
               </p>
@@ -98,14 +98,14 @@ const AlbumModal = ({ albumInfo, onClose }) => {
                   key={`${song.songId ?? "song"}-${song.title}-${index}`}
                   className="flex items-center gap-3 border-b border-black/10 py-3 last:border-b-0"
                 >
-                  <span className="w-7 shrink-0 font-Pretendard text-sm text-gray-500 tabular-nums">
+                  <span className="w-7 shrink-0 font-Pretendard text-sm text-sub-color tabular-nums">
                     {index + 1 < 10 ? `0${index + 1}` : index + 1}
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className="font-Pretendard text-sm font-medium text-black truncate">
                       {song.title}
                     </p>
-                    <p className="font-Pretendard text-xs text-gray-700 truncate mt-1">
+                    <p className="font-Pretendard text-xs text-sub-color truncate mt-1">
                       {song.artists}
                     </p>
                   </div>

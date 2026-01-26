@@ -6,7 +6,6 @@ import HistoryBox from "../components/HistoryBox";
 import MainCard from "../components/MainCard";
 import MetadataTemplate from "../SEO/MetadataTemplate";
 import Footer from "../components/Footer";
-import GotoTopButton from "../components/GotoTopButton";
 import PageContainer from "../components/PageContainer";
 import { dday, convertDday } from "../utils/date";
 
@@ -29,59 +28,60 @@ const Intro = () => {
       </Helmet>
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
-        <GotoTopButton />
 
         <PageContainer>
           {/* Profile */}
-          <section className="rounded-xl border border-black/10 bg-white p-6">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[220px_1fr]">
-              <div className="w-full max-w-[220px] mx-auto lg:mx-0">
-                <img
-                  src={faceImg}
-                  alt="식케이 프로필 사진"
-                  fetchpriority="high"
-                  decoding="async"
-                  width="220"
-                  height="220"
-                  className="w-full h-auto rounded-xl"
-                />
-              </div>
-              <div className="flex flex-col justify-center">
-                <p className="font-Pretendard text-2xl font-bold text-black">
-                  권민식 (SIK-K)
-                </p>
-                <p className="font-Pretendard text-sm text-gray-700 mt-2">
-                  2015.08.07 데뷔 | D+{debutDays} ({years}년 {months}개월 {days}
-                  일)
-                </p>
-                <p className="font-Pretendard text-sm leading-6 text-gray-700 mt-3">
-                  KC 레이블을 기반으로 서울을 중심으로 새로운 사운드를 꾸준히
-                  선보여온 아티스트예요. 군 복무 이후 [POP A LOT] 월드 투어를
-                  성공적으로 진행하며 활동 반경을 넓혀왔어요. 이후 앨범과
-                  무대에서 어떤 새로운 사운드를 보여줄지 계속 주목받고 있어요.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <a
-                    href="https://en.wikipedia.org/wiki/Sik-K"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 font-Pretendard text-xs text-black/70 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-                    aria-describedby="클릭 시 위키피디아로 연결됩니다."
-                  >
-                    Wikipedia →
-                  </a>
-                  <a
-                    href="https://vibe.naver.com/artist/331653"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 font-Pretendard text-xs text-black/70 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-                    aria-describedby="클릭 시 네이버 바이브로 연동됩니다."
-                  >
-                    VIBE →
-                  </a>
+          <section>
+            <MainCard title="Profile" variant="section">
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-[220px_1fr]">
+                <div className="w-full max-w-[220px] mx-auto lg:mx-0">
+                  <img
+                    src={faceImg}
+                    alt="식케이 프로필 사진"
+                    fetchpriority="high"
+                    decoding="async"
+                    width="220"
+                    height="220"
+                    className="w-full h-auto rounded-xl"
+                  />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <p className="font-Pretendard text-2xl font-bold text-black">
+                    권민식 (SIK-K)
+                  </p>
+                  <p className="font-Pretendard text-sm text-main-color mt-2">
+                    2015.08.07 데뷔 | D+{debutDays} ({years}년 {months}개월 {days}
+                    일)
+                  </p>
+                  <p className="font-Pretendard text-sm leading-6 text-sub-color mt-3">
+                    KC 레이블의 설립자이자 대표로 서울을 중심으로 새로운 사운드를
+                    꾸준히 선보여온 아티스트. 군 복무 이후 [POP A LOT] 월드 투어를
+                    성공적으로 진행하며 활동 반경을 넓혀왔다. 이후 앨범과 무대에서
+                    어떤 새로운 사운드를 보여줄지 계속 주목받고 있다.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <a
+                      href="https://en.wikipedia.org/wiki/Sik-K"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 font-Pretendard text-xs text-black/70 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                      aria-describedby="클릭 시 위키피디아로 연결됩니다."
+                    >
+                      Wikipedia →
+                    </a>
+                    <a
+                      href="https://vibe.naver.com/artist/331653"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 font-Pretendard text-xs text-black/70 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                      aria-describedby="클릭 시 네이버 바이브로 연동됩니다."
+                    >
+                      VIBE →
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </MainCard>
           </section>
 
           {/* Timeline */}

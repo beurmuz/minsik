@@ -11,7 +11,7 @@ const Header = ({ changeColor }) => {
     if (showMenu === false) setShowMenu();
   };
   return changeColor ? (
-    <header className="w-full text-main-blue">
+    <header className="w-full text-main-color">
       <div className={`${SITE_CONTAINER} flex flex-row h-1/8 justify-between mt-12`}>
         <Link to="/">
           <h1 className="font-NotoSerif text-4xl font-semibold ">SIK-K</h1>
@@ -20,7 +20,7 @@ const Header = ({ changeColor }) => {
           type="button"
           aria-label="메뉴 열기"
           onClick={openMenu}
-          className="focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded"
+          className="focus:outline-none focus:ring-2 focus:ring-main-color focus:ring-offset-2 rounded"
         >
           <img
             src={menuBIcon}

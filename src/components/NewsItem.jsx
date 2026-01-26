@@ -4,9 +4,8 @@ const NewsItem = ({ id, title, link, content, media, date }) => {
   return (
     <li
       className="bg-white rounded-xl border border-black/10 px-5 py-4 transition hover:border-black/20 hover:shadow-sm"
-      key={id}
     >
-      <p className="font-Pretendard text-xs text-gray-700">
+      <p className="font-Pretendard text-xs text-sub-color">
         {media} · {date.slice(-1) === "." ? date.slice(0, -1) : date}
       </p>
       <a
@@ -18,7 +17,7 @@ const NewsItem = ({ id, title, link, content, media, date }) => {
       >
         {title}
       </a>
-      <p className="mt-2 font-Pretendard text-sm text-gray-700 line-clamp-3">
+      <p className="mt-2 font-Pretendard text-sm text-sub-color line-clamp-3">
         {content}
       </p>
       <a

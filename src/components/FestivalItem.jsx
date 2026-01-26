@@ -26,8 +26,8 @@ const FestivalItem = ({ festivalInfo }) => {
           />
         </div>
         <div className="p-4">
-          <p className="font-Pretendard text-xs text-gray-700">{date}</p>
-          <p className="mt-1 font-Pretendard text-sm font-semibold text-black line-clamp-2">
+          <p className="font-Pretendard text-xs text-sub-color">{date}</p>
+          <p className="mt-1 font-Pretendard text-base font-semibold text-black line-clamp-2">
             {title}
           </p>
           <span className="mt-3 inline-block font-Pretendard text-xs text-black/70 group-hover:text-black">

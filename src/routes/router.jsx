@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { menuStore } from "../shared/store";
 import { Suspense, lazy } from "react";
 import Loading from "../components/Loading";
+import GotoTopButton from "../components/GotoTopButton";
 
 const Home = lazy(() => import("../pages/Home"));
 const Intro = lazy(() => import("../pages/Intro"));
@@ -19,7 +20,7 @@ const Router = () => {
         v7_relativeSplatPath: true,
       }}
     >
-      <div className="w-screen h-screen overflow-x-hidden">
+      <div className="w-screen min-h-screen overflow-x-hidden">
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -35,6 +36,8 @@ const Router = () => {
             <Menu />
           </Suspense>
         ) : null}
+
+        <GotoTopButton />
       </div>
     </BrowserRouter>
   );

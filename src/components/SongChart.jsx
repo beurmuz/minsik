@@ -113,9 +113,9 @@ const SongChart = () => {
   };
 
   return (
-    <div className="py-5">
+    <div className="py-2">
       {peakYear && (
-        <p className="font-Pretendard text-gray-700 text-sm mb-3">
+        <p className="font-Pretendard text-sub-color text-sm mb-3">
           최다 활동 연도: {peakYear}년 (총 {peakTotal}곡)
         </p>
       )}

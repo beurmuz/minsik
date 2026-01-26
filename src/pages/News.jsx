@@ -6,7 +6,6 @@ import FestivalsList from "../components/FestivalsList";
 import MainCard from "../components/MainCard";
 import PageContainer from "../components/PageContainer";
 import MetadataTemplate from "../SEO/MetadataTemplate";
-import GotoTopButton from "../components/GotoTopButton";
 
 const News = () => {
   return (
@@ -22,16 +21,15 @@ const News = () => {
       />
       <div className="w-full flex flex-col bg-white">
         <Header changeColor={true} />
-        <GotoTopButton />
         <PageContainer>
           <section className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <MainCard title="최신 뉴스">
+              <MainCard title="최신 뉴스" variant="section">
                 <NewsList />
               </MainCard>
             </div>
             <div className="lg:col-span-1">
-              <MainCard title="공연 정보">
+              <MainCard title="공연 정보" variant="section">
                 <div className="mt-4">
                   <FestivalsList pastLimit={3} />
                 </div>

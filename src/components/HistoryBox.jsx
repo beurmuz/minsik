@@ -37,7 +37,7 @@ const HistoryBox = () => {
 
   return (
     <div className="relative">
-      <ol className="relative border-l border-black/10 pl-6">
+      <ol className="relative">
         {items.map((item, idx) => {
           const prevYear = items[idx - 1]?._year ?? null;
           const showYearHeader = item._year !== prevYear;
@@ -45,7 +45,7 @@ const HistoryBox = () => {
           return (
             <React.Fragment key={`${item._year}-${item?.id ?? idx}`}>
               {showYearHeader ? (
-                <li className="sticky top-0 z-10 -ml-6 -mr-6 mb-4 bg-white/90 backdrop-blur border-b border-black/10 px-6 py-3">
+                <li className="sticky top-0 -ml-6 -mr-6 mb-1 bg-white/90 backdrop-blur px-6 pt-5 pb-2">
                   <p className="font-Pretendard text-sm font-semibold text-black">
                     {item._year}
                   </p>
@@ -77,21 +77,14 @@ const HistoryBox = () => {
 
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="inline-flex items-center rounded-full border border-black/10 bg-gray-50 px-2.5 py-1 font-Pretendard text-sm text-gray-700">
+                        <span className="inline-flex items-center rounded-full border border-black/10 bg-gray-50 px-2.5 py-1 font-Pretendard text-sm text-sub-color">
                           {item?._monthText}
                         </span>
                       </div>
                       <p className="mt-3 font-Pretendard text-base font-semibold text-black line-clamp-3">
-                        {item?.content}
+                        {item?.content} →
                       </p>
                     </div>
-
-                    <span
-                      className="shrink-0 font-Pretendard text-base text-black/60"
-                      aria-hidden="true"
-                    >
-                      →
-                    </span>
                   </div>
                 </a>
               </li>

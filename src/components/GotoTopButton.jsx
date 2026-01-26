@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-const GotoTopButton = (props) => {
+
+const GotoTopButton = () => {
   const [showButton, setShowButton] = useState(false);
 
   const scrollToTop = () => {
@@ -19,30 +20,40 @@ const GotoTopButton = (props) => {
     const handleShowButton = () => {
       // scrollY 폴백 (구형 Safari 지원)
       const scrollY = window.scrollY || window.pageYOffset || 0;
-      scrollY > window.innerHeight / 2
-        ? setShowButton(true)
-        : setShowButton(false);
+      // 스크롤 위치가 200px 이상이면 표시
+      setShowButton(scrollY > 200);
     };
 
-    window.addEventListener("scroll", handleShowButton);
+    // 초기 스크롤 위치 확인 (약간의 지연)
+    const timer = setTimeout(() => {
+      handleShowButton();
+    }, 100);
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener("scroll", handleShowButton, { passive: true });
+    // resize 이벤트도 추가
+    window.addEventListener("resize", handleShowButton, { passive: true });
+    
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("scroll", handleShowButton);
+      window.removeEventListener("resize", handleShowButton);
     };
   }, []);
 
+  if (!showButton) return null;
+
   return (
-    showButton && (
-      <div className="fixed right-5 bottom-20 z-1">
-        <button
-          onClick={scrollToTop}
-          type="button"
-          aria-label="페이지 상단으로 이동"
-          className="w-10 h-10 pointer font-Pretendard text-sm text-white bg-black rounded-full animate-fadeInEffect focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
-        >
-          TOP
-        </button>
-      </div>
-    )
+    <div className="fixed right-5 bottom-20 z-[100]">
+      <button
+        onClick={scrollToTop}
+        type="button"
+        aria-label="페이지 상단으로 이동"
+        className="w-10 h-10 pointer font-Pretendard text-sm text-white bg-black rounded-full animate-fadeInEffect focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+      >
+        TOP
+      </button>
+    </div>
   );
 };
 

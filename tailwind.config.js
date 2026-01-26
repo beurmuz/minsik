@@ -8,8 +8,8 @@ module.exports = {
         Pretendard: ["Pretendard"],
       },
       colors: {
-        "main-blue": "#144184",
-        "main-blue-light": "#1B53AD",
+        "main-color": "#2F2A24",
+        "sub-color": "#5A554F",
       },
       keyframes: {
         marquee: {

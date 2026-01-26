@@ -62,7 +62,7 @@ const FestivalsList = ({ upcomingLimit = null, pastLimit = 3 }) => {
   return (
     <div className="flex flex-col gap-6">
       <section>
-        <h3 className="font-Pretendard text-sm font-semibold text-black">
+        <h3 className="font-Pretendard text-base font-semibold text-black">
           예정된 공연
         </h3>
         {upcoming.length > 0 ? (
@@ -72,14 +72,14 @@ const FestivalsList = ({ upcomingLimit = null, pastLimit = 3 }) => {
             })}
           </ol>
         ) : (
-          <p className="mt-3 font-Pretendard text-sm text-gray-700">
+          <p className="mt-3 font-Pretendard text-sm text-sub-color">
             예정된 공연이 없어요.
           </p>
         )}
       </section>
 
       <section>
-        <h3 className="font-Pretendard text-sm font-semibold text-black">
+        <h3 className="font-Pretendard text-base font-semibold text-black">
           지난 공연
         </h3>
         {past.length > 0 ? (
@@ -89,7 +89,7 @@ const FestivalsList = ({ upcomingLimit = null, pastLimit = 3 }) => {
             })}
           </ol>
         ) : (
-          <p className="mt-3 font-Pretendard text-sm text-gray-700">
+          <p className="mt-3 font-Pretendard text-sm text-sub-color">
             표시할 공연 정보가 없어요.
           </p>
         )}

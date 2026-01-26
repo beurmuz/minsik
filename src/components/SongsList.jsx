@@ -57,37 +57,34 @@ const SongsList = (props) => {
         />
       )}
       {/* 전체곡 리스트 */}
-      <article className="overflow-auto p-3">
+      <article className="overflow-auto">
         <div className="w-full mb-3 flex flex-row justify-between">
-          <p className="font-Pretendard text-main-blue/80 text-xl font-bold">
-            전체곡 ({releaseNums + joinNums})
-          </p>
           <nav className="flex flex-row">
             <button
               type="button"
               aria-label={`발매 곡 목록 보기, 총 ${releaseNums}개`}
               aria-pressed={orderState === "release"}
-              className="mr-2 font-Pretendard text-gray-700 hover:text-main-blue focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded px-2"
+              className="font-Pretendard text-sub-color hover:text-main-color focus:outline-none focus:ring-2 focus:ring-main-color focus:ring-offset-2 rounded"
               onClick={(e) => setOrderState("release")}
             >
               발매 ({releaseNums})
             </button>
             <span
-              className="border-r border-gray-400 h-4 my-auto"
+              className="border-r border-gray-400 h-4 my-auto mx-2"
               aria-hidden="true"
             ></span>
             <button
               type="button"
               aria-label={`참여 곡 목록 보기, 총 ${joinNums}개`}
               aria-pressed={orderState === "join"}
-              className="ml-2 font-Pretendard text-gray-700 hover:text-main-blue focus:outline-none focus:ring-2 focus:ring-main-blue focus:ring-offset-2 rounded px-2"
+              className="font-Pretendard text-sub-color hover:text-main-color focus:outline-none focus:ring-2 focus:ring-main-color focus:ring-offset-2 rounded"
               onClick={() => setOrderState("join")}
             >
               참여 ({joinNums})
             </button>
           </nav>
         </div>
-        <ol className="grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-6">
+        <ol className="grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-5">
           {releaseAlbums && orderState === "release"
             ? Object.keys(releaseAlbums).map((album) => {
                 return (
@@ -115,7 +112,7 @@ const SongsList = (props) => {
                         ]);
                       }
                     }}
-                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-blue rounded"
+                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-color rounded"
                   >
                     <img
                       src={releaseAlbums[album][0]}
@@ -151,7 +148,7 @@ const SongsList = (props) => {
                         ]);
                       }
                     }}
-                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-blue rounded"
+                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-color rounded"
                   >
                     <img
                       src={joinAlbums[album][0]}
@@ -162,7 +159,7 @@ const SongsList = (props) => {
                 );
               })}
         </ol>
-        <p className="font-Pretendard text-sm py-5 text-gray-700">
+        <p className="font-Pretendard text-sm py-5 text-sub-color">
           * 앨범은 최신순으로 정렬되어 있습니다. <br />* 매주 수요일 오전
           9시마다 정보가 업데이트 됩니다.
         </p>
