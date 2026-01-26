@@ -41,8 +41,8 @@
       "id": 38,
       "month": "2025.08",
       "content": "KC 컴필 앨범 'KC2.5' 발매",
-      "imgUrl": "http://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/086/591/241/86591241_1754543513645_1_600x600.JPG",
-      "newsUrl": "http://mw.genie.co.kr/detail/albumInfo?axnm=86591241"
+      "imgUrl": "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/086/591/241/86591241_1754543513645_1_600x600.JPG",
+      "newsUrl": "https://mw.genie.co.kr/detail/albumInfo?axnm=86591241"
     },
     {
       "id": 37,
@@ -62,7 +62,7 @@
       "id": 35,
       "month": "2025.02",
       "content": "Korean Hiphop Awards 2025 올해의 아티스트로 선정",
-      "imgUrl": "http://hpawards2.cdn3.cafe24.com/2025/win/winner1.jpg"
+      "imgUrl": "https://hpawards2.cdn3.cafe24.com/2025/win/winner1.jpg"
     },
     {
       "id": 34,
@@ -274,7 +274,7 @@
       "month": "2017.05",
       "content": "식케이X크러쉬, 신곡 발매",
       "imgUrl": "https://file.osen.co.kr/article/2017/05/25/201705251016778528_59263213281b1.jpg",
-      "newsUrl": "http://www.osen.co.kr/article/G1110652343"
+      "newsUrl": "https://www.osen.co.kr/article/G1110652343"
     },
     {
       "id": 6,

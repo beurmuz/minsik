@@ -1,5 +1,5 @@
 {
-  "crawlingUrls": ["/", "/index", "/songs", "/news"],
+  "crawlingUrls": ["/", "/index", "/intro", "/songs", "/news"],
   "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
   "timeout": 60000,
   "waitUntil": "domcontentloaded"

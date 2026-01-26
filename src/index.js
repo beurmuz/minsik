@@ -14,7 +14,7 @@ if (container.hasChildNodes()) {
       <HelmetProvider>
         <App />
       </HelmetProvider>
-    </React.StrictMode>
+    </React.StrictMode>,
   );
 } else {
   // 미리 렌더링된 HTML이 없으면 일반 렌더링
@@ -24,6 +24,6 @@ if (container.hasChildNodes()) {
       <HelmetProvider>
         <App />
       </HelmetProvider>
-    </React.StrictMode>
+    </React.StrictMode>,
   );
 }
