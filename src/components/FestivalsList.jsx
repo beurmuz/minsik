@@ -64,7 +64,7 @@ const FestivalsList = ({ upcomingLimit = null, pastLimit = 3 }) => {
           : upcomingAll,
       past: pastAll.slice(0, pastLimit),
     };
-  }, [festivals, upcomingLimit, pastLimit]);
+  }, [festivals, upcomingLimit, pastLimit, isLoading]);
 
   return (
     <div className="flex flex-col gap-6">

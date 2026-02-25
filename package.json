@@ -56,7 +56,11 @@
     ]
   },
   "reactHydratable": {
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
+    ],
     "timeout": 60000
   },
   "devDependencies": {

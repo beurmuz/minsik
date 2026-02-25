@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import faceImg from "../assets/images/newMinsik.webp";
-import Header from "../components/Header";
 import HistoryBox from "../components/HistoryBox";
 import MainCard from "../components/MainCard";
 import YouTubeVideo from "../components/YouTubeVideo";

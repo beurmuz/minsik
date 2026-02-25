@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header";
 import SongsList from "../components/SongsList";
 import Footer from "../components/Footer";
 import { dataStore } from "../shared/store";

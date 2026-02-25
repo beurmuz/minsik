@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header";
 import NewsList from "../components/NewsList";
 import Footer from "../components/Footer";
 import FestivalsList from "../components/FestivalsList";
