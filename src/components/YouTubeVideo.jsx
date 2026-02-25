@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import MainCard from "./MainCard";
+import Skeleton from "./Skeleton";
 
 const YouTubeVideo = ({ videoId, title = "Video", className = "" }) => {
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
@@ -47,14 +48,10 @@ const YouTubeVideo = ({ videoId, title = "Video", className = "" }) => {
               />
             </div>
           ) : (
-            <div
-              className="relative w-full bg-gray-100 rounded-lg flex items-center justify-center"
+            <Skeleton
+              className="w-full rounded-lg"
               style={{ paddingBottom: "56.25%", minHeight: "200px" }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-gray-400 font-Pretendard text-sm">비디오 로딩 중...</p>
-              </div>
-            </div>
+            />
           )}
         </div>
       </MainCard>

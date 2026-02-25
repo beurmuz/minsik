@@ -30,27 +30,32 @@ const Home = (props) => {
           backgroundImage: `url(${imageURL})`,
         }}
       >
-        <Header />
+        {/* Header Spacer - Exactly 120px to match the Absolute Header in RootLayout */}
+        <div className="h-[120px] shrink-0" aria-hidden="true" />
+
         <section
-          className={`${SITE_CONTAINER} h-3/5 flex flex-col text-center animate-pageLoadEffect`}
+          className={`${SITE_CONTAINER} flex-1 flex flex-col justify-center text-center animate-pageLoadEffect`}
         >
-          <img
-            src={homeLogo}
-            className="m-auto w-72 animate-[spin_10s_linear_infinite] "
-            alt="home Logo"
-            fetchpriority="high"
-          />
-          <p className=" h-10 flex items-center m-auto">
-            <Link to="/intro">
-              <button
-                type="button"
-                aria-label="소개 페이지로 이동"
-                className="font-NotoSerif text-white text-xl font-bold focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded px-2 py-1"
-              >
-                who is he? →
-              </button>
-            </Link>
-          </p>
+          {/* Logo and Button wrapped in a single div for stable grouping */}
+          <div className="flex flex-col gap-20">
+            <img
+              src={homeLogo}
+              className="m-auto w-72 animate-[spin_10s_linear_infinite]"
+              alt="home Logo"
+              fetchpriority="high"
+            />
+            <p className="h-10 flex items-center m-auto">
+              <Link to="/intro">
+                <button
+                  type="button"
+                  aria-label="소개 페이지로 이동"
+                  className="font-NotoSerif text-white text-xl font-bold focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded px-2 py-1"
+                >
+                  who is he? →
+                </button>
+              </Link>
+            </p>
+          </div>
         </section>
         <Footer />
       </div>

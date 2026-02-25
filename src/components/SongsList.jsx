@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { DataFetchApi } from "../shared/axios";
 import { dataStore } from "../shared/store";
 import AlbumModal from "./AlbumModal";
+import Skeleton from "./Skeleton";
 
 const SongsList = (props) => {
   const {
@@ -85,79 +86,91 @@ const SongsList = (props) => {
           </nav>
         </div>
         <ol className="grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-5">
+          {orderState === "release" && Object.keys(releaseAlbums || {}).length === 0 &&
+            Array.from({ length: 10 }).map((_, idx) => (
+              <li key={`skel-r-${idx}`}>
+                <Skeleton className="w-full aspect-square rounded" />
+              </li>
+            ))}
+          {orderState === "join" && Object.keys(joinAlbums || {}).length === 0 &&
+            Array.from({ length: 10 }).map((_, idx) => (
+              <li key={`skel-j-${idx}`}>
+                <Skeleton className="w-full aspect-square rounded" />
+              </li>
+            ))}
           {releaseAlbums && orderState === "release"
             ? Object.keys(releaseAlbums).map((album) => {
-                return (
-                  <li
-                    key={album}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`${album} 앨범 상세 정보 보기`}
-                    onClick={() =>
+              return (
+                <li
+                  key={album}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`${album} 앨범 상세 정보 보기`}
+                  onClick={() =>
+                    openModal([
+                      album,
+                      releaseAlbums[album][0],
+                      releaseAlbums[album][1],
+                      "R",
+                    ])
+                  }
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
                       openModal([
                         album,
                         releaseAlbums[album][0],
                         releaseAlbums[album][1],
                         "R",
-                      ])
+                      ]);
                     }
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        openModal([
-                          album,
-                          releaseAlbums[album][0],
-                          releaseAlbums[album][1],
-                          "R",
-                        ]);
-                      }
-                    }}
-                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-color rounded"
-                  >
-                    <img
-                      src={releaseAlbums[album][0]}
-                      alt={`${album} 앨범 커버`}
-                      loading="lazy"
-                    />
-                  </li>
-                );
-              })
+                  }}
+                  className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-color rounded"
+                >
+                  <img
+                    src={releaseAlbums[album][0]}
+                    alt={`${album} 앨범 커버`}
+                    loading="lazy"
+                  />
+                </li>
+              );
+            })
             : Object.keys(joinAlbums).map((album) => {
-                return (
-                  <li
-                    key={album}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`${album} 앨범 상세 정보 보기`}
-                    onClick={() =>
+              return (
+                <li
+                  key={album}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`${album} 앨범 상세 정보 보기`}
+                  onClick={() =>
+                    openModal([
+                      album,
+                      joinAlbums[album][0],
+                      joinAlbums[album][1],
+                      "J",
+                    ])
+                  }
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
                       openModal([
                         album,
                         joinAlbums[album][0],
                         joinAlbums[album][1],
                         "J",
-                      ])
+                      ]);
                     }
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        openModal([
-                          album,
-                          joinAlbums[album][0],
-                          joinAlbums[album][1],
-                          "J",
-                        ]);
-                      }
-                    }}
-                    className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-color rounded"
-                  >
-                    <img
-                      src={joinAlbums[album][0]}
-                      alt={`${album} 앨범 커버`}
-                      loading="lazy"
-                    />
-                  </li>
-                );
-              })}
+                  }}
+                  className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-main-color rounded"
+                >
+                  <img
+                    src={joinAlbums[album][0]}
+                    alt={`${album} 앨범 커버`}
+                    loading="lazy"
+                  />
+                </li>
+              );
+            })}
         </ol>
         <p className="font-Pretendard text-sm py-5 text-sub-color">
           * 앨범은 최신순으로 정렬되어 있습니다. <br />* 매주 수요일 오전

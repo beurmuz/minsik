@@ -12,7 +12,7 @@ const Header = ({ changeColor }) => {
   };
   return changeColor ? (
     <header className="w-full text-main-color">
-      <div className={`${SITE_CONTAINER} flex flex-row h-1/8 justify-between mt-12`}>
+      <div className={`${SITE_CONTAINER} flex flex-row items-center justify-between h-[120px] pt-12 pb-6`}>
         <Link to="/">
           <h1 className="font-NotoSerif text-3xl font-semibold ">SIK-K</h1>
         </Link>
@@ -33,7 +33,7 @@ const Header = ({ changeColor }) => {
     </header>
   ) : (
     <header className="w-full text-white">
-      <div className={`${SITE_CONTAINER} flex flex-row h-1/8 justify-between mt-12`}>
+      <div className={`${SITE_CONTAINER} flex flex-row items-center justify-between h-[120px] pt-12 pb-6`}>
         <Link to="/">
           <h1 className="font-NotoSerif text-3xl font-semibold ">SIK-K</h1>
         </Link>

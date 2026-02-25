@@ -12,7 +12,7 @@ const Footer = ({ changeColor }) => {
 
   return (
     <footer className="w-full">
-      <div className={`${SITE_CONTAINER} py-8`}>
+      <div className={`${SITE_CONTAINER} pt-6 pb-10`}>
         <p
           className={`font-NotoSerif text-xs font-medium ${changeColor ? "text-sub-color" : "text-white"}`}
         >

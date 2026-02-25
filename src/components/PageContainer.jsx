@@ -4,7 +4,7 @@ import { SITE_CONTAINER } from "../shared/layout";
 const PageContainer = ({ children, className = "" }) => {
   return (
     <main
-      className={`${SITE_CONTAINER} py-10 animate-pageLoadEffect ${className}`.trim()}
+      className={`${SITE_CONTAINER} py-2 animate-pageLoadEffect ${className}`.trim()}
     >
       {children}
     </main>

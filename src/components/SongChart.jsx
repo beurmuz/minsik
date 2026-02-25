@@ -12,6 +12,7 @@ import {
 
 import { Line } from "react-chartjs-2";
 import { dataStore } from "../shared/store";
+import Skeleton from "./Skeleton";
 
 ChartJS.register(
   CategoryScale,
@@ -111,6 +112,15 @@ const SongChart = () => {
       },
     ],
   };
+
+  if (labels.length === 0) {
+    return (
+      <div className="py-2">
+        <Skeleton className="w-48 h-5 mb-3" />
+        <Skeleton className="w-full h-64" />
+      </div>
+    );
+  }
 
   return (
     <div className="py-2">
