@@ -8,6 +8,7 @@
   box-sizing: border-box;
   font-family: "Noto Serif", serif;
 }
+
 body {
   width: 100%;
 }
@@ -15,14 +16,17 @@ body {
 /* 모바일 Safari viewport 높이 문제 해결 */
 @supports (height: 100dvh) {
   .h-screen {
-    height: 100dvh; /* 동적 viewport 높이 (주소창 고려) */
+    height: 100dvh;
+    /* 동적 viewport 높이 (주소창 고려) */
   }
 }
 
 @supports not (height: 100dvh) {
   .h-screen {
-    height: 100vh; /* 폴백: 구형 브라우저 */
-    height: -webkit-fill-available; /* Safari 폴백 */
+    height: 100vh;
+    /* 폴백: 구형 브라우저 */
+    height: -webkit-fill-available;
+    /* Safari 폴백 */
   }
 }
 
@@ -71,4 +75,22 @@ button {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+
+.animate-typing {
+  animation: typing 1.5s steps(20, end) forwards;
+  animation-delay: 0.8s;
+  width: 0;
 }
