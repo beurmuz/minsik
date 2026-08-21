@@ -10,9 +10,12 @@ const NewsList = () => {
   const getNewsData = async () => {
     setIsLoading(true);
     const result = await DataFetchApi.get("news_data.json")
-      .then((res) => res.data)
-      .catch((error) => console.log(error));
-    setNewsData(result);
+  .then((res) => res.data)
+  .catch((error) => {
+    console.error("Data fetch failed:", error);
+    return [];
+  });
+setNewsData(result || []);
     setIsLoading(false);
   };
 

@@ -93,6 +93,7 @@ try:
 except Exception as e:
     # 크롤링 중 오류 발생
     newsData = []
+    print(f"크롤링 중 에러가 발생했습니다: {e}")
 
 # 크롤링이 실패하거나 결과가 비어 있을 경우 → 백업 데이터로 대체
 if not newsData:
@@ -102,6 +103,7 @@ if not newsData:
             newsData = json.load(backup_file)
     else:
         newsData = []
+        print("크롤링 결과가 없고, 백업 파일도 존재하지 않습니다.")
 
 # newsData가 존재할 경우 날짜 기준 최신순 정렬 후 저장 + 백업 갱신
 if newsData:

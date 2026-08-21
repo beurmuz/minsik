@@ -99,6 +99,7 @@ try:
 
 except Exception as e:
     songsData = []
+    print(f"크롤링 중 에러가 발생했습니다: {e}")
 
 # 크롤링 실패 or 결과 없음 → 백업 데이터로 대체
 if not songsData:
@@ -107,6 +108,7 @@ if not songsData:
             songsData = json.load(backup_file)
     else:
         songsData = []
+        print("크롤링 결과가 없고, 백업 파일도 존재하지 않습니다.")
 
 # 최종 저장 및 백업
 if songsData:

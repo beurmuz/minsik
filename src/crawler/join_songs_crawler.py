@@ -56,6 +56,7 @@ try:
 
 except Exception as e:
     JoinSongsData = []
+    print(f"크롤링 중 에러가 발생했습니다: {e}")
 
 # 크롤링 실패 또는 빈 리스트인 경우 → 백업 데이터 사용
 if not JoinSongsData:
@@ -64,6 +65,7 @@ if not JoinSongsData:
             JoinSongsData = json.load(backup_file)
     else:
         JoinSongsData = []
+        print("크롤링 결과가 없고, 백업 파일도 존재하지 않습니다.")
 
 # 정상 데이터 저장 및 백업 갱신
 if JoinSongsData:

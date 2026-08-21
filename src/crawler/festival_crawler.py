@@ -37,6 +37,7 @@ try:
 
 except Exception as e:
     festivalData = []
+    print(f"크롤링 중 에러가 발생했습니다: {e}")
 
 # 크롤링 실패 또는 결과가 없는 경우 → 백업 데이터로 대체
 if not festivalData:
@@ -45,6 +46,8 @@ if not festivalData:
             festivalData = json.load(backup_file)
     else:
         festivalData = []
+        print("크롤링 결과가 없고, 백업 파일도 존재하지 않습니다.")
+        
 
 # 최종 저장 및 백업 갱신
 if festivalData:
