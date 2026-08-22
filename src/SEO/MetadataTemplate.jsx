@@ -8,7 +8,7 @@ const MetadataTemplate = ({
   ogTitle,
   ogDescription,
 }) => {
-  const publicUrl = process.env.PUBLIC_URL || "";
+  const publicUrl = "";
   return (
     <Helmet>
       <title>{metaTitle}</title>
