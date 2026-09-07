@@ -9,19 +9,18 @@ import MainCard from "../components/MainCard";
 import MediaRow from "../components/MediaRow";
 import Skeleton from "../components/Skeleton";
 
-const Songs = (props) => {
-  const { releaseList } = dataStore((state) => state);
+const Songs = () => {
+  const releaseList = dataStore((state) => state.releaseList);
+  const latestSong = releaseList?.[0];
 
   return (
     <>
       <MetadataTemplate
-        metaTitle={"SIK-K | Song"}
-        metaDescription={
-          "SIK-K의 최근 발매 앨범, 지금까지 발매 및 참여한 노래 정보를 확인할 수 있는 페이지입니다."
-        }
-        ogUrl={"https://sik-k.netlify.app/songs"}
-        ogTitle={"SIK-K 노래 구경하기"}
-        ogDescription={"식케이의 최신 앨범, 노래 정보 확인하기"}
+        metaTitle="SIK-K | Song"
+        metaDescription="SIK-K의 최근 발매 앨범, 지금까지 발매 및 참여한 노래 정보를 확인할 수 있는 페이지입니다."
+        ogUrl="https://sik-k.netlify.app/songs"
+        ogTitle="SIK-K 노래 구경하기"
+        ogDescription="식케이의 최신 앨범, 노래 정보 확인하기"
       />
       <PageContainer>
         <section>
@@ -30,40 +29,38 @@ const Songs = (props) => {
             variant="section"
             className="flex-1 flex flex-col"
           >
-            {releaseList?.[0]?.title ? (
+            {latestSong?.title ? (
               <MediaRow
                 className="mt-4"
-                imageSrc={releaseList?.[0]?.imgSource}
-                imageAlt={`${releaseList[0].ablum} 앨범 커버`}
-                fallback={
-                  <div className="h-full w-full bg-gray-200 rounded" />
-                }
+                imageSrc={latestSong.imgSource}
+                imageAlt={`${latestSong.album || latestSong.ablum || "앨범"} 커버`}
+                fallback={<div className="h-full w-full bg-gray-200 rounded" />}
                 imageClassName="rounded"
               >
                 <div className="flex flex-col justify-center min-w-0">
                   <p
                     className="font-Pretendard text-xl font-bold text-black truncate"
-                    title={releaseList[0].title}
+                    title={latestSong.title}
                   >
-                    {releaseList[0].title}
+                    {latestSong.title}
                   </p>
                   <p
                     className="font-Pretendard text-sm text-sub-color mt-1 truncate"
-                    title={releaseList[0].artists}
+                    title={latestSong.artists}
                   >
-                    {releaseList[0].artists}
+                    {latestSong.artists}
                   </p>
-                  {releaseList[0].songId ? (
+                  {latestSong.songId && (
                     <a
-                      href={`https://www.melon.com/song/detail.htm?songId=${releaseList[0].songId}`}
+                      href={`https://www.melon.com/song/detail.htm?songId=${latestSong.songId}`}
                       target="_blank"
                       rel="noreferrer"
                       className="mt-2 inline-block font-Pretendard text-sm text-black/70 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded py-1 w-fit"
-                      aria-describedby="클릭 시 멜론 페이지로 연결됩니다."
+                      aria-label={`${latestSong.title} 멜론 페이지에서 듣기 (새 창 열림)`}
                     >
                       멜론에서 듣기 →
                     </a>
-                  ) : null}
+                  )}
                 </div>
               </MediaRow>
             ) : (

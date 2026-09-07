@@ -9,7 +9,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
 import { Line } from "react-chartjs-2";
 import { dataStore } from "../shared/store";
 import Skeleton from "./Skeleton";
@@ -21,27 +20,25 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend,
+  Legend
 );
 
 const SongChart = () => {
-  const { releaseYears, joinYears } = dataStore((state) => state);
+  const releaseYears = dataStore((state) => state.releaseYears);
+  const joinYears = dataStore((state) => state.joinYears);
 
   const { labels, releaseCounts, joinCounts, peakYear, peakTotal } =
     useMemo(() => {
       const releaseMap = new Map(
-        (releaseYears ?? []).map(([year, count]) => [
-          String(year),
-          Number(count),
-        ]),
+        (releaseYears ?? []).map(([year, count]) => [String(year), Number(count)])
       );
       const joinMap = new Map(
-        (joinYears ?? []).map(([year, count]) => [String(year), Number(count)]),
+        (joinYears ?? []).map(([year, count]) => [String(year), Number(count)])
       );
 
       const yearSet = new Set([...releaseMap.keys(), ...joinMap.keys()]);
       const sortedYears = Array.from(yearSet).sort(
-        (a, b) => Number(a) - Number(b),
+        (a, b) => Number(a) - Number(b)
       );
 
       const rCounts = sortedYears.map((y) => releaseMap.get(y) ?? 0);
@@ -66,52 +63,39 @@ const SongChart = () => {
       };
     }, [releaseYears, joinYears]);
 
-  const options = {
-    responsive: true,
-    animation: {
-      duration: 300,
-    },
-    plugins: {
-      legend: {
-        position: "bottom",
+  const options = useMemo(
+    () => ({
+      responsive: true,
+      animation: { duration: 300 },
+      plugins: { legend: { position: "bottom" } },
+      scales: {
+        x: { stacked: false, ticks: { autoSkip: true, maxRotation: 0 } },
+        y: { stacked: false, beginAtZero: true, ticks: { precision: 0, maxTicksLimit: 6 } },
       },
-    },
-    scales: {
-      x: {
-        stacked: false,
-        ticks: {
-          autoSkip: true,
-          maxRotation: 0,
-        },
-      },
-      y: {
-        stacked: false,
-        beginAtZero: true,
-        ticks: {
-          precision: 0,
-          maxTicksLimit: 6,
-        },
-      },
-    },
-  };
+    }),
+    []
+  );
 
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: "발매 곡 수",
-        data: releaseCounts,
-        backgroundColor: "rgba(0, 0, 0, 0.18)",
-        borderColor: "rgba(0, 0, 0, 0.75)",
-      },
-      {
-        label: "참여(피처링) 곡 수",
-        data: joinCounts,
-        backgroundColor: "rgba(0, 0, 0, 0.10)",
-        borderColor: "rgba(0, 0, 0, 0.45)",
-      },
-    ],
-  };
+  const data = useMemo(
+    () => ({
+      labels,
+      datasets: [
+        {
+          label: "발매 곡 수",
+          data: releaseCounts,
+          backgroundColor: "rgba(0, 0, 0, 0.18)",
+          borderColor: "rgba(0, 0, 0, 0.75)",
+        },
+        {
+          label: "참여(피처링) 곡 수",
+          data: joinCounts,
+          backgroundColor: "rgba(0, 0, 0, 0.10)",
+          borderColor: "rgba(0, 0, 0, 0.45)",
+        },
+      ],
+    }),
+    [labels, releaseCounts, joinCounts]
+  );
 
   if (labels.length === 0) {
     return (
@@ -134,4 +118,4 @@ const SongChart = () => {
   );
 };
 
-export default SongChart;
+export default React.memo(SongChart);
