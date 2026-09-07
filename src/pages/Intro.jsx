@@ -102,7 +102,7 @@ const Intro = () => {
         </section>
 
         {/* YouTube Video */}
-        <YouTubeVideo videoId="oCvA-i9OTyg" title="Music Video" />
+        <YouTubeVideo videoId="sQPl-Ep_1S8" title="Music Video" />
 
         {/* Timeline */}
         <section className="mt-12">

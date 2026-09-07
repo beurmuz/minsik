@@ -15,77 +15,91 @@ export const dataStore = create(
   devtools((set) => ({
     releaseList: [],
     releaseNums: 0,
-    releaseAlbums: [],
+    releaseAlbums: {},
     releaseYears: [],
 
     setsReleaseList: (jsonData) => {
-      set((state) => ({ releaseList: jsonData }));
-      set((state) => ({ releaseNums: jsonData.length }));
+      if (!Array.isArray(jsonData)) return;
 
-      let ablumSet = {};
+      // 1. 앨범별 대표 정보 추출 (중복 앨범 처리)
+      const albumSet = {};
       for (let i = 0; i < jsonData.length; i++) {
-        if (!ablumSet[jsonData[i].ablum]) {
-          ablumSet[jsonData[i].ablum] = [
-            jsonData[i].imgSource,
-            jsonData[i].release,
-          ];
+        const item = jsonData[i];
+        const albumKey = item.album || item.ablum; // 하위 호환성 유지
+        if (albumKey && !albumSet[albumKey]) {
+          albumSet[albumKey] = [item.imgSource, item.release];
         }
       }
-      set((state) => ({ releaseAlbums: ablumSet }));
 
-      let yearMap = new Map();
+      // 2. 연도별 발매 곡 수 집계
+      const yearMap = new Map();
       for (let i = getYear(); i > 2014; i--) {
         yearMap.set(String(i), 0);
       }
-      for (let song of jsonData) {
-        let year = song.release.split(".")[0];
-        yearMap.set(year, yearMap.get(year) + 1);
+      for (const song of jsonData) {
+        if (song.release) {
+          const year = song.release.split(".")[0];
+          if (yearMap.has(year)) {
+            yearMap.set(year, yearMap.get(year) + 1);
+          }
+        }
       }
-      let yearList = [];
-      for (let [year, count] of yearMap.entries()) {
-        yearList.push([year, count]);
-      }
-      set((state) => ({ releaseYears: yearList }));
+      const yearList = Array.from(yearMap.entries());
+
+      // 3. 단 한 번의 set()으로 모든 상태를 한꺼번에 원자적(Atomic) 업데이트
+      set({
+        releaseList: jsonData,
+        releaseNums: jsonData.length,
+        releaseAlbums: albumSet,
+        releaseYears: yearList,
+      });
     },
 
     joinList: [],
     joinNums: 0,
-    joinAlbums: [],
+    joinAlbums: {},
     joinYears: [],
 
     setsJoinList: (jsonData) => {
-      set((state) => ({ joinList: jsonData }));
-      set((state) => ({ joinNums: jsonData.length }));
+      if (!Array.isArray(jsonData)) return;
 
-      let ablumJSet = {};
+      // 1. 참여 앨범별 대표 정보 추출
+      const albumJSet = {};
       for (let i = 0; i < jsonData.length; i++) {
-        if (!ablumJSet[jsonData[i].ablum]) {
-          ablumJSet[jsonData[i].ablum] = [
-            jsonData[i].imgSource,
-            jsonData[i].release,
-          ];
+        const item = jsonData[i];
+        const albumKey = item.album || item.ablum; // 하위 호환성 유지
+        if (albumKey && !albumJSet[albumKey]) {
+          albumJSet[albumKey] = [item.imgSource, item.release];
         }
       }
-      set((state) => ({ joinAlbums: ablumJSet }));
 
-      let yearMap = new Map();
+      // 2. 연도별 참여 곡 수 집계
+      const yearMap = new Map();
       for (let i = 2015; i <= getYear(); i++) {
         yearMap.set(String(i), 0);
       }
-      for (let song of jsonData) {
-        let year = song.release.split(".")[0];
-        yearMap.set(year, yearMap.get(year) + 1);
+      for (const song of jsonData) {
+        if (song.release) {
+          const year = song.release.split(".")[0];
+          if (yearMap.has(year)) {
+            yearMap.set(year, yearMap.get(year) + 1);
+          }
+        }
       }
-      let yearList = [];
-      for (let [year, count] of yearMap.entries()) {
-        yearList.push([year, count]);
-      }
-      set((state) => ({ joinYears: yearList }));
+      const yearList = Array.from(yearMap.entries());
+
+      // 3. 단 한 번의 set()으로 상태 업데이트
+      set({
+        joinList: jsonData,
+        joinNums: jsonData.length,
+        joinAlbums: albumJSet,
+        joinYears: yearList,
+      });
     },
 
     festivalDatas: [],
 
     setsFestivalDatas: (jsonData) =>
-      set((state) => ({ festivalDatas: jsonData })),
+      set({ festivalDatas: jsonData }),
   }))
 );

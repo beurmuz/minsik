@@ -39,7 +39,8 @@ def parse_list_row(m):
         "songId": song_id,
         "title": m.select_one("a.fc_gray").text.strip(),
         "artists": m.select_one("span.checkEllipsis").text.strip(),
-        "ablum": m.select("div.ellipsis")[2].text.strip(),
+        "album": m.select("div.ellipsis")[2].text.strip(),  # ablum -> album 키 수정
+        "types": "A",
     }
 
 
@@ -60,7 +61,7 @@ def fetch_detail(song_id: str):
 
 
 try:
-    # 1) 리스트 페이지를 끝까지 순회(하드코딩 제거)
+    # 1) 리스트 페이지를 끝까지 순회
     start_index = START_INDEX
     seen_song_ids = set()
     while True:
@@ -78,12 +79,11 @@ try:
             except Exception:
                 continue
 
-        # 마지막 페이지는 보통 50개 미만
         if len(rows) < PAGE_SIZE:
             break
         start_index += PAGE_SIZE
 
-    # 2) 상세정보 추가 (상세 페이지 접근 불가한 곡은 제외)
+    # 2) 상세정보 추가
     finalSongsData = []
     for item in songsData:
         try:
@@ -92,7 +92,6 @@ try:
             item["imgSource"] = img_source
             finalSongsData.append(item)
         except Exception:
-            # 멜론에서 클릭이 안 되는 곡(상세 페이지 파싱 실패 등)은 제외
             continue
 
     songsData = finalSongsData
