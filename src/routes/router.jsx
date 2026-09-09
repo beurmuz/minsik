@@ -2,16 +2,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { menuStore } from "../shared/store";
 import { Suspense, lazy } from "react";
 import RootLayout from "../components/RootLayout";
+import Loading from "../components/Loading";
+import Home from '../pages/Home';
+import Menu from "../components/Menu";
 
-const Home = lazy(() => import("../pages/Home"));
 const Intro = lazy(() => import("../pages/Intro"));
 const News = lazy(() => import("../pages/News"));
 const Songs = lazy(() => import("../pages/Songs"));
 const NotFound = lazy(() => import("../pages/NotFound"));
-const Menu = lazy(() => import("../components/Menu"));
 
 const Router = () => {
-  const { showMenu } = menuStore((state) => state);
+  const { showMenu }  = menuStore((state) => state);
 
   return (
     <BrowserRouter
@@ -20,7 +21,7 @@ const Router = () => {
       }}
     >
       <RootLayout>
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/intro" element={<Intro />} />
@@ -30,11 +31,7 @@ const Router = () => {
           </Routes>
         </Suspense>
 
-        {showMenu ? (
-          <Suspense fallback={null}>
-            <Menu />
-          </Suspense>
-        ) : null}
+        {showMenu ? <Menu /> : null}
       </RootLayout>
     </BrowserRouter>
   );

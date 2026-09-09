@@ -77,6 +77,67 @@
   </head>
   <body aria-hidden="false">
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <style>
+      #splash-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #2F2A24;
+        transition: opacity 0.5s ease;
+      }
+      #splash-screen.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .splash-text {
+        font-family: Pretendard, sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 0.4em;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid rgba(255, 255, 255, 0.5);
+        animation: typing 1.5s steps(20, end) forwards;
+        animation-delay: 0.8s;
+        width: 0;
+      }
+      @media (min-width: 768px) {
+        .splash-text { font-size: 18px; }
+      }
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+    </style>
+    <div id="splash-screen">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <p class="splash-text">WELCOME TO FL1P WORLD</p>
+      </div>
+    </div>
+    <script>
+      (function() {
+        var isHome = window.location.pathname === "/";
+        var hasSeenSplash = sessionStorage.getItem("hasSeenSplash");
+        var splash = document.getElementById("splash-screen");
+        
+        if (!isHome || hasSeenSplash) {
+          splash.style.display = "none";
+        } else {
+          sessionStorage.setItem("hasSeenSplash", "true");
+          setTimeout(function() {
+            splash.classList.add("fade-out");
+          }, 2500);
+          setTimeout(function() {
+            splash.style.display = "none";
+          }, 3000);
+        }
+      })();
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
