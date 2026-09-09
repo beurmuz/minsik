@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import faceImg from "../assets/images/newMinsik.webp";
 import HistoryBox from "../components/HistoryBox";
 import MainCard from "../components/MainCard";
@@ -8,16 +7,12 @@ import MetadataTemplate from "../SEO/MetadataTemplate";
 import Footer from "../components/Footer";
 import PageContainer from "../components/PageContainer";
 import { dday, convertDday } from "../utils/date";
-import Skeleton from "../components/Skeleton";
 
 const Intro = () => {
-  // 클라이언트에서만 날짜 계산 (hydration 오류 방지)
   const [debutDays, setDebutDays] = useState(0);
   const [dateInfo, setDateInfo] = useState({ years: 0, months: 0, days: 0 });
-  const [isImgLoaded, setIsImgLoaded] = useState(false);
 
   useEffect(() => {
-    // 클라이언트에서만 실행되어 hydration 오류 방지
     const days = dday();
     const info = convertDday(days);
     setDebutDays(days);
@@ -37,27 +32,22 @@ const Intro = () => {
         ogTitle={"SIK-K가 누구?"}
         ogDescription={"SIK-K에 대해 알아보기"}
       />
-      <Helmet>
-        <link rel="preload" as="image" href={faceImg} />
-      </Helmet>
+
       <PageContainer>
         {/* Profile */}
         <section>
           <MainCard title="Profile" variant="section">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-[220px_1fr]">
               <div className="w-full max-w-[220px] mx-auto lg:mx-0 relative aspect-square overflow-hidden rounded-full bg-gray-100">
-                {!isImgLoaded && (
-                  <Skeleton className="absolute inset-0 w-full h-full" />
-                )}
+                {/* LCP 최적화: opacity 제어 제거, React 속성명 fetchPriority(카멜케이스) 적용 */}
                 <img
                   src={faceImg}
                   alt="식케이 프로필 사진"
-                  fetchpriority="high"
+                  fetchPriority="high"
                   decoding="async"
                   width="220"
                   height="220"
-                  className={`w-full h-full object-cover transition-opacity duration-300 ${isImgLoaded ? "opacity-100" : "opacity-0"}`}
-                  onLoad={() => setIsImgLoaded(true)}
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex flex-col justify-center">
@@ -66,8 +56,7 @@ const Intro = () => {
                 </p>
                 <p className="font-Pretendard text-sm text-main-color mt-2">
                   2015.08.07 데뷔 | D+{debutDays} ({years}년 {months}개월{" "}
-                  {days}
-                  일)
+                  {days}일)
                 </p>
                 <p className="font-Pretendard text-sm leading-6 text-sub-color mt-3">
                   KC 레이블의 설립자이자 대표로 서울을 중심으로 새로운
@@ -82,7 +71,6 @@ const Intro = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 font-Pretendard text-xs text-black/70 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-                    aria-describedby="클릭 시 위키피디아로 연결됩니다."
                   >
                     Wikipedia →
                   </a>
@@ -91,7 +79,6 @@ const Intro = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 font-Pretendard text-xs text-black/70 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-                    aria-describedby="클릭 시 네이버 바이브로 연동됩니다."
                   >
                     VIBE →
                   </a>
